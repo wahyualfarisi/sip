@@ -8,10 +8,10 @@
     Version: 1.0
 
 -----------------------------------------------------------------------------------
-    
+
     CSS INDEX
     ===================
-	
+
     1. Theme Default CSS (body, link color, section etc)
 	2. Header Customize CSS
 	3. Header top Menu CSS
@@ -122,6 +122,13 @@ padding: 0
 .shadow-reset{
 	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
 }
+
+.btn-custome {
+  background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.4);
+  color: white;
+  font-weight: bold;
+}
 /*----------------------------------------*/
 /*  2.  Header top Customize CSS
 /*----------------------------------------*/
@@ -145,12 +152,12 @@ padding: 0
 	background:#2b2a2a;
 }
 .header-top-menu .navbar-nav>li .dropdown-menu{
-	border: 0px solid #ccc; 
+	border: 0px solid #ccc;
     border: 0px solid rgba(0,0,0,.15);
-	background-color: #303030;	
+	background-color: #303030;
 }
 .header-right-info .navbar-nav>li .dropdown-menu{
-	border: 0px solid #ccc; 
+	border: 0px solid #ccc;
     border: 0px solid rgba(0,0,0,.15);
 }
 .header-top-menu .nav>li>a:focus, .header-top-menu .nav>li>a:hover, .header-top-menu .nav>li>a:active {
@@ -231,7 +238,7 @@ padding: 0
 	padding:18px 10px;
 }
 .header-right-info {
-	
+
 }
 .header-right-info ul.header-right-menu li{
 	display:inline-block;
@@ -690,7 +697,7 @@ ul.setting-panel-list li{
 }
 .header-top-area{
 	background:#303030;
-	
+
 }
 .header-top-menu ul.header-top-nav{
 	text-align:right;
@@ -1473,13 +1480,13 @@ ul.comment-action-st li a{
 	font-size:13px;
 	color:#303030;
 	margin:0px;
-	
+
 }
 .daily-feed-content .feed-ago{
 	position:absolute;
 	right:0px;
 	top:0px;
-	
+
 }
 .daily-feed-content .message-feed-single{
 	margin: 15px 0px 0px 74px;
@@ -1955,7 +1962,7 @@ ul.comment-action-st li a{
      background-color: white;
    border-radius:0px;
 }
- 
+
 .multipleInput-container input {
      font-size:13px;
      width:150px;
@@ -1964,12 +1971,12 @@ ul.comment-action-st li a{
      margin-bottom:1px;
      outline: none
 }
- 
+
 .multipleInput-container ul {
      list-style-type:none;
      padding-left: 0px !important;
 }
- 
+
 li.multipleInput-email {
      float:left;
      margin-right:2px;
@@ -1978,7 +1985,7 @@ li.multipleInput-email {
      padding:2px;
      background:#F3F7FD;
 }
- 
+
 .multipleInput-close {
      width:16px;
      height:16px;
@@ -2649,7 +2656,7 @@ ul.profile-contact-menu {
     text-align: left;
 }
 .user-profile-post{
-	
+
 }
 .user-profile-post-action .comment-action-st, .user-profile-post-action .comment-action-st.in {
     width: 140%;
@@ -3955,7 +3962,7 @@ ul.breadcome-menu {
 }
 .darklayout .datepicker thead tr:first-child th:hover, .darklayout .datepicker tfoot tr th:hover, .darklayout .datepicker table tr td.day:hover, .darklayout .datepicker table tr td.day.focused, .darklayout .datepicker table tr td span:hover, .darklayout .datepicker table tr td.range, .darklayout .analytics-adminpro, .darklayout .analytics-sparkle-line, .darklayout .analytics-rounded, .darklayout .analysis-progrebar, .darklayout .charts-single-pro, .darklayout .notification-list, .darklayout .button-ad-wrap, .darklayout .tinymce-single, .darklayout .x-editable-list, .darklayout .pdf-single-pro, .darklayout .code-editor-single, .darklayout .custom-inbox-message, .darklayout .inbox-email-menu-list, .darklayout li.multipleInput-email, .darklayout .single-skill, .darklayout .contact-client-single, .darklayout .user-profile-wrap, .darklayout .user-profile-about, .darklayout .user-profile-post, .darklayout .user-profile-mutual-friends, .darklayout .project-details-wrap, .darklayout .project-details-descri, .darklayout .project-details-files, .darklayout .popover, .darklayout .popover-title, .darklayout .modal-bootstrap, .darklayout .dropzone-custom-sys, .darklayout .dropzone-pro, .darklayout .preloader-single, .darklayout .user-profile-comment-input textarea, .darklayout .comment-replay-profile .btn-white, .darklayout .widget-flot-bg, .darklayout .menu-list-wrap, .darklayout .custon-tab-style1, .darklayout .author-permissio-wrap, .darklayout .card-box{
 	background-color: #393939;
-} 
+}
 .darklayout li.multipleInput-email{
 	border: 1px #393939 solid;
 }

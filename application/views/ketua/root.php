@@ -64,7 +64,14 @@
                             </div>
                             <div class="col-lg-6 col-md-1 col-sm-1 col-xs-12">
                                 <div class="header-top-menu tabl-d-n">
-
+                                  <ul class="nav navbar-nav mai-top-nav">
+                                        <li class="nav-item dropdown">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Profile <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
+                                            <div role="menu" class="dropdown-menu animated flipInX">
+                                                <a href="<?= base_url('Login/logout') ?> " class="dropdown-item">Logout</a>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                             <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">

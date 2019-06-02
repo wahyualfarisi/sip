@@ -10,9 +10,11 @@
 }
 .login-title h1{
 	font-size:20px;
+	color: white;
 }
 .login-bg{
-	background:#fff;
+	/* background: purple; */
+	background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
 	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.4);
 	padding:20px;
 }
@@ -60,6 +62,7 @@
 	padding:16px 0px;
 	margin:0;
 	font-size:14px;
+	color: white;
 }
 .login-button-pro{
 	padding:30px 0px;
@@ -127,7 +130,7 @@
 	padding-left: 27px;
 	font-size: 14px;
 	line-height: 27px;
-	color: #404040;
+	color: white;
 	cursor: pointer;
 	font-weight:300;
 }

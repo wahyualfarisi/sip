@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login | Adminpro - Admin Template</title>
+    <title>Login | Posyandu </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -34,9 +34,11 @@
     <!-- normalize CSS
 		============================================ -->
     <link rel="stylesheet" href="<?= base_url().'assets/css/normalize.css' ?>  ">
+    <link rel="stylesheet" href="<?= base_url().'assets/css/Lobibox.min.css' ?>  ">
     <!-- form CSS
 		============================================ -->
     <link rel="stylesheet" href="<?= base_url().'assets/css/form.css' ?>  ">
+    <link rel="stylesheet" href="<?= base_url().'assets/css/notifications.css' ?>  ">
     <!-- style CSS
 		============================================ -->
     <link rel="stylesheet" href="<?= base_url().'assets/style.css' ?>   ">
@@ -51,11 +53,10 @@
 <body class="materialdesign">
     <div class="wrapper-pro">
         <div class="content-inner-all">
-
             <div class="login-form-area mg-t-30 mg-b-40">
                 <div class="container-fluid">
                     <div class="row">
-                        <form id="adminpro-form" class="adminpro-form" style="margin-top: 140px;">
+                        <form id="form-login-panitia" class="adminpro-form" style="margin-top: 140px;">
                             <div class="col-lg-6">
                                 <div class="login-bg">
                                     <div class="row">
@@ -68,12 +69,12 @@
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="login-input-head">
-                                                <p>E-mail</p>
+                                                <p>Kode Panitia</p>
                                             </div>
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <input type="email" name="email" />
+                                                <input type="text" name="kode_panitia" id="kode_panitia" />
                                                 <i class="fa fa-envelope login-user" aria-hidden="true"></i>
                                             </div>
                                         </div>
@@ -86,21 +87,14 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <input type="password" name="password" />
+                                                <input type="password" name="password" id="password" />
                                                 <i class="fa fa-lock login-user"></i>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="forgot-password">
-                                                        <a href="#">Forgot password?</a>
-                                                    </div>
-                                                </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="login-keep-me">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" name="remember" checked><i></i>Tampilkan password
+                                                            <input type="checkbox" id="show-password" ><i></i>Tampilkan password
                                                         </label>
                                                     </div>
                                                 </div>
@@ -108,19 +102,34 @@
                                         </div>
                                     </div>
                                     <div class="row">
+                                      <div class="col-lg-4">
+                                        <div class="login-input-head">
+                                          <p>Akses</p>
+                                        </div>
+                                      </div>
+                                      <div class="col-lg-8">
+                                        <div class="login-input-area">
+                                          <select class="form-control" name="akses">
+                                            <option value="">pilih akses</option>
+                                            <option value="admin">Administrator</option>
+                                            <option value="kader">Kader</option>
+                                            <option value="ketua">Ketua</option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-lg-4">
 
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-button-pro">
-                                                <button type="submit" class="login-button login-button-rg">Register</button>
                                                 <button type="submit" class="login-button login-button-lg">Log in</button>
                                             </div>
+                                            <button id="basicInfoPosition" class="btn btn-info">Info</button>
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
                         </form>
                         <div class="col-lg-4">
@@ -132,7 +141,9 @@
             <!-- login End-->
         </div>
     </div>
-
+    <script type="text/javascript">
+      var BASE_URL = '<?= base_url() ?>';
+    </script>
     <!-- jquery
 		============================================ -->
     <script src="<?= base_url().'assets/js/vendor/jquery-1.11.3.min.js' ?>  "></script>
@@ -151,14 +162,16 @@
     <!-- scrollUp JS
 		============================================ -->
     <script src="<?= base_url().'assets/js/jquery.scrollUp.min.js' ?> "></script>
+    <script src="<?= base_url().'assets/js/Lobibox.js' ?>  "></script>
     <!-- form validate JS
 		============================================ -->
     <script src="<?= base_url().'assets/js/jquery.form.min.js' ?> "></script>
     <script src="<?= base_url().'assets/js/jquery.validate.min.js' ?> "></script>
-    <script src="<?= base_url().'assets/js/form-active.js' ?>  "></script>
     <!-- main JS
 		============================================ -->
     <script src="<?= base_url().'assets/js/main.js' ?> "></script>
+    <script src="<?= base_url().'public/mynotif.js' ?>"></script>
+    <script src="<?= base_url().'public/auth.js' ?>"></script>
 </body>
 
 </html>
