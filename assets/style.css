@@ -1125,6 +1125,9 @@ ul.comment-action-st li a{
 .user-monthly{
 	background:linear-gradient(to bottom, #b96f77 0%, #ca0e0e 100%);
 }
+.bg-custome-me {
+  background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+}
 .income-title{
 	padding:15px 20px;
 	border-bottom:1px solid rgba(233, 157, 128, 0.18);
