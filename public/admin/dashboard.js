@@ -24,9 +24,34 @@ var DashboardListener = (function() {
             });
           }
 
-          $('.message-list-menu').html(html);
+          $('#show-user-dashboard').html(html);
         }
       })
+    },
+    loadAllVaksin: function(){
+      $.ajax({
+        url: `${BASE_URL}master/admin/Vaksin/getAll`,
+        method: 'post',
+        dataType: 'json',
+        success: function(data){
+          var html = '', no;
+          no = 1;
+          if(data.length > 0)
+          {
+            data.forEach(function(item) {
+              html += `
+                  <li>
+                    <span class="message-serial message-cl-one">${no++}</span>
+                    <span class="message-info">${item.nama_imunisasi}</span>
+                    <span class="message-time">${item.kriteria_usia}</span>
+                  </li>
+              `;
+            });
+          }
+
+          $('#show-vaksin-dashboard').html(html);
+        }
+      });
     }
   }
 
@@ -36,4 +61,5 @@ var DashboardListener = (function() {
 
 $(document).ready(function() {
   DashboardListener.loadAllUser();
+  DashboardListener.loadAllVaksin();
 });
