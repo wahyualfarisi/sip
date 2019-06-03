@@ -7,6 +7,7 @@ class Admin extends CI_Controller{
   {
     parent::__construct();
     $this->t_panitia = 't_panitia';
+    $this->t_imunisasi = 't_imunisasi';
     $this->load->model('m_core');
     if($this->session->userdata('akses') != 'admin' ||
        $this->session->userdata('akses') == 'kader' ||
@@ -44,6 +45,18 @@ class Admin extends CI_Controller{
   function edituser($id)
   {
     $this->load->view('admin/form/form_edit_user');
+  }
+
+  function addvaksin()
+  {
+    $this->load->view('admin/form/form_add_vaksin');
+  }
+
+  function editvaksin($id)
+  {
+    $where = array('id_imunisasi' => $id);
+    $data['get_data'] = $this->db->get_where($this->t_imunisasi, $where)->result();
+    $this->load->view('admin/form/form_edit_vaksin', $data);
   }
 
 }
