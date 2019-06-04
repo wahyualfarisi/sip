@@ -53,6 +53,9 @@
                                <a href="#/listwarga" class="dropdown-item">Data Warga</a>
                            </div>
                        </li>
+                       <li class="nav-item">
+                         <a href="#/user" class="nav-link dropdown-toggle"><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">KMS</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                       </li>
                         <li class="nav-item">
                           <a href="#/user" class="nav-link dropdown-toggle"><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">Kunjungan</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                         </li>

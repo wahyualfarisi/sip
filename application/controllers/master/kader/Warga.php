@@ -13,6 +13,15 @@ class Warga extends CI_Controller{
   function addData()
   {
     $no_kk = $this->input->post('no_kk');
+
+    $where_kk = array('no_kk' => $no_kk);
+    $chek_kk = $this->m_core->get_where($this->table, $where_kk);
+
+    if($chek_kk->num_rows() > 0){
+      echo json_encode(array('msg' => 'No KK sudah ada', 'code' => 401) );
+      return;
+    }
+
     $dataWarga = array(
       'no_kk'      => $no_kk,
       'nama_ayah'  => $this->input->post('nama_ayah'),
@@ -45,12 +54,12 @@ class Warga extends CI_Controller{
             );
              $this->db->insert('t_anak', $data);
           }
-         echo json_encode(array('msg' => 'success'));
+         echo json_encode(array('msg' => 'success', 'code' => 200));
       }else{
-        echo json_encode(array('msg' => 'success'));
+        echo json_encode(array('msg' => 'success', 'code' => 200));
       }
     }else{
-      echo json_encode(array('msg' => 'failed') );
+      echo json_encode(array('msg' => 'failed', 'code' => 401) );
     }
   }
 

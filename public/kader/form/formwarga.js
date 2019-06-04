@@ -103,9 +103,6 @@ var setupEventListener = (function() {
             }
           });
 
-
-
-
           if(error.length > 0){
             error.forEach(function(item) {
               return mynotifications('info','top right', item);
@@ -120,7 +117,13 @@ var setupEventListener = (function() {
               cache: false,
               async: false,
               success: function(data){
-                console.log(JSON.parse(data))
+                var parse = JSON.parse(data);
+                if(parse.code === 200){
+                  location.hash = '#/listwarga';
+                  return mynotifications('success','top right', parse.msg);
+                }else{
+                  return mynotifications('info','top right', parse.msg);
+                }
               }
             });
           }
