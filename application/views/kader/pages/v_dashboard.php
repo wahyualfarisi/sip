@@ -215,7 +215,7 @@
              </div>
          </div>
          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <button type="button" class="btn btn-custome btn-block" name="button">Tambah Kunjungan</button>
+            <a href="#/addkunjungan" class="btn btn-custome btn-block" name="button">Tambah Kunjungan</a>
 
              <div class="sparkline7-list shadow-reset" style="margin-top: 10px;" >
                  <div class="sparkline7-hd">

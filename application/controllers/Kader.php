@@ -31,4 +31,24 @@ class Kader extends CI_Controller{
     $this->load->view('kader/form/form_add_warga');
   }
 
+  function addkunjungan()
+  {
+    $this->load->view('kader/form/form_add_kunjungan');
+  }
+
+  function kunjungan()
+  {
+    $this->load->view('kader/pages/v_kunjungan');
+  }
+
+  function kms()
+  {
+    $this->load->view('kader/pages/v_kms');
+  }
+
+  function jadwalkegiatan()
+  {
+    $this->load->view('kader/pages/v_jadwal_kegiatan');
+  }
+
 }
