@@ -215,10 +215,12 @@
              </div>
          </div>
          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-             <div class="sparkline7-list shadow-reset ">
+            <button type="button" class="btn btn-custome btn-block" name="button">Tambah Kunjungan</button>
+
+             <div class="sparkline7-list shadow-reset" style="margin-top: 10px;" >
                  <div class="sparkline7-hd">
                      <div class="main-spark7-hd ">
-                         <h1>No Antri </h1>
+                         <h1 class="text-center">No Antri </h1>
                          <div class="sparkline7-outline-icon">
 
                          </div>
@@ -227,7 +229,7 @@
                  <div class="sparkline7-graph project-details-price-hd">
                      <div class="single-skill">
                          <div class="progress-circular1 project-details-price">
-                             <h2 style="font-size: 120px;">1</h2>
+                             <h2 style="font-size: 100px;">1</h2>
                          </div>
                      </div>
                  </div>
@@ -235,16 +237,16 @@
 
 
 
-             <div class="income-dashone-total orders-monthly shadow-reset nt-mg-b-30" style="margin-top: 30px;">
+             <div class="income-dashone-total orders-monthly shadow-reset nt-mg-b-30" style="margin-top: 10px;">
                   <div class="income-title">
                       <div class="main-income-head">
-                          <h2>Jumlah Antrian</h2>
+                          <h2 class="text-center" >Jumlah Antrian</h2>
                       </div>
                   </div>
                   <div class="income-dashone-pro">
                       <div class="income-rate-total">
                           <div class="price-adminpro-rate">
-                              <h3><span class="counter">7,23,20</span></h3>
+                              <h3 class="text-center"><span class="counter">7,23,20</span></h3>
                           </div>
                           <div class="price-graph">
                               <span id="sparkline6"></span>

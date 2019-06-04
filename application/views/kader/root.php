@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard v.1.0 | Adminpro - Admin Template</title>
+    <title>Kader Page</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="<?= base_url().'assets/css/normalize.css' ?>  ">
     <link rel="stylesheet" href="<?= base_url().'assets/css/c3.min.css' ?>  ">
     <link rel="stylesheet" href="<?= base_url().'assets/css/form/all-type-forms.css' ?>  ">
+    <link rel="stylesheet" href="<?= base_url().'assets/css/Lobibox.min.css' ?>  ">
     <link rel="stylesheet" href="<?= base_url().'assets/style.css' ?>  ">
     <link rel="stylesheet" href="<?= base_url().'assets/css/responsive.css' ?>  ">
     <script src="<?= base_url().'assets/js/vendor/modernizr-2.8.3.min.js' ?>  "></script>
@@ -48,7 +49,7 @@
                         <li class="nav-item">
                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-home"></i> <span class="mini-dn">Warga</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                            <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                               <a href="dashboard.html" class="dropdown-item">Tambah Warga</a>
+                               <a href="#/addwarga" class="dropdown-item">Tambah Warga</a>
                                <a href="#/listwarga" class="dropdown-item">Data Warga</a>
                            </div>
                        </li>
@@ -515,6 +516,9 @@
     <script src="<?= base_url().'assets/js/map/world_countries.js' ?>  "></script>
     <script src="<?= base_url().'assets/js/map/usa_states.js' ?>  "></script>
     <script src="<?= base_url().'assets/js/map/map-active.js' ?>  "></script>
+
+    <script src="<?= base_url().'assets/js/Lobibox.js' ?>  "></script>
+    <script src="<?= base_url().'assets/js/jquery.validate.min.js' ?> "></script>
     <!-- data table JS
 		============================================ -->
     <script src="<?= base_url().'assets/js/data-table/bootstrap-table.js' ?>  "></script>
