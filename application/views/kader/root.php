@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="<?= base_url().'assets/css/Lobibox.min.css' ?>  ">
     <link rel="stylesheet" href="<?= base_url().'assets/style.css' ?>  ">
     <link rel="stylesheet" href="<?= base_url().'assets/css/responsive.css' ?>  ">
+    <link rel="stylesheet" href="<?= base_url().'assets/css/modals.css' ?>  ">
+    <link rel="stylesheet" href="<?= base_url().'assets/spinner.css' ?> ">
     <script src="<?= base_url().'assets/js/vendor/modernizr-2.8.3.min.js' ?>  "></script>
 </head>
 
