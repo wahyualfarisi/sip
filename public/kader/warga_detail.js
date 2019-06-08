@@ -345,14 +345,10 @@ var SetupEventWargaDetail = (function(UI) {
 
     return {
       init: function(){
+        load_warga()
+        load_anak()
 
-        setTimeout(function(){
-          load_warga()
-        }, 1000)
-
-        setTimeout(function(){
-            load_anak()
-        }, 1300)
+      
 
         console.log('initialize');
       }
