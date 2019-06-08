@@ -258,7 +258,8 @@
 
 <script type="text/javascript">
   var BASE_URL = '<?= base_url() ?>';
-  var PARAMS = '<?= $this->uri->segment(3) ?>';
+  var PARAMS = location.hash.substr(13);
+  alert(PARAMS);
 </script>
 <script src="<?= base_url().'public/mynotif.js'?>"></script>
 <script src="<?= base_url().'public/kader/warga_detail.js'  ?>"></script>
