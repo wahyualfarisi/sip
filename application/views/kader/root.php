@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url().'assets/css/bootstrap.min.css' ?>  ">
     <link rel="stylesheet" href="<?= base_url().'assets/css/font-awesome.min.css' ?>  ">
     <link rel="stylesheet" href="<?= base_url().'assets/css/adminpro-custon-icon.css' ?> ">
