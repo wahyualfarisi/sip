@@ -74,7 +74,7 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <input type="text" name="kode_panitia" id="kode_panitia" />
+                                                <input type="text" name="kode_panitia" id="kode_panitia" placeholder="Masukan Username" />
                                                 <i class="fa fa-envelope login-user" aria-hidden="true"></i>
                                             </div>
                                         </div>
@@ -87,7 +87,7 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <input type="password" name="password" id="password" />
+                                                <input type="password" name="password" id="password" placeholder="Masukan password" />
                                                 <i class="fa fa-lock login-user"></i>
                                             </div>
                                             <div class="row">
