@@ -53,7 +53,7 @@ class Kader extends CI_Controller{
 
   function wargadetail($id = null)
   {
-    $this->load->view('kader/pages/form_add_kegiatan');
+    $this->load->view('kader/form/form_add_kegiatan');
   }
 
   function addkegiatan()
