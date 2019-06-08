@@ -11,6 +11,11 @@ var setupEventListener = (function() {
             minlength: 16,
             maxlength: 16
           },
+          email:
+          {
+            required: true,
+            email: true
+          },
           nama_ayah:
           {
             required: true
@@ -38,6 +43,11 @@ var setupEventListener = (function() {
           {
             required: 'No KK harus di isi',
             minlength: 'No KK Kurang dari 16 Angka'
+          },
+          email:
+          {
+            required: 'Email Tidak boleh kosong',
+            email: 'Maaf .. Email Tidak valid'
           },
           nama_ayah:
           {

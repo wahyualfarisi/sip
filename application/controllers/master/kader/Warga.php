@@ -26,11 +26,10 @@ class Warga extends CI_Controller{
 
     $dataWarga = array(
       'no_kk'      => $no_kk,
+      'email'      => $this->input->post('email'),
       'nama_ayah'  => $this->input->post('nama_ayah'),
       'nama_ibu'   => $this->input->post('nama_ibu'),
       'password'   => '1234',
-      'pekerjaan'  => $this->input->post('pekerjaan'),
-      'agama'      => $this->input->post('agama'),
       'alamat'     => $this->input->post('alamat'),
       'no_telp'    => $this->input->post('no_telp'),
       'tanggal_terdaftar' => date('Y-m-d')
@@ -84,8 +83,12 @@ class Warga extends CI_Controller{
                         <div class="col-lg-12">
                           <table class="table table-striped" >
                                 <tr>
-                                  <th>No K</th>
+                                  <th>No KK</th>
                                   <td>'.$row->no_kk.'</td>
+                                </tr>
+                                <tr>
+                                  <th>Email</th>
+                                  <td>'.$row->email.'</td>
                                 </tr>
                                 <tr>
                                   <th>Nama Ibu</th>

@@ -126,7 +126,6 @@
                                             <div class="login-button-pro">
                                                 <button type="submit" class="login-button login-button-lg">Log in</button>
                                             </div>
-                                            <button id="basicInfoPosition" class="btn btn-info">Info</button>
                                         </div>
                                     </div>
                                 </div>

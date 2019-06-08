@@ -17,8 +17,8 @@ class M_warga extends CI_Model{
     // }
     // $this->db->order_by('tanggal_terdaftar', 'DESC');
     // return $this->db->get();
-    
-    $query = $this->db->query("SELECT a.nama_ayah, a.nama_ibu, a.no_kk, a.alamat,COUNT(b.no_bpjs) AS JUMLAH_ANAK
+
+    $query = $this->db->query("SELECT a.nama_ayah, a.nama_ibu, a.email, a.no_kk, a.alamat,COUNT(b.no_bpjs) AS JUMLAH_ANAK
                                FROM t_warga AS a LEFT JOIN t_anak AS b
                                USING(no_kk)
                                WHERE no_kk LIKE '%$query%'

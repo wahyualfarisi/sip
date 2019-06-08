@@ -28,6 +28,17 @@
                                 <div class="form-group-inner">
                                     <div class="row">
                                         <div class="col-lg-3">
+                                            <label class="login2 pull-right pull-right-pro">Alamat Email</label>
+                                        </div>
+                                        <div class="col-lg-9">
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="Masukan Alamat Email" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group-inner">
+                                    <div class="row">
+                                        <div class="col-lg-3">
                                             <label class="login2 pull-right pull-right-pro">Nama Ayah</label>
                                         </div>
                                         <div class="col-lg-9">
@@ -43,28 +54,6 @@
                                         </div>
                                         <div class="col-lg-9">
                                             <input type="text" class="form-control" name="nama_ibu" id="nama_ibu" placeholder="Masukan Nama Ibu" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group-inner">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <label class="login2 pull-right pull-right-pro">Pekerjaan</label>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control" name="pekerjaan" id="pekerjaan" placeholder="Masukan Pekerjaan" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group-inner">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <label class="login2 pull-right pull-right-pro">Agama</label>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control" name="agama" id="agama" placeholder="Masukan Agama" />
                                         </div>
                                     </div>
                                 </div>
@@ -98,7 +87,7 @@
                                       <th> No. BPJS </th>
                                       <th> Nama Depan </th>
                                       <th> Nama Belakang </th>
-                                      <th> Umur </th>
+                                      <th> Umur (Bulan) </th>
                                       <th>Jenis Kelamin</th>
                                       <th> <button type="button" class="btn btn-custome btn-add-anak"  name="add"> <span class="fa fa-plus"></span> Tambah Anak </button> </th>
                                     </tr>

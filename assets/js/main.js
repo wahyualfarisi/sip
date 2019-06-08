@@ -4,53 +4,53 @@
 		/*----------------------------
 		 jQuery MeanMenu
 		------------------------------ */
-		jQuery('nav#dropdown').meanmenu();	
-		
-		
-		
+		jQuery('nav#dropdown').meanmenu();
+
+
+
 		$('#sidebarCollapse').on('click', function () {
                      $('#sidebar').toggleClass('active');
-                     
+
                  });
- 
+
 		// Collapse ibox function
 			$('#sidebar ul li').on('click', function () {
 				var button = $(this).find('i.fa.indicator-mn');
 				button.toggleClass('fa-angle-left').toggleClass('fa-angle-right');
-				
+
 			});
 
-			
+
 		$('#sidebarCollapse').on('click', function () {
 			$("body").toggleClass("mini-navbar");
 			SmoothlyMenu();
 		});
-		
+
 		/*-----------------------------
 			Menu Stick
 		---------------------------------*/
 		$(".sicker-menu").sticky({topSpacing:0});
-		
+
 		$(document).on('click', '.header-right-menu .dropdown-menu', function (e) {
 			  e.stopPropagation();
 			});
-			
+
 		/*--------------------------
 		 mCustomScrollbar
-		---------------------------- */	
+		---------------------------- */
 			$(window).on("load",function(){
 				$(".message-menu, .notification-menu, .comment-scrollbar, .notes-menu-scrollbar, .project-st-menu-scrollbar").mCustomScrollbar({
 					autoHideScrollbar: true,
 					scrollbarPosition: "outside",
 					theme:"light-1"
-					
+
 				});
 				$(".timeline-scrollbar").mCustomScrollbar({
 					setHeight:636,
 					autoHideScrollbar: true,
 					scrollbarPosition: "outside",
 					theme:"light-1"
-					
+
 				});
 				$(".project-list-scrollbar").mCustomScrollbar({
 					setHeight:636,
@@ -85,10 +85,10 @@
 					theme:"light-1"
 				});
 			});
-			
-			
-			
-		
+
+
+
+
 		// Collapse Chat function
 			$('.chat-icon-link').on('click', function () {
 				var button = $(this).find('i');
@@ -144,7 +144,7 @@
 			$(".sparkline9-collapse-close").on('click', function(){
 				$( "div.sparkline9-list" ).fadeOut( 600 );
 			});
-			
+
 		// Collapse ibox function
 			$('.sparkline10-collapse-link').on('click', function () {
 				var button = $(this).find('i');
@@ -163,8 +163,8 @@
 			$(".sparkline11-collapse-close").on('click', function(){
 				$( "div.sparkline11-list" ).fadeOut( 600 );
 			});
-			
-			
+
+
 		// Collapse ibox function
 			$('.sparkline12-collapse-link').on('click', function () {
 				var button = $(this).find('i');
@@ -174,7 +174,7 @@
 			$(".sparkline12-collapse-close").on('click', function(){
 				$( "div.sparkline12-list" ).fadeOut( 600 );
 			});
- 
+
 		// Collapse ibox function
 			$('.sparkline13-collapse-link').on('click', function () {
 				var button = $(this).find('i');
@@ -184,7 +184,7 @@
 			$(".sparkline13-collapse-close").on('click', function(){
 				$( "div.sparkline13-list" ).fadeOut( 600 );
 			});
- 
+
 		// Collapse ibox function
 			$('.sparkline14-collapse-link').on('click', function () {
 				var button = $(this).find('i');
@@ -194,7 +194,7 @@
 			$(".sparkline14-collapse-close").on('click', function(){
 				$( "div.sparkline14-list" ).fadeOut( 600 );
 			});
- 
+
 		// Collapse ibox function
 			$('.sparkline15-collapse-link').on('click', function () {
 				var button = $(this).find('i');
@@ -204,7 +204,7 @@
 			$(".sparkline15-collapse-close").on('click', function(){
 				$( "div.sparkline15-list" ).fadeOut( 600 );
 			});
- 
+
 		// Collapse ibox function
 			$('.sparkline16-collapse-link').on('click', function () {
 				var button = $(this).find('i');
@@ -214,7 +214,7 @@
 			$(".sparkline16-collapse-close").on('click', function(){
 				$( "div.sparkline16-list" ).fadeOut( 600 );
 			});
- 
-		 
- 
-})(jQuery); 
+
+
+
+})(jQuery);

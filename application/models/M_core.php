@@ -34,4 +34,10 @@ class M_core extends CI_Model{
     return $this->db->insert($table, $data);
   }
 
+  function getMaxNumber($table, $field)
+  {
+    $query = $this->db->query("SELECT max($field) as maxKode FROM $table ");
+    return $query;
+  }
+
 }

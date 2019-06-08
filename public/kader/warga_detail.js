@@ -71,12 +71,12 @@ var UIWargaDetail = (function() {
                       <div style="margin-top: 30px;">
                         <p><strong> No.BPJS </strong>: ${item.no_bpjs}</p>
                         <p><strong> Jenis Kelamin </strong>: ${item.jenis_kelamin}</p>
-                        <p><strong> Umur </strong>: ${item.umur}</p>
+                        <p><strong> Umur (Bulan) </strong>: ${item.umur}</p>
                       </div>
                       <button class="btn btn-danger btn-xs btn-delete-anak" data-id="${item.no_bpjs}"> Hapus </button>
                       <button class="btn btn-warning btn-xs btn-edit-anak" data-id="${item.no_bpjs}" data-nama_depan="${item.nama_depan}" data-nama_blkg="${item.nama_belakang}" data-jenis_kelamin="${item.jenis_kelamin}" data-umur="${item.umur}" > Edit </button>
                   </div>
-
+                  <button class="btn btn-custome btn-block">Detail </button>
               </div>
             `;
           });

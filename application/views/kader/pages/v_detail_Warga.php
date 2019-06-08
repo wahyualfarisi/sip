@@ -129,7 +129,7 @@
                       <input type="text" class="form-control" name="nama_belakang" id="nama_belakang" placeholder="Masukan Nama Belakang (optional)">
                     </div>
                     <div class="form-group">
-                      <label>Umur</label>
+                      <label>Umur (Bulan)</label>
                       <input type="text" class="form-control" name="umur" id="umur" placeholder="Masukan Umur">
                     </div>
                     <div class="form-group">

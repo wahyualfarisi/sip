@@ -6,7 +6,7 @@ class Ketua extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
-    if($this->session->userdata('akses') != 'ketua' || $this->session->userdata('login') !== 1 ){
+    if($this->session->userdata('login') !== 1 ){
       redirect('/Login');
     }
   }
@@ -14,6 +14,11 @@ class Ketua extends CI_Controller{
   function index()
   {
     $this->load->view('ketua/root');
+  }
+
+  function dashboard()
+  {
+    $this->load->view('ketua/pages/v_dashboard');
   }
 
 }

@@ -141,6 +141,19 @@
                                  </div>
                              </div>
                          </div>
+
+                         <div class="project-details-mg" style="margin-top: 70px;">
+                            <div class="row">
+                              <div class="col-lg-6">
+                                <button type="button" class="btn btn-info btn-block" name="button">Lewati Antrian</button>
+                              </div>
+                              <div class="col-lg-6">
+                                <button type="button" class="btn btn-custome btn-block" name="button">Antrian Selanjutnya</button>
+                              </div>
+                            </div>
+                         </div>
+
+
                      </div>
                  </div>
 
@@ -162,11 +175,80 @@
                                                <th>No. Antri</th>
                                                <th>Tanggal Kunjungan</th>
                                                <th>No. KMS</th>
-                                               <th>prosess</th>
+                                               <th>status</th>
                                            </tr>
                                        </thead>
                                        <tbody>
-
+                                          <tr>
+                                            <td>20190819001</td>
+                                            <td>1</td>
+                                            <td>2019-09-19</td>
+                                            <th>223344553322</th>
+                                            <th><span class="label label-warning">Menunggu Antrian</span> </th>
+                                          </tr>
+                                          <tr>
+                                            <td>20190819002</td>
+                                            <td>2</td>
+                                            <td>2019-09-19</td>
+                                            <th>223344553322</th>
+                                            <th><span class="label label-warning">Menunggu Antrian</span> </th>
+                                          </tr>
+                                          <tr>
+                                            <td>20190819003</td>
+                                            <td>3</td>
+                                            <td>2019-09-19</td>
+                                            <th>223344553322</th>
+                                            <th><span class="label label-warning">Menunggu Antrian</span> </th>
+                                          </tr>
+                                          <tr>
+                                            <td>20190819004</td>
+                                            <td>4</td>
+                                            <td>2019-09-19</td>
+                                            <th>223344553322</th>
+                                            <th><span class="label label-warning">Menunggu Antrian</span> </th>
+                                          </tr>
+                                          <tr>
+                                            <td>20190819005</td>
+                                            <td>5</td>
+                                            <td>2019-09-19</td>
+                                            <th>223344553322</th>
+                                            <th><span class="label label-warning">Menunggu Antrian</span> </th>
+                                          </tr>
+                                          <tr>
+                                            <td>20190819006</td>
+                                            <td>6</td>
+                                            <td>2019-09-19</td>
+                                            <th>223344553322</th>
+                                            <th><span class="label label-warning">Menunggu Antrian</span> </th>
+                                          </tr>
+                                          <tr>
+                                            <td>20190819007</td>
+                                            <td>7</td>
+                                            <td>2019-09-19</td>
+                                            <th>223344553322</th>
+                                            <th><span class="label label-warning">Menunggu Antrian</span> </th>
+                                          </tr>
+                                          <tr>
+                                            <td>20190819008</td>
+                                            <td>8</td>
+                                            <td>2019-09-19</td>
+                                            <th>223344553322</th>
+                                            <th><span class="label label-warning">Menunggu Antrian</span> </th>
+                                          </tr>
+                                          <tr>
+                                            <td>20190819009</td>
+                                            <td>9</td>
+                                            <td>2019-09-19</td>
+                                            <th>223344553322</th>
+                                          <th><span class="label label-warning">Menunggu Antrian</span> </th>
+                                          </tr>
+                                          <tr>
+                                            <td>20190819010</td>
+                                            <td>10</td>
+                                            <td>2019-09-19</td>
+                                            <th>223344553322</th>
+                                            <th><span class="label label-warning">Menunggu Antrian</span> </th>
+                                          </tr>
                                        </tbody>
                                      </table>
                                  </div>
@@ -183,24 +265,122 @@
                                                  </tr>
                                              </thead>
                                              <tbody>
-
-
                                                  <tr>
                                                      <td>
-                                                         <span class="label label-primary"><i class="fa fa-check"></i> Sent</span>
+                                                         <span class="label label-success"><i class="fa fa-check"></i>Selesai</span>
                                                      </td>
                                                      <td>
-                                                         Contrary to popular
+                                                         20190819010
                                                      </td>
                                                      <td>
-                                                         12.07.2018 10:10:1
+                                                         2
                                                      </td>
                                                      <td>
-                                                         14.07.2018 10:16:36
+                                                         2019-09-19
                                                      </td>
                                                      <td>
                                                          <p class="prject-details-small">
-                                                             It has roots in a piece of classical
+                                                            223344553322
+                                                         </p>
+                                                     </td>
+                                                 </tr>
+
+                                                 <tr>
+                                                     <td>
+                                                         <span class="label label-success"><i class="fa fa-check"></i>Selesai</span>
+                                                     </td>
+                                                     <td>
+                                                         20190819010
+                                                     </td>
+                                                     <td>
+                                                         2
+                                                     </td>
+                                                     <td>
+                                                         2019-09-19
+                                                     </td>
+                                                     <td>
+                                                         <p class="prject-details-small">
+                                                            223344553322
+                                                         </p>
+                                                     </td>
+                                                 </tr>
+
+                                                 <tr>
+                                                     <td>
+                                                         <span class="label label-success"><i class="fa fa-check"></i>Selesai</span>
+                                                     </td>
+                                                     <td>
+                                                         20190819010
+                                                     </td>
+                                                     <td>
+                                                         2
+                                                     </td>
+                                                     <td>
+                                                         2019-09-19
+                                                     </td>
+                                                     <td>
+                                                         <p class="prject-details-small">
+                                                            223344553322
+                                                         </p>
+                                                     </td>
+                                                 </tr>
+
+                                                 <tr>
+                                                     <td>
+                                                         <span class="label label-success"><i class="fa fa-check"></i>Selesai</span>
+                                                     </td>
+                                                     <td>
+                                                         20190819010
+                                                     </td>
+                                                     <td>
+                                                         2
+                                                     </td>
+                                                     <td>
+                                                         2019-09-19
+                                                     </td>
+                                                     <td>
+                                                         <p class="prject-details-small">
+                                                            223344553322
+                                                         </p>
+                                                     </td>
+                                                 </tr>
+
+                                                 <tr>
+                                                     <td>
+                                                         <span class="label label-success"><i class="fa fa-check"></i>Selesai</span>
+                                                     </td>
+                                                     <td>
+                                                         20190819010
+                                                     </td>
+                                                     <td>
+                                                         2
+                                                     </td>
+                                                     <td>
+                                                         2019-09-19
+                                                     </td>
+                                                     <td>
+                                                         <p class="prject-details-small">
+                                                            223344553322
+                                                         </p>
+                                                     </td>
+                                                 </tr>
+
+                                                 <tr>
+                                                     <td>
+                                                         <span class="label label-success"><i class="fa fa-check"></i>Selesai</span>
+                                                     </td>
+                                                     <td>
+                                                         20190819010
+                                                     </td>
+                                                     <td>
+                                                         2
+                                                     </td>
+                                                     <td>
+                                                         2019-09-19
+                                                     </td>
+                                                     <td>
+                                                         <p class="prject-details-small">
+                                                            223344553322
                                                          </p>
                                                      </td>
                                                  </tr>
@@ -246,7 +426,7 @@
                   <div class="income-dashone-pro">
                       <div class="income-rate-total">
                           <div class="price-adminpro-rate">
-                              <h3 class="text-center"><span class="counter">7,23,20</span></h3>
+                              <h3 class="text-center"><span class="counter">20</span></h3>
                           </div>
                           <div class="price-graph">
                               <span id="sparkline6"></span>
