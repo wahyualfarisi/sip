@@ -258,8 +258,6 @@
 
 <script type="text/javascript">
   var BASE_URL = '<?= base_url() ?>';
-  var PARAMS = location.hash.substr(13);
-  alert(PARAMS);
 </script>
 <script src="<?= base_url().'public/mynotif.js'?>"></script>
-<script src="<?= base_url().'public/kader/warga_detail.js'  ?>"></script>
+<!-- <script src="<?= base_url().'public/kader/warga_detail.js'  ?>"></script> -->
