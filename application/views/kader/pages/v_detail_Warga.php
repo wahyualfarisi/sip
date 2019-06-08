@@ -1,6 +1,7 @@
 <div class="user-profile-area" style="margin-top: 50px;">
     <div class="container-fluid">
         <div class="row" id="show-warga-detail">
+          <h1>Warga</h1>
           <div class="progress">
             <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
