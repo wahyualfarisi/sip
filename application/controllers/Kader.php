@@ -53,7 +53,7 @@ class Kader extends CI_Controller{
 
   function wargadetail($id)
   {
-    $this->load->view('kader/pages/v_detail_warga');
+   echo $id;
   }
 
   function addkegiatan()
