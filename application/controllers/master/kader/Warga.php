@@ -108,7 +108,7 @@ class Warga extends CI_Controller{
                                 </tr>
                                 <tr>
                                   <th></th>
-                                  <td><a href="#/wargadetail/" class="btn btn-custome">Lihat Data</a></td>
+                                  <td><a href="#/wargadetail" class="btn btn-custome">Lihat Data</a></td>
                                 </tr>
                           </table>
                         </div>
