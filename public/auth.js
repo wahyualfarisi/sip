@@ -11,7 +11,7 @@ $(domLogin.formLogin).validate(
   {
     rules:
     {
-      kode_panitia:
+      username:
       {
         required: true
       },
@@ -26,9 +26,9 @@ $(domLogin.formLogin).validate(
     },
     messages:
     {
-      kode_panitia:
+      username:
       {
-        required: 'Masukan kode panitia anda'
+        required: 'Masukan Username anda'
       },
       password:
       {

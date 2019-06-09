@@ -19,6 +19,7 @@
                                     <th>#</th>
                                     <th>Kode Panitia</th>
                                     <th>Nama</th>
+                                    <th>Username</th>
                                     <th>Akses</th>
                                     <th>Login terakhir</th>
                                     <th colspan="2"></th>

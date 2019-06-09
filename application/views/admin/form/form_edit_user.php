@@ -19,7 +19,18 @@
                                       <label class="login2 pull-right pull-right-pro">Kode Panitia</label>
                                   </div>
                                   <div class="col-lg-9">
-                                      <input type="text" class="form-control" name="kode_panitia_edit" id="kode_panitia_edit" disabled />
+                                      <input type="text" class="form-control" name="kode_panitia_edit" id="kode_panitia_edit" readonly/>
+                                  </div>
+                              </div>
+                            </div>
+
+                            <div class="form-group-inner">
+                              <div class="row">
+                                  <div class="col-lg-3">
+                                      <label class="login2 pull-right pull-right-pro">Username</label>
+                                  </div>
+                                  <div class="col-lg-9">
+                                      <input type="text" class="form-control" name="username_edit" id="username_edit" />
                                   </div>
                               </div>
                             </div>
@@ -34,18 +45,6 @@
                                    </div>
                                </div>
                              </div>
-
-
-                             <div class="form-group-inner">
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <label class="login2 pull-right pull-right-pro">Password</label>
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <input type="text" class="form-control" name="password_edit" id="password_edit" />
-                                    </div>
-                                </div>
-                              </div>
 
                               <div class="form-group-inner">
                                  <div class="row">

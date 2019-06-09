@@ -25,6 +25,17 @@
                             </div>
 
                             <div class="form-group-inner">
+                              <div class="row">
+                                  <div class="col-lg-3">
+                                      <label class="login2 pull-right pull-right-pro">Username</label>
+                                  </div>
+                                  <div class="col-lg-9">
+                                      <input type="text" class="form-control" name="username" id="username" />
+                                  </div>
+                              </div>
+                            </div>
+
+                            <div class="form-group-inner">
                                <div class="row">
                                    <div class="col-lg-3">
                                        <label class="login2 pull-right pull-right-pro">Nama Panitia</label>

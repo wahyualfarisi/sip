@@ -21,12 +21,12 @@ class Login extends CI_Controller{
   function process()
   {
     $data = array(
-      'kode_panitia' => $this->input->post('kode_panitia'),
+      'username' => $this->input->post('username'),
       'password'     => $this->input->post('password')
     );
 
     $datawithakses = array(
-      'kode_panitia' => $this->input->post('kode_panitia'),
+      'username'     => $this->input->post('username'),
       'password'     => $this->input->post('password'),
       'akses'        => $this->input->post('akses')
     );
@@ -47,7 +47,7 @@ class Login extends CI_Controller{
         if($value->akses == 'admin'){
           $session_value = array(
             'akses'        => $value->akses,
-            'kode_panitia' => $value->kode_panitia,
+            'username' => $value->kode_panitia,
             'name' => $value->nama_panitia,
             'login' => 1
           );
@@ -56,7 +56,7 @@ class Login extends CI_Controller{
         }else if($value->akses == 'kader'){
           $session_value = array(
             'akses'        => $value->akses,
-            'kode_panitia' => $value->kode_panitia,
+            'username' => $value->kode_panitia,
             'name' => $value->nama_panitia,
             'login' => 1
           );
@@ -65,7 +65,7 @@ class Login extends CI_Controller{
         }else if($value->akses == 'ketua'){
           $session_value = array(
             'akses'        => $value->akses,
-            'kode_panitia' => $value->kode_panitia,
+            'username' => $value->kode_panitia,
             'name' => $value->nama_panitia,
             'login' => 1
           );

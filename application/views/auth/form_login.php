@@ -69,13 +69,13 @@
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="login-input-head">
-                                                <p>Kode Panitia</p>
+                                                <p>Username</p>
                                             </div>
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <input type="text" name="kode_panitia" id="kode_panitia" placeholder="Masukan Username" />
-                                                <i class="fa fa-envelope login-user" aria-hidden="true"></i>
+                                                <input type="text" name="username" id="username" placeholder="Masukan Username" />
+                                                <i class="fa fa-user login-user" aria-hidden="true"></i>
                                             </div>
                                         </div>
                                     </div>

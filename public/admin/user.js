@@ -40,6 +40,7 @@ var userEventListener = (function() {
                   <td>${no++}</td>
                   <td>${item.kode_panitia}</td>
                   <td>${item.nama_panitia}</td>
+                  <td>${item.username}</td>
                   <td>${item.akses}</td>
                   <td>${item.login_terakhir}</td>
                   <td><button class="btn btn-custome btn-sm btn-delete" data-id="${item.kode_panitia}" > <span class="fa fa-trash"></span> </button> </td>

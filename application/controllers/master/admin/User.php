@@ -37,6 +37,7 @@ class User extends CI_Controller{
   {
     $data = array(
       'kode_panitia' => $this->input->post('kode_panitia'),
+      'username'     => $this->input->post('username'),
       'nama_panitia' => $this->input->post('nama_panitia'),
       'password' => $this->input->post('password'),
       'akses' => $this->input->post('akses')
@@ -50,6 +51,31 @@ class User extends CI_Controller{
       echo json_encode($res);
     }
   }
+
+  function update()
+  {
+    $data = array(
+      'username'     => $this->input->post('username_edit'),
+      'nama_panitia' => $this->input->post('nama_panitia_edit'),
+      'akses'        => $this->input->post('akses_edit')
+    );
+
+    $where = array('kode_panitia' => $this->input->post('kode_panitia_edit') );
+
+    $update = $this->m_core->update_table($this->table,$data,$where);
+    if($update){
+      $res = array('msg' => 'Berhasil Update data user', 'code' => 200);
+      echo json_encode($res);
+    }else{
+      $res = array('msg' => 'Gagal Update data user', 'code' => 400);
+      echo json_encode($res);
+    }
+    
+
+  }
+
+
+
 
   function fetch_user($id)
   {

@@ -8,6 +8,10 @@ $('#form-add-user').validate(
           required: true,
           minlength: 5
         },
+        username:
+        {
+          required: true
+        },
         nama_panitia:
         {
           required: true
@@ -28,6 +32,10 @@ $('#form-add-user').validate(
         {
           required: 'Kode panitia tidak boleh kosong',
           minlength: 'Masukan minimal 5 karakter'
+        },
+        username:
+        {
+          required: 'Username tidak boleh kosong'
         },
         nama_panitia: 'Nama Panitia tidak boleh kosong',
         password:
@@ -108,7 +116,24 @@ $('#form-edit-user').validate(
       error.insertAfter(element.parent() );
     },
     submitHandler: function(form){
-      alert('submited');
+      $.ajax({
+        url: `${BASE_URL}master/admin/User/update`,
+        method: 'post',
+        data: new FormData(form),
+        processData: false,
+        contentType: false,
+        cache: false,
+        async: false,
+        success: function(data){
+          var parse = JSON.parse(data);
+          if(parse.code === 200){
+            location.hash = '#/user';
+            return mynotifications('success', 'top right', parse.msg);
+          }else{
+            return mynotifications('info', 'top right', parse.msg)
+          }
+        }
+      })
     }
   }
 )
@@ -124,6 +149,7 @@ function get_data()
     dataType: 'json',
     success: function(data){
         $('#kode_panitia_edit').val(data[0].kode_panitia);
+        $('#username_edit').val(data[0].username)
         $('#nama_panitia_edit').val(data[0].nama_panitia);
         $('#akses_edit').val(data[0].akses);
     }
