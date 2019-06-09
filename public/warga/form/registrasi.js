@@ -73,6 +73,8 @@ $('#form-registrasi-warga').validate(
                         if(parse.code === 200){
                             $('#form-verifikasi-akun').css('display','block');
                             $('#form-registrasi-warga').css('display','none');
+                        }else{
+                            alert(parse.msg)
                         }
                     }
                 })

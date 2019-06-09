@@ -21,12 +21,18 @@ class Home extends CI_Controller{
 
   function login()
   {
-    $this->load->view('warga/pages/v_login');
+    if($this->session->userdata('login') != 1){
+      $this->load->view('warga/pages/v_login');
+    }
+    
   }
 
   function register()
   {
-    $this->load->view('warga/pages/v_register');
+    if($this->session->userdata('login') != 1){
+      $this->load->view('warga/pages/v_register');
+    }
+    
   }
 
   function jadwal()
