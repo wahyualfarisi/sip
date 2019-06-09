@@ -54,9 +54,12 @@
                                     </div>
                                     <div class="col-lg-9">
                                         <input type="password" class="form-control" name="password" id="password" />
+                                        <input type="checkbox" id="show-password">Show password
                                     </div>
                                 </div>
                               </div>
+
+
 
                               <div class="form-group-inner">
                                  <div class="row">

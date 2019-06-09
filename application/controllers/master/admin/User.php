@@ -35,12 +35,22 @@ class User extends CI_Controller{
 
   function adduser()
   {
+    $kode_panitia = $this->input->post('kode_panitia');
+    $check_kode_panitia = $this->m_core->get_where($this->table, array($this->primary => $kode_panitia) );
+
+    if($check_kode_panitia->num_rows() > 0) {
+      $res = array('msg' => 'kode panitia sudah ada , silahkan gunakan kode lain', 'code' => 500);
+      echo json_encode($res);
+      return;
+    }
+
+
     $data = array(
       'kode_panitia' => $this->input->post('kode_panitia'),
       'username'     => $this->input->post('username'),
       'nama_panitia' => $this->input->post('nama_panitia'),
-      'password' => $this->input->post('password'),
-      'akses' => $this->input->post('akses')
+      'password'     => $this->input->post('password'),
+      'akses'        => $this->input->post('akses')
     );
     $insert = $this->m_core->add_data($this->table, $data);
     if($insert){

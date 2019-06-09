@@ -21,7 +21,7 @@ class Login extends CI_Controller{
   function process()
   {
     $data = array(
-      'username' => $this->input->post('username'),
+      'username'     => $this->input->post('username'),
       'password'     => $this->input->post('password')
     );
 

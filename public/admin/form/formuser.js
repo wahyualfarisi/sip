@@ -68,8 +68,10 @@ $('#form-add-user').validate(
             if(parse.code === 200){
               location.hash = '#/user';
               return mynotifications('success', 'top left', parse.msg);
+            }else if(parse.code === 500) {
+              return mynotifications('info', 'top left', parse.msg);
             }else{
-              return mynotifications('error', 'top left', parse.msg);
+              return mynotifications('info', 'top left', parse.msg);
             }
           }
         })
@@ -159,5 +161,13 @@ function get_data()
 
 $(document).ready(function() {
   get_data();
+
+  $('#show-password').on('click', function() {
+      if($(this).is(':checked') ){
+        $('#password').attr('type','text')
+      }else{
+        $('#password').attr('type','password')
+      }
+  })
 
 });
