@@ -122,8 +122,9 @@ $(document).ready(function() {
         }else{
             alert('kode konfirmasi salah')
         }
-      
     })
+
+    $('')
 
 
 });

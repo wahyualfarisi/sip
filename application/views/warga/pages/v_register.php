@@ -12,23 +12,43 @@
                 <div class="montserrat">
                     <span style="color: #adadad;">Oleh :</span>&nbsp;Posyandu, Kelurahan Slipi<br>
                 </div>
+                <p>Sudah punya akun ? <a href="#/login" style="text-decoration: none">Login disini</a> </p>
             </div>
             <div class="one_half last" style="margin-top: 70px;">
-                <div class="contact-form">
+                <div class="">
                     <form id="form-registrasi-warga" method="post">
-                        <p><input id="email" type="email" name="email" placeholder="Masukan Email"></p>
-                        <p><input id="no_kk" type="text" maxlength="16" name="no_kk"  placeholder="Masukan No. KK "></p>
-                        <p><input id="password" type="password" name="password" placeholder="Masukan Password"></p>
-                        <p><input id="password2" type="password" name="password2" placeholder="Konfirmasi Password"></p>
+                        <div class="form-group" >
+                            <label>Email</label>
+                            <input id="email" type="email" class="form-control" name="email" placeholder="Masukan Email">
+                        </div>
+
+                        <div class="form-group">
+                            <label>No. Kartu Keluarga</label>
+                             <input id="no_kk" type="text" maxlength="16" name="no_kk" class="form-control"  placeholder="Masukan No. KK ">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input id="password" type="password" name="password" class="form-control showpassword" placeholder="Masukan Password">
+                        </div>   
+
+                        <div class="form-group">
+                            <label>Konfirmasi Password</label>
+                            <input id="password2" type="password" name="password2" class="form-control showpassword" placeholder="Konfirmasi Password">
+                        </div>
+
+                        
+
                         <div style="margin-top: 30px;" >
-                            <p><input type="submit" value="Registrasi" /> </p>
+                            <p><input type="submit" class="btn btn-danger btn-block" value="Registrasi" /> </p>
                         </div>
                     </form>
 
                      <form id="form-verifikasi-akun" method="post">
-                        <p><input type="text" name="code_confirmation" id="code_confirmation" placeholder="Masukan Verifikasi Kode"></p>
+                         <div class="form-group" >
+                              <input type="text" name="code_confirmation" class="form-control" id="code_confirmation" placeholder="Masukan Verifikasi Kode">
+                         </div>
                         <div style="margin-top: 30px;" >
-                            <p><input type="submit" value="Konfirmasi" /> </p>
+                            <p><input type="submit" class="btn btn-danger btn-block" value="Konfirmasi" /> </p>
                         </div>
                     </form>
 

@@ -18,11 +18,11 @@
                     <form id="form-login-warga" method="post">
                       <div class="form-group">
                         <label>Email</label>
-                        <input type="email" name="email" id="email" class="form-control">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Masukan Alamat Email">
                       </div>
                       <div class="form-group">
                         <label>Password</label>
-                        <input type="password" name="password" id="password" class="form-control">
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Masukan Password">
                       </div>
                       <button type="submit" class="btn btn-danger btn-block" name="button">Login</button>
                     </form>
