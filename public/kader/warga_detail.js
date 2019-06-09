@@ -71,10 +71,9 @@ var UIWargaDetail = (function() {
                       <div style="margin-top: 30px;">
                         <p><strong> No.BPJS </strong>: ${item.no_bpjs}</p>
                         <p><strong> Jenis Kelamin </strong>: ${item.jenis_kelamin}</p>
-                        <p><strong> Umur (Bulan) </strong>: ${item.umur}</p>
                       </div>
                       <button class="btn btn-danger btn-xs btn-delete-anak" data-id="${item.no_bpjs}"> Hapus </button>
-                      <button class="btn btn-warning btn-xs btn-edit-anak" data-id="${item.no_bpjs}" data-nama_depan="${item.nama_depan}" data-nama_blkg="${item.nama_belakang}" data-jenis_kelamin="${item.jenis_kelamin}" data-umur="${item.umur}" > Edit </button>
+                      <button class="btn btn-warning btn-xs btn-edit-anak" data-id="${item.no_bpjs}" data-nama_depan="${item.nama_depan}" data-nama_blkg="${item.nama_belakang}" data-jenis_kelamin="${item.jenis_kelamin}"> Edit </button>
                   </div>
                   <button class="btn btn-custome btn-block">Detail </button>
               </div>
@@ -145,7 +144,6 @@ var SetupEventWargaDetail = (function(UI) {
       $('#nama_depan_edit').val($(this).data('nama_depan') )
       $('#nama_belakang_edit').val($(this).data('nama_blkg') )
       $('#jenis_kelamin_edit').val($(this).data('jenis_kelamin') )
-      $('#umur_edit').val($(this).data('umur') )
       $('#modalEditAnak').modal('show');
     });
     $('#show-warga-detail').on('click', '.btn-delete-warga', function(){
@@ -171,9 +169,6 @@ var SetupEventWargaDetail = (function(UI) {
         nama_depan: {
           required: true
         },
-        umur:{
-          required: true
-        },
         jenis_kelamin:{
           required: true
         }
@@ -185,9 +180,6 @@ var SetupEventWargaDetail = (function(UI) {
         },
         nama_depan:{
           required: 'Nama Depan Tidak boleh kosong'
-        },
-        umur:{
-          required: 'Umur Tidak Boleh Kosong'
         },
         jenis_kelamin: {
           required: 'Jenis Kelamin harus di pilih'
@@ -234,9 +226,6 @@ var SetupEventWargaDetail = (function(UI) {
         nama_depan: {
           required: true
         },
-        umur:{
-          required: true
-        },
         jenis_kelamin:{
           required: true
         }
@@ -248,9 +237,6 @@ var SetupEventWargaDetail = (function(UI) {
         },
         nama_depan:{
           required: 'Nama Depan Tidak boleh kosong'
-        },
-        umur:{
-          required: 'Umur Tidak Boleh Kosong'
         },
         jenis_kelamin: {
           required: 'Jenis Kelamin harus di pilih'

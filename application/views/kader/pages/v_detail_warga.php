@@ -130,10 +130,6 @@
                       <input type="text" class="form-control" name="nama_belakang" id="nama_belakang" placeholder="Masukan Nama Belakang (optional)">
                     </div>
                     <div class="form-group">
-                      <label>Umur (Bulan)</label>
-                      <input type="text" class="form-control" name="umur" id="umur" placeholder="Masukan Umur">
-                    </div>
-                    <div class="form-group">
                       <label>Jenis Kelamain</label>
                       <select class="form-control" name="jenis_kelamin" id="jenis_kelamin">
                         <option value="">pilih jenis kelamin</option>
@@ -229,10 +225,6 @@
                     <div class="form-group">
                       <label>Nama Belakang</label>
                       <input type="text" class="form-control" name="nama_belakang" id="nama_belakang_edit" placeholder="Masukan Nama Belakang (optional)">
-                    </div>
-                    <div class="form-group">
-                      <label>Umur</label>
-                      <input type="text" class="form-control" name="umur" id="umur_edit" placeholder="Masukan Umur">
                     </div>
                     <div class="form-group">
                       <label>Jenis Kelamain</label>

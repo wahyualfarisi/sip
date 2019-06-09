@@ -99,13 +99,6 @@ var setupEventListener = (function() {
             }
           });
 
-          $('.item_umur').each(function() {
-            if($(this).val() == ''){
-              error.push('Kolom Umur belum diisi');
-              return false;
-            }
-          });
-
           $('.item_jk').each(function() {
             if($(this).val() == ''){
               error.push('Kolom JK belum diisi');
@@ -153,7 +146,6 @@ var setupEventListener = (function() {
               html += '<td><input type="text" name="no_bpjs[]" class="form-control item_bpjs" /> </td>';
               html += '<td><input type="text" name="nama_depan[]" class="form-control item_nama_depan" /> </td>';
               html += '<td><input type="text" name="nama_blkg[]" class="form-control item_nama_blkg "  /> </td>';
-              html += '<td><input type="text" name="umur[]" class="form-control item_umur"  /> </td>';
               html += '<td>';
                     html += '<select name="jk[]" class="form-control item_jk">';
                           html += '<option value=""> </option>';

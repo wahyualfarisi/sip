@@ -18,7 +18,6 @@ class Anak extends CI_Controller{
       'no_kk' => $this->input->post('no_kk'),
       'nama_depan' => $this->input->post('nama_depan'),
       'nama_belakang' => $this->input->post('nama_belakang'),
-      'umur' => $this->input->post('umur'),
       'jenis_kelamin' => $this->input->post('jenis_kelamin')
     );
     $check_primary = $this->m_core->get_where($this->table, array('no_bpjs' => $this->input->post('no_bpjs')));
@@ -57,7 +56,6 @@ class Anak extends CI_Controller{
     $data = array(
       'nama_depan' => $this->input->post('nama_depan'),
       'nama_belakang' => $this->input->post('nama_belakang'),
-      'umur' => $this->input->post('umur'),
       'jenis_kelamin' => $this->input->post('jenis_kelamin')
     );
     $where = array(

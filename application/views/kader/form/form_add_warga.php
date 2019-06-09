@@ -87,7 +87,6 @@
                                       <th> No. BPJS </th>
                                       <th> Nama Depan </th>
                                       <th> Nama Belakang </th>
-                                      <th> Umur (Bulan) </th>
                                       <th>Jenis Kelamin</th>
                                       <th> <button type="button" class="btn btn-custome btn-add-anak"  name="add"> <span class="fa fa-plus"></span> Tambah Anak </button> </th>
                                     </tr>
