@@ -54,5 +54,6 @@ $('#form-add-kegiatan').validate({
         }
       }
     })
+    
   }
 })

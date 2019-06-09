@@ -39,6 +39,7 @@ class Kegiatan extends CI_Controller{
       $res = array('msg' => 'Gagal Menambahkan kegiatan', 'code' => 400);
       echo json_encode($res);
     }
+    
   }
 
   function delete()

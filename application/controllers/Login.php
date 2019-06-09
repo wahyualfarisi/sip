@@ -47,7 +47,8 @@ class Login extends CI_Controller{
         if($value->akses == 'admin'){
           $session_value = array(
             'akses'        => $value->akses,
-            'username' => $value->kode_panitia,
+            'kode_panitia' => $value->kode_panitia,
+            'username' => $value->username,
             'name' => $value->nama_panitia,
             'login' => 1
           );
@@ -56,7 +57,8 @@ class Login extends CI_Controller{
         }else if($value->akses == 'kader'){
           $session_value = array(
             'akses'        => $value->akses,
-            'username' => $value->kode_panitia,
+            'kode_panitia' => $value->kode_panitia,
+            'username' => $value->username,
             'name' => $value->nama_panitia,
             'login' => 1
           );
@@ -65,7 +67,8 @@ class Login extends CI_Controller{
         }else if($value->akses == 'ketua'){
           $session_value = array(
             'akses'        => $value->akses,
-            'username' => $value->kode_panitia,
+            'kode_panitia' => $value->kode_panitia,
+            'username' => $value->username,
             'name' => $value->nama_panitia,
             'login' => 1
           );
