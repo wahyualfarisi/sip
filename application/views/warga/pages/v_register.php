@@ -1,74 +1,44 @@
-<div id="blog-wrapper">
-    <div class="blog-holder center-relative">
+<article>
+    <div class="content-1070 center-relative entry-content">
+        <div class="content-900 center-relative">
+            <h1 class="entry-title">Registrasi</h1>
+            <div class="one_half" style="margin-top: 70px;">
+                Tahap Registrasi Dilakukan dengan memverifikasi Email yang akan dikirim kan kepada email terdaftar<p></p>
+                <br>
+                <p>Pastikan email yang terdaftar masih aktif dan valid, agar proses pengiriman kode tidak terhambat</p>
 
-        <article id="post-1" class="blog-item-holder featured-post">
-            <div class="entry-content relative">
-                <div class="content-1170 center-relative">
-                    <h2 class="entry-title">
-                        <a href="single.html" style="text-decoration:none">Register</a>
-                    </h2>
-                    <div class="clear"></div>
+                <p>Setelah Verifikasi berhasil, silahkan login dengan email yang terdaftar, lalu lengkapi data</p>
+                <br>
+                <div class="montserrat">
+                    <span style="color: #adadad;">Oleh :</span>&nbsp;Posyandu, Kelurahan Slipi<br>
                 </div>
             </div>
-        </article>
-
-        <article id="post-2" class="blog-item-holder">
-            <div class="entry-content relative">
-                <div class="content-1170 center-relative">
-                    <form method="post">
-                      <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" name="email_warga" id="email_warga" class="form-control" />
-                      </div>
-
-                      <div class="form-group">
-                        <label>No. KK</label>
-                        <input type="text" name="no_kk" id="no_kk" class="form-control" >
-                      </div>
-
-                      <div class="form-group">
-                        <label>Nama Ayah</label>
-                        <input type="text" name="nama_ayah" id="nama_ayah" class="form-control" >
-                      </div>
-
-                      <div class="form-group">
-                        <label>Nama Ibu</label>
-                        <input type="text" name="nama_ibu" id="nama_ibu" class="form-control" >
-                      </div>
-
-                      <div class="form-group">
-                        <label>Alamat</label>
-                        <input type="text" name="alamat" id="alamat" class="form-control" >
-                      </div>
-
-                      <div class="form-group">
-                        <label>No. Telp</label>
-                        <input type="text" name="no_telp" id="no_telp" class="form-control" >
-                      </div>
-
-                      <div class="form-group">
-                        <label>Password</label>
-                        <input type="email" name="email_warga" id="email_warga" class="form-control" />
-                      </div>
-                      <button type="submit" class="btn btn-danger btn-block" name="button">Login</button>
+            <div class="one_half last" style="margin-top: 70px;">
+                <div class="contact-form">
+                    <form id="form-registrasi-warga" method="post">
+                        <p><input id="email" type="email" name="email" placeholder="Masukan Email"></p>
+                        <p><input id="no_kk" type="text" maxlength="16" name="no_kk"  placeholder="Masukan No. KK "></p>
+                        <p><input id="password" type="password" name="password" placeholder="Masukan Password"></p>
+                        <p><input id="password2" type="password" name="password2" placeholder="Konfirmasi Password"></p>
+                        <div style="margin-top: 30px;" >
+                            <p><input type="submit" value="Registrasi" /> </p>
+                        </div>
                     </form>
-                    <div class="clear" ></div>
+
+                     <form id="form-verifikasi-akun" method="post">
+                        <p><input type="text" name="code_confirmation" id="code_confirmation" placeholder="Masukan Verifikasi Kode"></p>
+                        <div style="margin-top: 30px;" >
+                            <p><input type="submit" value="Konfirmasi" /> </p>
+                        </div>
+                    </form>
+
                 </div>
             </div>
-
-        </article>
-
-        <div style="margin-top: 30px;">
-          <p>Sudah Punya akun ?  <a href="#/login" style="text-decoration: none">Login disini</a>  </p>
+            <div class="clear"></div>
         </div>
-
-
-
     </div>
-    <div class="clear"></div>
-</div>
-
-<div class="featured-image-holder">
-    <div class="featured-post-image" style="background-image: url(<?= base_url().'assets/users/images/cover-1.png' ?>); background-size:cover;"></div>
-</div>
-<div class="clear"></div>
+</article>
+<script>
+ var BASE_URL = '<?= base_url() ?>';
+</script>
+<script src="<?= base_url('public/warga/form/registrasi.js') ?>"></script>

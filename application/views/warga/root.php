@@ -39,13 +39,31 @@
                     <p class="site-description">
                         Kelurahan Slipi
                     </p>
+
+                    <div style="margin-top: 50px;">
+                        <?php if($this->session->userdata('login') === 1): ?>
+                            <p class="site-description" style="color: white" >Hallo, <?= $this->session->userdata('email') ?>  </p>
+                            <a href="<?= base_url('master/warga/Akun/logout') ?>" class="btn btn-danger btn-block btn-sm">Logout</a>
+                        <?php endif; ?>    
+                   </div>  
+
                 </div>
                 <nav id="header-main-menu">
                     <ul class="main-menu sm sm-clean">
                         <li><a href="#/dashboard" class="current">Beranda</a></li>
                         <li><a href="#/jadwal">Jadwal Kegiatan</a></li>
                         <li><a href="#/antrian">Lihat Antrian</a></li>
+
+                        <?php if($this->session->userdata('login') === 1): ?>
+                            <li><a href="#/antrian">Catatan Medis</a></li>
+                        <?php endif; ?>                        
+
+
                     </ul>
+
+                    
+
+
                 </nav>
                 <footer>
                     <div class="footer-info">
@@ -75,13 +93,15 @@
         </div>
 
         <!-- Home Content -->
-        <div id="content" class="site-content">
-
-        </div>
-
+        <div id="content" class="site-content"></div>
+    </div>
+    </div>
+    </div>
+  
         <!--Load JavaScript-->
 
         <script src="<?= base_url().'assets/js/vendor/jquery-1.11.3.min.js' ?>  "></script>
+        <script src="<?= base_url().'assets/js/jquery.validate.min.js' ?> "></script>
         <script type='text/javascript' src='<?= base_url().'assets/users/js/imagesloaded.pkgd.js' ?>  '></script>
         <script type='text/javascript' src='<?= base_url().'assets/users/js/jquery.nicescroll.min.js' ?>  '></script>
         <script type='text/javascript' src='<?= base_url().'assets/users/js/jquery.smartmenus.min.js' ?>  '></script>

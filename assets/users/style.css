@@ -851,7 +851,7 @@ body.open .site-content
     margin: 0 auto;
 }
 
-.contact-form input[type=text], .contact-form input[type=email], .contact-form textarea
+.contact-form input[type=text], .contact-form input[type=email],  .contact-form textarea, .contact-form input[type=password]
 {
     border: 0;
     border-bottom: 2px solid;
@@ -898,7 +898,7 @@ body.open .site-content
     color: #0697ae;
 }
 
-.contact-form input[type=text]::-webkit-input-placeholder, .contact-form input[type=email]::-webkit-input-placeholder, .contact-form textarea::-webkit-input-placeholder
+.contact-form input[type=text]::-webkit-input-placeholder, .contact-form input[type=email]::-webkit-input-placeholder, .contact-form textarea::-webkit-input-placeholder, .contact-form input[type=password]::-webkit-input-placeholder
 {
     font-family: 'Montserrat', sans-serif, Arial;
     color: #404040;
@@ -907,7 +907,7 @@ body.open .site-content
     line-height: 25px;
     text-transform: uppercase;
 }
-.contact-form input[type=text]::-moz-placeholder, .contact-form input[type=email]::-moz-placeholder, .contact-form textarea::-moz-placeholder
+.contact-form input[type=text]::-moz-placeholder, .contact-form input[type=email]::-moz-placeholder, .contact-form textarea::-moz-placeholder, .contact-form input[type=password]::-webkit-input-placeholder
 {
     font-family: 'Montserrat', sans-serif, Arial;
     color: #404040;
@@ -917,7 +917,7 @@ body.open .site-content
     opacity: 1;
     text-transform: uppercase;
 }
-.contact-form input[type=text]:-ms-input-placeholder, .contact-form input[type=email]:-ms-input-placeholder, .contact-form textarea:-ms-input-placeholder
+.contact-form input[type=text]:-ms-input-placeholder, .contact-form input[type=email]:-ms-input-placeholder, .contact-form textarea:-ms-input-placeholder, .contact-form input[type=password]::-webkit-input-placeholder
 {
     font-family: 'Montserrat', sans-serif, Arial;
     color: #404040;
@@ -926,7 +926,7 @@ body.open .site-content
     line-height: 25px;
     text-transform: uppercase;
 }
-.contact-form input[type=text]:-moz-placeholder, .contact-form input[type=email]:-moz-placeholder, .contact-form textarea:-moz-placeholder
+.contact-form input[type=text]:-moz-placeholder, .contact-form input[type=email]:-moz-placeholder, .contact-form textarea:-moz-placeholder, .contact-form input[type=password]::-webkit-input-placeholder
 {
     font-family: 'Montserrat', sans-serif, Arial;
     color: #404040;
