@@ -43,9 +43,13 @@ $('#form-login-warga').validate(
                 success: function(data){
                     var parse = JSON.parse(data);
                     if(parse.code === 200){
-                        alert(parse.msg);
+                        $.notify(parse.msg, 'success');
+                        location.href = BASE_URL;
                     }else{
-                        alert(parse.msg)
+                        $.notify(parse.msg,'info', {
+                            position: 'left'
+                        })
+
                     }
                 }
             })

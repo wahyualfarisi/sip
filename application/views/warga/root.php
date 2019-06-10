@@ -17,6 +17,7 @@
         <link rel="stylesheet" type="text/css"  href='<?= base_url().'assets/users/css/carouFredSel.css' ?>  ' />
         <link rel="stylesheet" type="text/css"  href='<?= base_url().'assets/users/css/sm-clean.css' ?>  ' />
         <link rel="stylesheet" type="text/css"  href='<?= base_url().'assets/users/style.css' ?> ' />
+        
     </head>
     <body class="home blog">
 
@@ -52,13 +53,7 @@
                     <ul class="main-menu sm sm-clean">
                         <li><a href="#/dashboard" class="current">Beranda</a></li>
                         <li><a href="#/jadwal">Jadwal Kegiatan</a></li>
-                        <li><a href="#/antrian">Lihat Antrian</a></li>
-
-                        <?php if($this->session->userdata('login') === 1): ?>
-                            <li><a href="#/antrian">Catatan Medis</a></li>
-                        <?php endif; ?>                        
-
-
+                        <li><a href="#/antrian">Lihat Antrian</a></li>                        
                     </ul>
 
                     
@@ -82,11 +77,11 @@
                         <div class="menu-line"></div>
                     </div>
                 </div>
-                <div class="social-holder">
+                <!-- <div class="social-holder">
                     <div class="social-list">
                         <a href="#"><i class="fa fa-plus"></i></a>
                     </div>
-                </div>
+                </div> -->
                 <div class="fixed scroll-top"><i class="fa fa-caret-square-o-up" aria-hidden="true"></i></div>
             </div>
             <div class="clear"></div>
@@ -101,6 +96,7 @@
         <!--Load JavaScript-->
 
         <script src="<?= base_url().'assets/js/vendor/jquery-1.11.3.min.js' ?>  "></script>
+        <script src="<?= base_url().'assets/js/bootstrap.min.js' ?>  "></script>
         <script src="<?= base_url().'assets/js/jquery.validate.min.js' ?> "></script>
         <script type='text/javascript' src='<?= base_url().'assets/users/js/imagesloaded.pkgd.js' ?>  '></script>
         <script type='text/javascript' src='<?= base_url().'assets/users/js/jquery.nicescroll.min.js' ?>  '></script>
@@ -110,6 +106,7 @@
         <script type='text/javascript' src='<?= base_url().'assets/users/js/jquery.touchSwipe.min.js' ?>   '></script>
         <script type='text/javascript' src='<?= base_url().'assets/users/js/jquery.easing.1.3.js' ?>  '></script>
         <script type='text/javascript' src='<?= base_url().'assets/users/js/main.js' ?>  '></script>
+        <script type='text/javascript' src="<?= base_url().'assets/notify.min.js' ?>" ></script>
         <script type="text/javascript">
         $(document).ready(function() {
           var loadContent = function(href) {

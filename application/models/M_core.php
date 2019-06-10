@@ -40,4 +40,12 @@ class M_core extends CI_Model{
     return $query;
   }
 
+  function get_order($table, $field, $method)
+  {
+    $this->db->select('*');
+    $this->db->from($table);
+    $this->db->order_by($field, $method);
+    return $this->db->get();
+  }
+
 }

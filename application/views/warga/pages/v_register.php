@@ -39,7 +39,7 @@
                         
 
                         <div style="margin-top: 30px;" >
-                            <p><input type="submit" class="btn btn-danger btn-block" value="Registrasi" /> </p>
+                            <p><input type="submit" id="btn-submit-register" class="btn btn-danger btn-block" value="Registrasi" /> </p>
                         </div>
                     </form>
 

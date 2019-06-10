@@ -16,7 +16,12 @@ class Home extends CI_Controller{
 
   function dashboard()
   {
-    $this->load->view('warga/pages/v_welcome');
+    if($this->session->userdata('login') != 1){
+      $this->load->view('warga/pages/v_welcome');
+    }else{
+      $this->load->view('warga/pages/v_dashboard');
+    }
+    
   }
 
   function login()
@@ -44,5 +49,17 @@ class Home extends CI_Controller{
   {
     $this->load->view('warga/pages/v_antrian');
   }
+
+  function profile()
+  {
+    $this->load->view('warga/pages/v_create_profile');
+  }
+
+  function addanak()
+  {
+    $this->load->view('warga/pages/v_tambah_anak');
+  }
+
+  
 
 }

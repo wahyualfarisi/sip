@@ -68,10 +68,11 @@ class Akun extends CI_Controller{
       if($this->email->send() )
       {
         $res = array(
-            'msg' => 'Kode Verifikasi Berhasil Di kirim',
+            'msg' => 'Kode Verifikasi Berhasil Di kirim, silahkan cek inbox email anda',
             'code' => 200,
             'verifikasiCode' => $codeVerifikasi,
-            'data' => $data
+            'data' => $data,
+            'newacc' => 1
         );
         echo json_encode($res);
       }else{
@@ -94,10 +95,10 @@ class Akun extends CI_Controller{
 
       $insert = $this->m_core->add_data($this->table, $data);
       if($insert){
-          $res = array('msg' => 'Verifikasi Success' , 'code' => 200);
+          $res = array('msg' => 'Verifikasi Success, Silahkan login dengan email dan password anda' , 'code' => 200);
           echo json_encode($res);
       }else{
-          $res = array('msg' => 'Verifikasi Gagal', 'code' => 400);
+          $res = array('msg' => 'Verifikasi Gagal, Silahkan cek kembali kode verfikasi yang dikirim', 'code' => 400);
           echo json_encode($res);
       }
   }
@@ -132,6 +133,33 @@ class Akun extends CI_Controller{
   {
     $this->session->sess_destroy();
     redirect(base_url());
+  }
+
+  function updateprofile()
+  {
+    $data = array(
+      'email' => $this->input->post('email'),
+      'nama_ayah' => $this->input->post('nama_ayah'),
+      'nama_ibu' => $this->input->post('nama_ibu'),
+      'alamat' => $this->input->post('alamat'),
+      'no_telp' => $this->input->post('no_telp'),
+      'tanggal_terdaftar' => date('Y-m-d')
+    );
+
+    $where = array(
+      'no_kk' => $this->input->post('no_kk')
+    );
+
+    $update = $this->m_core->update_table($this->table, $data, $where);
+    if($update){
+      $res = array('msg' => 'Terimakasih telah melengkapi data anda, anda sudah bisa menambahkan anak', 'code' => 200);
+      echo json_encode($res);
+    }else{
+      $res = array('msg' => 'Gagal Melengkapi data','code' => 400);
+      echo json_encode($res);
+    }
+
+
   }
 
 

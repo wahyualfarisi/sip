@@ -67,17 +67,23 @@ $('#form-registrasi-warga').validate(
                     contentType: false,
                     cache: false,
                     async: false,
+                    beforeSend: function(){
+                        console.log('beforesend')
+                        $('#btn-submit-register').val('Sedang mengirim email ..')
+                    },
                     success:function(data){
                         var parse = JSON.parse(data);
                         localStorage.setItem('codeVerification', JSON.stringify(parse) );
                         if(parse.code === 200){
+                            $.notify('Kode Verifikasi Berhasil Di kirim, silahkan cek inbox email anda ', "success");
                             $('#form-verifikasi-akun').css('display','block');
                             $('#form-registrasi-warga').css('display','none');
                         }else{
-                            alert(parse.msg)
+                            $.notify('Gagal mengirim kode verifikasi', "info");
                         }
                     }
                 })
+                
             }
 
            
@@ -87,7 +93,6 @@ $('#form-registrasi-warga').validate(
 
 $(document).ready(function() {
     $('#form-verifikasi-akun').css('display','none');
-
     $('#form-registrasi-warga').on('keypress','#no_kk', function(e) {
         if(e.which != 8 && e.which !=0 && (e.which < 48 || e.which > 57) ){
             return false
@@ -112,15 +117,15 @@ $(document).ready(function() {
                 success: function(data){
                     var parse = JSON.parse(data);
                     if(parse.code === 200){
-                        alert('Verfikasi Berhasil');
+                        $.notify('Verifikasi Success, Silahkan login dengan email dan password anda', 'success');
                         location.hash = '#/login'
                     }else{
-                        alert('Terjadi Masalah');
+                        $.notify('verifikasi kode gagal, silahkan periksa kembali code verifikasi', 'info');
                     }
                 }
             })
         }else{
-            alert('kode konfirmasi salah')
+           $.notify('verifikasi kode gagal, silahkan periksa kembali code verifikasi', 'info')
         }
     })
 
