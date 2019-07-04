@@ -1,26 +1,24 @@
 <div id="blog-wrapper">
     <div class="blog-holder center-relative">
-        
+
         <article id="post-1" class="blog-item-holder featured-post">
             <div class="entry-content relative">
                 <div class="content-1170 center-relative" id="show-jadwal">
 
-               
+
 
 
                 </div>
             </div>
         </article>
 
-       
+
 
     </div>
     <div class="clear"></div>
 </div>
 
-<div class="featured-image-holder">
-    <div class="featured-post-image" style="background-image: url(<?= base_url().'assets/users/images/jadwal_kegiatan.png' ?>); background-size:cover;"></div>
-</div>
+
 <div class="clear"></div>
 
 <script>

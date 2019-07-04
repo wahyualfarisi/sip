@@ -5,8 +5,6 @@ console.log('warga is running');
 load_data();
 function load_data(query)
 {
-  
-
   $.ajax({
     url: `${BASE_URL}master/kader/Warga/fetch`,
     method: 'post',

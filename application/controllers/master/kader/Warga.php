@@ -153,4 +153,18 @@ class Warga extends CI_Controller{
     echo json_encode($data->result() );
   }
 
+  function fetch_warga_json()
+  {
+    $query = '';
+
+    if($this->input->post('query') )
+    {
+      $query = $this->input->post('query');
+    }
+
+    $data = $this->m_warga->fetch_data($query);
+    echo json_encode($data->result());
+
+  }
+
 }

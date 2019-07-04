@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="<?= base_url().'assets/css/modals.css' ?>  ">
     <link rel="stylesheet" href="<?= base_url().'assets/spinner.css' ?> ">
     <script src="<?= base_url().'assets/js/vendor/modernizr-2.8.3.min.js' ?>  "></script>
+    <script>
+        var BASE_URL = '<?= base_url() ?>';
+    </script>
 </head>
 
 <body class="materialdesign">

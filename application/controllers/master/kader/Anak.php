@@ -8,7 +8,7 @@ class Anak extends CI_Controller{
     parent::__construct();
     $this->table = 't_anak';
     $this->load->model('m_core');
-    //Codeigniter : Write Less Do More
+    $this->load->model('m_warga');    
   }
 
   function add()
@@ -70,6 +70,18 @@ class Anak extends CI_Controller{
       $res = array('msg' => 'Gagal Update Data Anak', 'code' => 500);
       echo json_encode($res);
     }
+  }
+
+  function fetch_anak_json()
+  {
+    $query = '';
+    if($this->input->post('query') ){
+      $query = $this->input->post('query');
+    }
+
+    $data = $this->m_warga->fetch_anak_warga($query);
+    echo json_encode($data->result() );
+
   }
 
 

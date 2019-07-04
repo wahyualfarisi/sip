@@ -49,7 +49,7 @@
 
 
                                 <div align="center">
-                                  <a href="#/dashboard" class="btn btn-warning btn-md" name="button">BATAL</a>
+                                  <a href="#/kunjungan" class="btn btn-warning btn-md" name="button">BATAL</a>
                                   <button type="submit" class="btn btn-custome btn-md" name="button">Tambah Ke Antrian</button>
                                 </div>
 
