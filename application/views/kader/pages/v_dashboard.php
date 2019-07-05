@@ -1,3 +1,9 @@
+<div class="container-fluid">
+<div style="margin-top: 30px;" >
+         <h3>DASHBOARD</h3>
+</div>
+</div>
+
 <div class="income-order-visit-user-area" style="margin-top: 20px;" >
 <div class="container-fluid">
     <div class="row">

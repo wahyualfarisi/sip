@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div style="margin-top: 30px;" >
-         <h3>KMS</h3>
+         <h3>CEK IMUNISASI</h3>
     </div>
     <div class="sparkline12-list shadow-reset mg-t-30">
         <div class="sparkline12-graph">

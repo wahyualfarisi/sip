@@ -2,36 +2,42 @@
 const KmsURL = (function() {
     const uri = {
         fetchanak: BASE_URL+'master/kader/Anak/fetch_anak_json',
-        addKMS: BASE_URL+'master/kader/Kms/add'
+        addKMS: BASE_URL+'master/kader/Kms/add',
+        fetch: BASE_URL+'master/kader/Kms/fetch',
+        delete: BASE_URL+'master/kader/Kms/delete'
     }
 
     return {
-        getURI: () => {
-            return uri;
-        }
+        getURI: () => uri
     }
 })()
 
 const KmsUI = (function() {
     const domString = {
         htmlshow: {
-            showKMS: '#show-kegiatan',
+            showKMS: '#show-kms',
             showAnak: '#show__list__anak'
         },
         form: {
-            add: '#form__add__kms'
+            add: '#form__add__kms',
+            delete: '#form-delete-kms'
         },
         field: {
             searchKMS: '#serch__KMS',
             searchAnak: '#search__anak',
-            no_bpjs: '#no_bpjs'
+            no_bpjs: '#no_bpjs',
+            confirm: '#confirm',
+            no_kms: '#no_kms'
         },
         button: {
             searchBPJS : '#btn__search_bpjs',
-            pilihAnak: '#pilih__anak'
+            pilihAnak: '#pilih__anak',
+            deleteKms: '.btn__delete__kms',
+            editKms: '.btn__edit__kms'
         },
         modal: {
-            modalBPJS: '#modalSearchBPJS'
+            modalBPJS: '#modalListAnak',
+            modalDelete: '#modalDelete'
         }
     }
 
@@ -54,13 +60,43 @@ const KmsUI = (function() {
         $(domString.htmlshow.showAnak).html(html);
     }
 
-    return {
-        getDOM: () => {
-            return domString;
-        },
-        getListAnak: (object) => {
-            renderListAnak(object);
+    const renderKms = (data) => {
+        var html = '', no = 1;
+        if(data.length > 0){
+            data.forEach(item => {
+                html += `
+                    <tr>
+                        <td> ${no++} </td>
+                        <td> ${item.no_kms} </td>
+                        <td> ${item.bpjs_number} </td>
+                        <td> ${item.nama_lengkap} </td>
+                        <td> ${item.tanggal_terdaftar} </td>
+                        <td> ${item.bb} </td>
+                        <td> ${item.pb} </td>
+                        <td> <button class="btn btn-warning btn__edit__kms"> <i class="fa fa-pencil"> </i> </button> 
+                            <button class="btn btn-warning btn__delete__kms" data-id="${item.no_kms}" > <i class="fa fa-close"> </i> </button> 
+                        </td>
+                        <td> <a class="btn btn-info" > Detail KMS </a> </td>
+                    </tr>
+                `;
+            })
         }
+        $(domString.htmlshow.showKMS).html(html)
+    }
+
+    const renderNotif = (data) => {
+        var parse = JSON.parse(data);
+        if(parse.code !== 200) return mynotifications('error','top right', parse.msg)
+        mynotifications('success','top right', parse.msg)
+    }
+
+   
+
+    return {
+        getDOM: () => domString,
+        getListAnak: (object) => renderListAnak(object),
+        retrieveKMS: (object) =>  renderKms(object),
+        notif: (data) => renderNotif(data)
     }
 })()
 
@@ -143,10 +179,57 @@ const KmsController = (function(UI, URL) {
                 error.insertAfter(element)
             },
             submitHandler: function(form){
-                postData(url.addKMS, form, data => console.log(data) )
+                postData(url.addKMS, form, data =>  {
+                    UI.notif(data);
+                    $(DOM.form.add)[0].reset();
+                    load_kms()
+                })
             }
         })
+
+        /**
+         * event keyup search kms 
+         */
+        $(DOM.field.searchKMS).on('keyup', function() {
+            if($(this).val() != ''){
+                getData(url.fetch, $(this).val(), data => UI.retrieveKMS(data) )
+            }else{
+                load_kms()
+            }
+        })
+
+        /**
+         * Event cliked delete
+         */
+         $(DOM.htmlshow.showKMS).on('click', DOM.button.deleteKms, function() {
+             var no_kms = $(this).data('id')
+             $(DOM.field.no_kms).val(no_kms)
+             ModalAction(DOM.modal.modalDelete, 'show')
+         })
+         $(DOM.form.delete).on('submit', function(e) {
+             e.preventDefault() 
+             var confirm = $(DOM.field.confirm).val() 
+             if(confirm !== 'confirm') return  mynotifications('error','top right', 'Konfirmasi Salah');
+             postData(url.delete, this, data => {
+                UI.notif(data);
+                load_kms()
+                ModalAction(DOM.modal.modalDelete, 'hide') 
+                $(DOM.form.delete)[0].reset()
+             });
+         })
+
+         /**
+          * Event cliked edit
+          */
+         $(DOM.htmlshow.showKMS).on('click', DOM.button.editKms, function() {
+             alert('edit')
+         })
+
+
     }
+
+    const load_kms = () => getData(url.fetch, undefined, data => UI.retrieveKMS(data));
+    
 
 
     //my function//
@@ -164,10 +247,11 @@ const KmsController = (function(UI, URL) {
 
     const ModalAction = (modalName, method) => $(modalName).modal(method);
 
-    const getData = (url, callback) => {
+    const getData = (url, query, callback) => {
         $.ajax({
             url, 
-            method: 'get',
+            method: 'post',
+            data: {query: query},
             dataType: 'json',
             success(data){
                 callback(data);
@@ -189,14 +273,11 @@ const KmsController = (function(UI, URL) {
             }
         })
     }
-
- 
-
-
     //end my func//
     return {
         init: function(){
             eventListener()
+            load_kms()
             console.log('initalize app')
             console.log(url);
         }

@@ -1,39 +1,56 @@
 <div class="container-fluid">
     <div style="margin-top: 30px;" >
-         <h3>KMS</h3>
+         <h3>CEK PERTUMBUHAN ANAK</h3>
     </div>
     <div class="sparkline12-list shadow-reset mg-t-30">
         <div class="sparkline12-graph">
 
             <div class="row">
             <form id="form__add__kms" method="posts">
-                <div class="col-md-6">
+                <div class="col-md-4">
                         <div class="form-group">
-                            <label>No. BPJS</label>
-                            <input type="text" class="form-control" name="no_bpjs" id="no_bpjs" placeholder="Masukan No. BPJS" >
+                            <label>No. Kunjungan</label>
+                            <input type="text" class="form-control" name="no_kunjungan" id="no_kunjungan" placeholder="Masukan No. Kunjungan" >
                            
                         </div>
 
                         <div class="form-group">
-                            <label>Tanggal Terdaftar</label>
-                            <input type="text" class="form-control" name="tanggal_terdaftar" value="<?= date('Y-m-d') ?>" readOnly >
+                            <label>Tanggal Cek</label>
+                            <input type="text" class="form-control" name="tanggal_cek" value="<?= date('Y-m-d') ?>" readOnly >
                         </div>
                        
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                         <div class="form-group">
-                            <label>Berat Badan Lahir</label>
+                            <label>Berat Badan</label>
                             <input type="number" class="form-control" name="berat_badan" step="0.1" placeholder="dalam (kg) "  >
                         </div>
 
                         <div class="form-group">
-                            <label>Panjang Badan Lahir</label>
+                            <label>Tinggi Badan</label>
                             <input type="number" class="form-control" name="panjang_badan" step="0.1" placeholder="dalam (kg) " >
                         </div>
+
+                         <div class="form-group">
+                            <label>Umur</label>
+                            <input type="text" class="form-control" name="umur" placeholder="" >
+                        </div>
+               </div>
+
+               <div class="col-md-5" >
+                        <div class="form-group">
+                            <label>Hasil</label>
+                            <input type="number" class="form-control" name="berat_badan" step="0.1" placeholder="dalam (kg) "  >
+                        </div>
+                        <div class="form-group">
+                            <label>Catatan</label>
+                            <textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
+                        </div>
+                        <button class="btn btn-warning" type="button" id="btn__search_bpjs"><span class="fa fa-search"></span> Cari No Kunjungan</button>
+                        <button type="submit" class="btn btn-success">CEK</button>
                </div>
                
-               <button class="btn btn-warning" type="button" id="btn__search_bpjs"><span class="fa fa-search"></span> Cari No BPJS</button>
-               <button type="submit" class="btn btn-success">SIMPAN</button>
+               
             </form>    
             </div>      
         </div>
@@ -41,7 +58,7 @@
 </div>
 
 <div class="container-fluid" style="margin-top: 30px;">
-    <input type="text" id="serch__KMS" class="form-control" placeholder="Cari Data KMS">
+    <input type="text" id="serch__KMS" class="form-control" placeholder="Cari Data Pertumbuhan Anak">
 </div>
 
 <div class="static-table-area mg-b-15" style="margin-top: 50px;">
@@ -52,7 +69,7 @@
             <div class="sparkline8-list shadow-reset">
                 <div class="sparkline8-hd">
                     <div class="main-sparkline8-hd">
-                        <h1>Data KMS</h1>
+                        <h1>Data Pertumbuhan Anak</h1>
 
                     </div>
                 </div>
@@ -136,4 +153,3 @@
 </div>
 
 <script src="<?= base_url().'public/mynotif.js'?>"></script>
-<script src="<?= base_url('public/kader/kms.js')?>" ></script>

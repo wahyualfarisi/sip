@@ -61,4 +61,14 @@ class Kader extends CI_Controller{
     $this->load->view('kader/form/form_add_kegiatan');
   }
 
+  function tumbuhanak()
+  {
+    $this->load->view('kader/pages/v_tumbuh_anak');
+  }
+
+  function imunisasi()
+  {
+    $this->load->view('kader/pages/v_imunisasi');
+  }
+
 }

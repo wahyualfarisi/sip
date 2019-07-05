@@ -10,12 +10,15 @@ class Kms extends CI_Controller{
     $this->primary = 'no_kms';
     $this->foreignKEY = 'no_bpjs';
     $this->load->model('m_core');
+    $this->load->model('m_kms');
   }
+
+
 
   public function add()
   {
       $data = array(
-        'no_kms' => rand(0, 300),
+        'no_kms' => $this->generateAutoNumber(),
         'no_bpjs' => $this->input->post('no_bpjs'),
         'tanggal_terdaftar' => date('Y-m-d'),
         'berat_badan_lahir' => $this->input->post('berat_badan'),
@@ -42,8 +45,52 @@ class Kms extends CI_Controller{
             'msg' => 'KMS Gagal Di Buat',
             'code' => 500
           );
+          echo json_encode($res);
       }
- 
   }
+
+  public function fetch()
+  {
+    $query = '';
+    if($this->input->post('query') ){
+      $query = $this->input->post('query');
+    }
+    $data = $this->m_kms->fetch_kms($query);
+    echo json_encode($data->result() );
+  }
+
+  public function delete()
+  {
+    $no_kms = $this->input->post('no_kms');
+    
+    $where[$this->primary] = $no_kms;
+
+    $delete = $this->m_core->delete_rows($this->table, $where);
+    if($delete){
+      $res = array('msg' => 'KMS Berhasil Di Hapus', 'code' => 200);
+      echo json_encode($res);
+    }else{
+      $res = array('msg' => 'KMS Gagal Di Hapus', 'code' => 400);
+      echo json_encode($res);
+    }
+
+  }
+
+  public function generateAutoNumber()
+  {
+    $data = $this->m_core->getMaxNumber($this->table, $this->primary);
+    $kode = $data->result()[0]->maxKode;
+    $nourut = (int) substr($kode, 4, 4);
+    $nourut++;
+
+
+    $char = 'kms_';
+    $newID = $char. sprintf('%04s', $nourut);
+    return $newID;
+  }
+
+  
+
+ 
 
 }
