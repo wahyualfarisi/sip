@@ -1,9 +1,14 @@
+<div class="container-fluid">
+<div style="margin-top: 30px;" >
+         <h3>KUNJUNGAN</h3>
+</div>
+</div>
+
 <div class="project-details-area mg-b-15" style="margin-top: 50px;">
  <div class="container-fluid">
 
     <div class="row">
-
-        <div class="col-md-3">
+         <div class="col-md-3">
             <div class="income-dashone-total orders-monthly shadow-reset nt-mg-b-30" style="margin-top: 10px;">
                     <div class="income-title">
                         <div class="main-income-head">
@@ -13,7 +18,26 @@
                     <div class="income-dashone-pro">
                         <div class="income-rate-total">
                             <div class="price-adminpro-rate">
-                                <h3 class="text-center"><span class="counter">20</span></h3>
+                                <h3 class="text-center"><span class="counter" id="total__antrian">20</span></h3>
+                            </div>
+                            <div class="price-graph">
+                                <span id="sparkline6"></span>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+
+                <div class="income-dashone-total orders-monthly shadow-reset nt-mg-b-30" style="margin-top: 10px;">
+                    <div class="income-title">
+                        <div class="main-income-head">
+                            <h2 class="text-center" >Dalam Antrian</h2>
+                        </div>
+                    </div>
+                    <div class="income-dashone-pro">
+                        <div class="income-rate-total">
+                            <div class="price-adminpro-rate">
+                                <h3 class="text-center"><span class="counter" id="total__antrian">20</span></h3>
                             </div>
                             <div class="price-graph">
                                 <span id="sparkline6"></span>
@@ -28,7 +52,7 @@
             <div class="income-dashone-total orders-monthly shadow-reset nt-mg-b-30" style="margin-top: 10px;">
                     <div class="income-title">
                         <div class="main-income-head">
-                            <h2 class="text-center" >Antrian Terlewat</h2>
+                            <h2 class="text-center" id="total__antrian__terlewat" >Antrian Terlewat</h2>
                         </div>
                     </div>
                     <div class="income-dashone-pro">
@@ -43,6 +67,26 @@
                         <div class="clear"></div>
                     </div>
                 </div>
+
+                <div class="income-dashone-total orders-monthly shadow-reset nt-mg-b-30" style="margin-top: 10px;">
+                    <div class="income-title">
+                        <div class="main-income-head">
+                            <h2 class="text-center" id="total__antrian__terlewat" >Selesai</h2>
+                        </div>
+                    </div>
+                    <div class="income-dashone-pro">
+                        <div class="income-rate-total">
+                            <div class="price-adminpro-rate">
+                                <h3 class="text-center"><span class="counter">20</span></h3>
+                            </div>
+                            <div class="price-graph">
+                                <span id="sparkline6"></span>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+
         </div>
 
         <div class="col-lg-6">
@@ -79,7 +123,7 @@
                                  </div>
                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                      <div class="btn-group project-list-ad">
-                                         <button class="btn btn-white btn-xs">Menunggu Panggilan</button>
+                                         <button class="btn btn-white btn-xs">----</button>
                                      </div>
                                  </div>
                              </div>
@@ -93,7 +137,7 @@
                                  </div>
                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                      <div class="project-details-dt">
-                                         <span>1</span>
+                                         <span>-----</span>
                                      </div>
                                  </div>
                              </div>
@@ -107,7 +151,7 @@
                                  </div>
                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                      <div class="project-details-dt">
-                                         <span>1600123</span>
+                                         <span>-----</span>
                                      </div>
                                  </div>
                              </div>
@@ -121,7 +165,7 @@
                                  </div>
                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                      <div class="project-details-dt">
-                                         <span>160012388774645</span>
+                                         <span>-----</span>
                                      </div>
                                  </div>
                              </div>
@@ -135,7 +179,7 @@
                                  </div>
                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                      <div class="project-details-dt">
-                                         <span>160012388774645</span>
+                                         <span>-----</span>
                                      </div>
                                  </div>
                              </div>
@@ -149,7 +193,7 @@
                                  </div>
                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                      <div class="project-details-dt">
-                                         <a href="#">1231233324</a>
+                                         <a href="#">-----</a>
                                      </div>
                                  </div>
                              </div>
@@ -166,7 +210,7 @@
                                  </div>
                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                      <div class="project-details-dt">
-                                         <span>Bimo</span>
+                                         <span>-----</span>
                                      </div>
                                  </div>
                              </div>
@@ -180,7 +224,7 @@
                                  </div>
                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                      <div class="project-details-dt">
-                                         <span>4 Bulan</span>
+                                         <span>-----</span>
                                      </div>
                                  </div>
                              </div>
@@ -194,7 +238,7 @@
                                  </div>
                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                      <div class="project-details-dt">
-                                         <span>Laki - Laki</span>
+                                         <span>-----</span>
                                      </div>
                                  </div>
                              </div>

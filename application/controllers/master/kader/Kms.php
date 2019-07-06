@@ -73,7 +73,23 @@ class Kms extends CI_Controller{
       $res = array('msg' => 'KMS Gagal Di Hapus', 'code' => 400);
       echo json_encode($res);
     }
+  }
 
+  public function update()
+  {
+    $where = array('no_kms' => $this->input->post('no_kms') );
+    $data  = array(
+      'panjang_badan_lahir' => $this->input->post('pb'),
+      'berat_badan_lahir'   => $this->input->post('bb')
+    );
+    $delete = $this->m_core->update_table($this->table, $data, $where);
+    if($delete){
+      $res = array('msg' => 'KMS Berhasil Di Update', 'code' => 200);
+      echo json_encode($res);
+    }else{
+      $res = array('msg' => 'Kms Gagal Di Update', 'code' => 400);
+      echo json_encode($res);
+    }
   }
 
   public function generateAutoNumber()

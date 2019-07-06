@@ -14,44 +14,7 @@
                           <div class="all-form-element-inner">
                               <form id="form-add-kunjungan" method="post">
 
-                                <div class="form-group-inner">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <label class="login2 pull-right pull-right-pro">No. Kunjungan</label>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control" name="no_kk" id="no_kk" maxlength="16" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group-inner">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <label class="login2 pull-right pull-right-pro">No. Antri</label>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control" name="nama_ayah" id="nama_ayah" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group-inner">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <label class="login2 pull-right pull-right-pro">No. KMS</label>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control" name="nama_ayah" id="nama_ayah" placeholder="Masukan No. KMS" />
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div align="center">
-                                  <a href="#/kunjungan" class="btn btn-warning btn-md" name="button">BATAL</a>
-                                  <button type="submit" class="btn btn-custome btn-md" name="button">Tambah Ke Antrian</button>
-                                </div>
+                                <div id="detail_jadwal"></div>
 
                               </form>
                           </div>
@@ -64,3 +27,4 @@
       </div>
   </div>
 </div>
+<script src="<?= base_url('public/kader/form/formkunjungan.js') ?>" ></script>

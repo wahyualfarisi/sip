@@ -110,6 +110,41 @@
     </div>
 </div>
 
+<div id="modalEditKms" class="modal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-close-area modal-close-df">
+                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+            </div>
+            <div class="modal-body">            
+                <form id="form-edit-kms">
+                    <input type="text" id="no__kms__edit" name="no_kms">
+                    <div class="form-group">
+                        <label>Nama</label>
+                        <input type="text" class="form-control" id="nama__edit" name="nama_edit" readOnly>
+                    </div>
+                    <div class="form-group">
+                        <label>No. BPJS</label>
+                        <input type="text" class="form-control" id="no__bpjs__edit" name="no_bpjs" readOnly>
+                    </div>
+                    <div class="form-group">
+                        <label>Berat Badan Lahir</label>
+                        <input type="text" class="form-control" name="bb" id="berat__badan__edit">
+                    </div>
+                    <div class="form-group">
+                        <label>Panjang Badan Lahir</label>
+                        <input type="text" class="form-control" name="pb" id="panjang__badan__edit">
+                    </div>
+                    <button type="submit" class="btn btn-info">EDIT</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a data-dismiss="modal" href="#">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="modalDelete" class="modal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">

@@ -53,6 +53,7 @@
                                <a href="#/kms" class="dropdown-item">Kelola KMS</a>
                            </div>
                        </li>
+                       <li class="nav-item"><a href="#/jadwalkegiatan" class="nav-link dropdown-toggle"><i class="fa big-icon fa-clock-o"></i> <span class="mini-dn">Jadwal Kegiatan</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                        <li class="nav-item">
                           <a href="#/kunjungan" class="nav-link dropdown-toggle"><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">Kunjungan</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                         </li>
@@ -65,7 +66,7 @@
                        </li>
                         
                        
-                        <li class="nav-item"><a href="#/jadwalkegiatan" class="nav-link dropdown-toggle"><i class="fa big-icon fa-clock-o"></i> <span class="mini-dn">Jadwal Kegiatan</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        
                         </li>
                     </ul>
                 </div>

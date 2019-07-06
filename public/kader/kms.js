@@ -4,7 +4,8 @@ const KmsURL = (function() {
         fetchanak: BASE_URL+'master/kader/Anak/fetch_anak_json',
         addKMS: BASE_URL+'master/kader/Kms/add',
         fetch: BASE_URL+'master/kader/Kms/fetch',
-        delete: BASE_URL+'master/kader/Kms/delete'
+        delete: BASE_URL+'master/kader/Kms/delete',
+        update: BASE_URL+'master/kader/Kms/update'
     }
 
     return {
@@ -20,14 +21,20 @@ const KmsUI = (function() {
         },
         form: {
             add: '#form__add__kms',
-            delete: '#form-delete-kms'
+            delete: '#form-delete-kms',
+            edit: '#form-edit-kms'
         },
         field: {
             searchKMS: '#serch__KMS',
             searchAnak: '#search__anak',
             no_bpjs: '#no_bpjs',
             confirm: '#confirm',
-            no_kms: '#no_kms'
+            no_kms: '#no_kms', 
+            bb_edit: '#berat__badan__edit',
+            pb_edit: '#panjang__badan__edit',
+            bpjs_edit: '#no__bpjs__edit',
+            nama_edit: '#nama__edit',
+            no_kms_edit: '#no__kms__edit'
         },
         button: {
             searchBPJS : '#btn__search_bpjs',
@@ -37,7 +44,8 @@ const KmsUI = (function() {
         },
         modal: {
             modalBPJS: '#modalListAnak',
-            modalDelete: '#modalDelete'
+            modalDelete: '#modalDelete',
+            modalEdit: '#modalEditKms'
         }
     }
 
@@ -73,8 +81,16 @@ const KmsUI = (function() {
                         <td> ${item.tanggal_terdaftar} </td>
                         <td> ${item.bb} </td>
                         <td> ${item.pb} </td>
-                        <td> <button class="btn btn-warning btn__edit__kms"> <i class="fa fa-pencil"> </i> </button> 
-                            <button class="btn btn-warning btn__delete__kms" data-id="${item.no_kms}" > <i class="fa fa-close"> </i> </button> 
+                        <td> <button class="btn btn-warning btn__edit__kms"
+                                        data-no_bpjs="${item.bpjs_number}"
+                                        data-nama_lengkap=${item.nama_lengkap}
+                                        data-bb="${item.bb}"
+                                        data-pb="${item.pb}"
+                                        data-id="${item.no_kms}"
+                             > <i class="fa fa-pencil"> </i> </button> 
+                             <button class="btn btn-warning btn__delete__kms" 
+                                     data-id="${item.no_kms}" 
+                             > <i class="fa fa-close"> </i> </button> 
                         </td>
                         <td> <a class="btn btn-info" > Detail KMS </a> </td>
                     </tr>
@@ -222,10 +238,47 @@ const KmsController = (function(UI, URL) {
           * Event cliked edit
           */
          $(DOM.htmlshow.showKMS).on('click', DOM.button.editKms, function() {
-             alert('edit')
+             var id = $(this).data('id'), no_bpjs = $(this).data('no_bpjs') , nama = $(this).data('nama_lengkap'), bb   = $(this).data('bb'), pb = $(this).data('pb')
+             $(DOM.field.nama_edit).val(nama)
+             $(DOM.field.pb_edit).val(pb)
+             $(DOM.field.bb_edit).val(bb)
+             $(DOM.field.no_kms_edit).val(id)
+             $(DOM.field.bpjs_edit).val(no_bpjs)
+             ModalAction(DOM.modal.modalEdit, 'show')
          })
 
-
+         /**
+          * event submit form edit kms  
+          */
+         $(DOM.form.edit).validate({
+             rules: {
+                 bb: {
+                     required: true
+                 },
+                 pb: {
+                     required: true
+                 }
+             },
+             messages: {
+                 bb:{
+                     required: 'Berat Badan Tidak Boleh Kosong'
+                 },
+                 pb: {
+                     required: 'Panjang Badan Tidak Boleh Kosong'
+                 }
+             },
+             errorPlacement(error, element){
+                 error.css('color', 'red')
+                 error.insertAfter(element)
+             },
+             submitHandler(form){
+                 postData(url.update, form, data => {
+                    UI.notif(data);
+                    load_kms()
+                    ModalAction(DOM.modal.modalEdit, 'hide')
+                 });
+             }
+         })
     }
 
     const load_kms = () => getData(url.fetch, undefined, data => UI.retrieveKMS(data));
