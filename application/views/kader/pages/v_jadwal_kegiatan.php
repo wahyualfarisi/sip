@@ -1,3 +1,8 @@
+<div class="container-fluid">
+<div style="margin-top: 30px;" >
+         <h3>Jadwal Dan Kegiatan</h3>
+</div>
+</div>
 <div class="static-table-area mg-b-15" style="margin-top: 50px;">
     <div class="container-fluid">
       <a href="#/addkegiatan" class="btn btn-custome" name="button">Tambah Jadwal Kegiatan</a>

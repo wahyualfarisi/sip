@@ -1,10 +1,31 @@
 <div class="container-fluid">
-<div style="margin-top: 30px;" >
-         <h3>KUNJUNGAN</h3>
-</div>
+    <div style="margin-top: 30px;" >
+            <h3>ANTRIAN KUNJUNGAN</h3>
+    </div>
+    <div id="displayClock" class="text-center" ></div>
+    
+        <table class="table table-bordered">
+            <tr>
+                <th>No. Kegiatan</th>
+                 <td class="bg-info"><?= $kegiatan->result()[0]->no_kegiatan ?></td>
+            </tr>
+            <tr>
+                <th>Nama Kegiatan </th>
+                 <td class="bg-info"><?= $kegiatan->result()[0]->nama_kegiatan ?></td>
+            </tr>
+            <tr>
+                <th>Tanggal Kegiatan</th>
+                <td class="bg-info"><?= $kegiatan->result()[0]->tanggal_kegiatan ?></td>
+            </tr>
+            <tr>
+                <th>Lokasi</th>
+                <td class="bg-info"><?= $kegiatan->result()[0]->lokasi ?></td>
+            </tr>
+        </table>
+        
 </div>
 
-<div class="project-details-area mg-b-15" style="margin-top: 50px;">
+<div class="project-details-area mg-b-15">
  <div class="container-fluid">
 
     <div class="row">
@@ -108,7 +129,7 @@
                  <div class="row">
                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
                          <div class="project-details-title">
-                             <h2><span class="profile-details-name-nn">Kunjungan</span> 28, September 2018</h2>
+                             <h2><span class="profile-details-name-nn">Antrian </span> 28, September 2018</h2>
                          </div>
                      </div>
                  </div>
@@ -259,7 +280,7 @@
              </div>
          </div>
          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <a href="#/addkunjungan" class="btn btn-custome btn-block" name="button">Tambah Kunjungan</a>
+            <a href="#/addkunjungan/<?= $kegiatan->result()[0]->no_kegiatan ?>" class="btn btn-custome btn-block" name="button">Tambah Kunjungan</a>
 
              <div class="sparkline7-list shadow-reset" style="margin-top: 10px;" >
                  <div class="sparkline7-hd">
@@ -287,7 +308,7 @@
         <div class="sparkline8-list shadow-reset">
             <div class="sparkline8-hd">
                 <div class="main-sparkline8-hd">
-                    <h1>Daftar Kunjungan </h1>
+                    <h1>Daftar Antrian </h1>
                 </div>
             </div>
             <div class="sparkline8-graph">
@@ -310,4 +331,10 @@
         </div>
 </div>
 
+
+
+<script>
+    var ID = '<?= $kegiatan->result()[0]->no_kegiatan ?>';
+</script>
 <script src="<?= base_url('public/ex/chart_kunjungan.js') ?>" ></script>
+<script src="<?= base_url('public/kader/antrian.js') ?>" ></script>

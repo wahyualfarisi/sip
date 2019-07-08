@@ -11,9 +11,9 @@ class M_kms extends CI_Model {
                   FROM
                   t_kms a LEFT JOIN t_anak b ON a.no_bpjs = b.no_bpjs
                   WHERE 
-                  nama_depan LIKE '%$key%' OR 
-                  no_kms LIKE '%$key%' OR 
-                  nama_belakang LIKE '%$key%'
+                  b.nama_depan LIKE '%$key%' OR 
+                  a.no_kms LIKE '%$key%' OR 
+                  b.nama_belakang LIKE '%$key%'
 
                  ";
                  return $this->db->query($query);

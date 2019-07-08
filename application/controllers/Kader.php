@@ -9,6 +9,7 @@ class Kader extends CI_Controller{
     if($this->session->userdata('akses') != 'kader' || $this->session->userdata('login') !== 1 ){
       redirect('/Login');
     }
+    $this->load->model('m_kunjungan');
   }
 
   function index()
@@ -38,7 +39,14 @@ class Kader extends CI_Controller{
 
   function kunjungan()
   {
-    $this->load->view('kader/pages/v_kunjungan');
+    $check_kegiatan_today = $this->m_kunjungan->fetch_jadwal_kegiatan();
+    if($check_kegiatan_today->num_rows() === 1){
+      $data['kegiatan'] = $check_kegiatan_today;
+      $this->load->view('kader/pages/v_kunjungan', $data);
+    }else{
+      echo "Tidak ada Jadwal Kegiatan imunisasi hari ini";
+    }
+   
   }
 
   function kms()
@@ -69,6 +77,11 @@ class Kader extends CI_Controller{
   function imunisasi()
   {
     $this->load->view('kader/pages/v_imunisasi');
+  }
+
+  function datakunjungan()
+  {
+    $this->load->view('kader/pages/v_datakunjungan');
   }
 
 }
