@@ -58,7 +58,7 @@ class Kunjungan extends CI_Controller{
       'id_kegiatan' => $no_kegiatan,
       'no_antri' => $no_antri,
       'tanggal_kunjungan' => date('Y-m-d'),
-      'status' => 'proses'
+      'status' => 'antri'
     );
 
     $insertAntri = $this->m_core->add_data($this->table, $data_insert);
@@ -69,9 +69,100 @@ class Kunjungan extends CI_Controller{
       $res = array('msg' => 'Gagal Menambahkan Ke Antrian', 'code' => 400 );
       echo json_encode($res);
     }
-
-
   }
+
+  public function fetch_antrian($id_kegiatan)
+  {
+    $data = $this->m_kunjungan->fetch_antrian_kunjungan($id_kegiatan);
+    echo json_encode($data->result() );
+  }
+
+  public function fetch_no_urut_current($id)
+  {
+    $data = $this->m_kunjungan->fetch_no_urut_current($id);
+    echo json_encode($data->result() );
+  }
+
+  public function fetch_monitor_antri($id)
+  {
+    $data = $this->m_kunjungan->fetch_monitor_antri($id);
+    echo json_encode($data->result() );
+  }
+
+  public function chart_antrian($id)
+  {
+    $data = $this->m_kunjungan->chart_antrian($id);
+    echo json_encode($data->result() );
+  }
+
+  public function get_total_status($status, $id_kegiatan)
+  {
+    $where = array('status' => $status, 'id_kegiatan' => $id_kegiatan);
+    $data = $this->m_core->get_where($this->table, $where);
+    echo json_encode($data->num_rows());
+  }
+
+  public function get_total_kunjungan($id_kegiatan)
+  {
+    $data = $this->m_kunjungan->fetch_antrian_kunjungan($id_kegiatan);
+    echo json_encode($data->num_rows() );
+  }
+
+  public function action_next_antrian()
+  {
+    //antri to proses 
+    $where = array(
+      'no_kunjungan' => $this->input->post('no_kunjungan')
+    );
+    $data = array(
+      'status' => 'proses'
+    );
+    $update = $this->m_core->update_table($this->table, $data, $where);
+    if($update){
+      $res = array(
+        'msg' => 'Antrian Selanjutnya',
+        'code' => 200
+      );
+      echo json_encode($res);
+    }else{
+      $res = array(
+        'msg' => 'Terjadi Kesalahan',
+        'code' => 400
+      );
+      echo json_encode($res);
+    }
+    
+  }
+
+  public function action_skip_antrian()
+  {
+    //antri to terlewat 
+    $where = array(
+      'no_kunjungan' => $this->input->post('no_kunjungan')
+    );
+    $data = array(
+      'status' => 'terlewat'
+    );
+    $update = $this->m_core->update_table($this->table, $data, $where);
+    if($update){
+      $res = array(
+        'msg' => 'Antrian Selanjutnya',
+        'code' => 200
+      );
+      echo json_encode($res);
+    }else{
+      $res = array(
+        'msg' => 'Terjadi Kesalahan',
+        'code' => 400
+      );
+      echo json_encode($res);
+    }
+    
+  }
+
+  
+
+ 
 
 
   public function generateAutoNumber()
@@ -86,5 +177,7 @@ class Kunjungan extends CI_Controller{
     $newID = $char. sprintf('%04s', $nourut);
     return $newID;
   }
+
+  
 
 }
