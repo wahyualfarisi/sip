@@ -59,7 +59,7 @@ class M_kunjungan extends CI_Model{
 
     public function chart_antrian($id_kegiatan)
     {
-        $query = "SELECT SUM(status = 'antri') as totalantri, SUM(status= 'proses') as totalproses, SUM(status = 'terlewat') as totalterlewat, SUM(status = 'selesai') as totalselesai FROM t_kunjungan WHERE id_kegiatan = '$id_kegiatan' ";
+        $query = "SELECT SUM(status = 'antri') as totalantri, SUM(status = 'proses') as totalproses, SUM(status = 'terlewat') as totalterlewat, SUM(status = 'selesai') as totalselesai FROM t_kunjungan WHERE id_kegiatan = '$id_kegiatan' ";
         return $this->db->query($query);
     }
 

@@ -55,6 +55,7 @@
         <div class="content-inner-all">
             <div class="login-form-area mg-t-30 mg-b-40">
                 <div class="container-fluid">
+                <h1 style="font-weight: bold">POSYANDU SLIPI</h1>
                     <div class="row">
                         <form id="form-login-panitia" class="adminpro-form" style="margin-top: 140px;">
                             <div class="col-lg-6">

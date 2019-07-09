@@ -54,9 +54,18 @@ const AntrianInterface = (function() {
     }
 
     const renderListAntrian = object => {
-       let html = ''
+       let html = '', color = '';
        if(object.length > 0){
            object.forEach(item => {
+               if(item.status === 'antri'){
+                    color = `<button class="btn btn-success"> ${item.status} </button>`;
+               }else if(item.status === 'terlewat'){
+                   color  = `<button class="btn btn-default"> ${item.status} </button>`;
+               }else if(item.status === 'proses'){
+                   color = `<button class="btn btn-danger"> ${item.status} </button>`;
+               }else if(item.status === 'selesai'){
+                   color = `<button class="btn btn-info"> ${item.status} </button>`;
+               }
                html += `
                     <tr>
                         <td>${item.no_kunjungan} </td>
@@ -67,7 +76,7 @@ const AntrianInterface = (function() {
                         <td>${item.bb_lahir}</td>
                         <td>${item.pb_lahir}</td>
                         <td>${item.jk}</td>
-                        <td>${item.status} </td>
+                        <td>${color} </td>
                     </tr>
                `;
            })

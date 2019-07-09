@@ -79,14 +79,14 @@
                             <thead>
                                 <tr class="bg-warning">
                                     <th>No. </th>
-                                    <th>No. KMS</th>
+                                    <th>No. Kunjungan</th>
                                     <th>No. BPJS</th>
-                                    <th>Nama Lengkap </th>
-                                    <th>Tanggal Terdaftar</th>
-                                    <th>Berat Badan Lahir</th>
-                                    <th>Panjang Badan Lahir</th>
-                                    <th></th>
-                                    <th></th>
+                                    <th>No. KMS</th>
+                                    <th>Berat Badan</th>
+                                    <th>Tinggi Badan</th>
+                                    <th>Umur</th>
+                                    <th>Hasil</th>
+                                    <th>Catatan</th>
                                 </tr>
                             </thead>
                             <tbody id="show-kms"></tbody>

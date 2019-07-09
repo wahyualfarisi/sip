@@ -11,7 +11,7 @@
             <div class="income-dashone-total income-monthly shadow-reset nt-mg-b-30">
                 <div class="income-title">
                     <div class="main-income-head">
-                        <h2>Kunjungan</h2>
+                        <h2>Kunjungan (2019) </h2>
                     </div>
                 </div>
                 <div class="income-dashone-pro">
@@ -85,7 +85,7 @@
             <div class="income-dashone-total user-monthly shadow-reset nt-mg-b-30">
                 <div class="income-title">
                     <div class="main-income-head">
-                        <h2>Jadwal Kegiatan</h2>
+                        <h2>Jadwal Kegiatan (2019) </h2>
                     </div>
                 </div>
                 <div class="income-dashone-pro">

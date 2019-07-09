@@ -44,7 +44,7 @@ class Kader extends CI_Controller{
       $data['kegiatan'] = $check_kegiatan_today;
       $this->load->view('kader/pages/v_kunjungan', $data);
     }else{
-      echo "Tidak ada Jadwal Kegiatan imunisasi hari ini";
+      $this->load->view('kader/pages/v_empty_activity');
     }
    
   }

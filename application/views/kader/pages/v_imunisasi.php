@@ -9,26 +9,31 @@
             <form id="form__add__kms" method="posts">
                 <div class="col-md-6">
                         <div class="form-group">
-                            <label>No. BPJS</label>
+                            <label>No. Kunjungan</label>
                             <input type="text" class="form-control" name="no_bpjs" id="no_bpjs" placeholder="Masukan No. BPJS" >
                            
                         </div>
 
                         <div class="form-group">
-                            <label>Tanggal Terdaftar</label>
+                            <label>Umur</label>
                             <input type="text" class="form-control" name="tanggal_terdaftar" value="<?= date('Y-m-d') ?>" readOnly >
+                        </div>
+
+                        <div class="form-group">
+                            <label>Imunisasi</label>
+                            <input type="text" class="form-control" name="tanggal_terdaftar" value="" >
                         </div>
                        
                 </div>
                 <div class="col-md-6">
                         <div class="form-group">
-                            <label>Berat Badan Lahir</label>
+                            <label>Hasil Imunisasi</label>
                             <input type="number" class="form-control" name="berat_badan" step="0.1" placeholder="dalam (kg) "  >
                         </div>
 
                         <div class="form-group">
-                            <label>Panjang Badan Lahir</label>
-                            <input type="number" class="form-control" name="panjang_badan" step="0.1" placeholder="dalam (kg) " >
+                            <label>Catatan</label>
+                            <textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
                         </div>
                </div>
                
@@ -41,7 +46,7 @@
 </div>
 
 <div class="container-fluid" style="margin-top: 30px;">
-    <input type="text" id="serch__KMS" class="form-control" placeholder="Cari Data KMS">
+    <input type="text" id="serch__KMS" class="form-control" placeholder="Cari Data Imunisasi">
 </div>
 
 <div class="static-table-area mg-b-15" style="margin-top: 50px;">
@@ -136,4 +141,3 @@
 </div>
 
 <script src="<?= base_url().'public/mynotif.js'?>"></script>
-<script src="<?= base_url('public/kader/kms.js')?>" ></script>
