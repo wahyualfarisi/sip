@@ -99,6 +99,15 @@ var setupEventListener = (function() {
             }
           });
 
+          $('.item_tgl_lahir').each(function() {
+            if($(this).val() == ''){
+              error.push('Kolom Tanggal Lahir belum diisi');
+              return false;
+            }
+          });
+
+
+
           $('.item_jk').each(function() {
             if($(this).val() == ''){
               error.push('Kolom JK belum diisi');
@@ -136,16 +145,13 @@ var setupEventListener = (function() {
     );
 
 
-
-
-
-
     $('.btn-add-anak').on('click', function() {
       var html = '';
       html += '<tr>';
-              html += '<td><input type="text" name="no_bpjs[]" class="form-control item_bpjs" /> </td>';
-              html += '<td><input type="text" name="nama_depan[]" class="form-control item_nama_depan" /> </td>';
+              html += '<td><input type="text" name="no_bpjs[]" maxlength="13" class="form-control item_bpjs" /> </td>';
+              html += '<td><input type="text" name="nama_depan[]"  class="form-control item_nama_depan" /> </td>';
               html += '<td><input type="text" name="nama_blkg[]" class="form-control item_nama_blkg "  /> </td>';
+              html += '<td><input type="date" name="tgl_lahir[]" class="form-control item_tgl_lahir"  </td>';
               html += '<td>';
                     html += '<select name="jk[]" class="form-control item_jk">';
                           html += '<option value=""> </option>';

@@ -10,6 +10,7 @@ class TumbuhAnak extends CI_Controller{
         $this->primary      = 'no_cek_pertumbuhan';
         $this->load->model('m_kunjungan');
         $this->load->model('m_core');
+        date_default_timezone_set('Asia/Jakarta');
     }
 
 
@@ -19,6 +20,7 @@ class TumbuhAnak extends CI_Controller{
         if($this->input->post('query') ){
             $query = $this->input->post('query');
         }
+    
         $data = $this->m_kunjungan->ListKunjunganOnCheckout($query);
         foreach($data->result() as $row){
             $json[] = array(

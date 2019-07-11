@@ -9,6 +9,7 @@
                 <th> No. BPJS </th>
                 <th> Nama Depan </th>
                 <th> Nama Belakang </th>
+                <th> Tanggal Lahir </th>
                 <th>Jenis Kelamin</th>
                 <th> <button type="button" class="btn btn-info btn-add-anak"  name="add"> <span class="fa fa-plus"></span> Tambah Anak </button> </th>
             </tr>
@@ -16,6 +17,7 @@
                 <td><input type="text" name="no_bpjs[]" maxlength="13" class="form-control item_bpjs" /> </td>
                 <td><input type="text" name="nama_depan[]" class="form-control item_nama_depan" /> </td>
                 <td><input type="text" name="nama_blkg[]" class="form-control item_nama_blkg "  /></td>
+                <td><input type="date" name="tgl_lahir[]" class="form-control item_tgl_lahir" > </td>
                 <td> 
                     <select name="jk[]" class="form-control item_jk"> 
                          <option value=""> </option>

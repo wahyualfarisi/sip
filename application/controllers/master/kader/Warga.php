@@ -37,6 +37,7 @@ class Warga extends CI_Controller{
     $no_bpjs     = $this->input->post('no_bpjs');
     $nama_depan  = $this->input->post('nama_depan');
     $nama_blkg   = $this->input->post('nama_blkg');
+    $tgl_lahir   = $this->input->post('tgl_lahir');
     $jk          = $this->input->post('jk');
 
     $insert = $this->m_core->add_data($this->table, $dataWarga);
@@ -49,6 +50,7 @@ class Warga extends CI_Controller{
               'no_kk'         => $no_kk,
               'nama_depan'    => $nama_depan[$count],
               'nama_belakang' => $nama_blkg[$count],
+              'tgl_lahir'     => $tgl_lahir[$count],
               'jenis_kelamin' => $jk[$count]
             );
              $this->db->insert('t_anak', $data);

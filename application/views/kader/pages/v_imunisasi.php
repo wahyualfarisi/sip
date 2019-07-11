@@ -12,7 +12,7 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="input-group custom-go-button">
-                                        <span class="input-group-btn"><button type="button" class="btn btn-primary"><span class="fa fa-search"></span> Cari No. Kunjungan</button></span>
+                                        <span class="input-group-btn"><button type="button" class="btn btn-primary" id="btn__show__list"><span class="fa fa-search"></span> Cari No. Kunjungan</button></span>
                                         <input type="text" id="no_kunjungan" name="no_kunjungan" placeholder="no. kunjungan" class="form-control" readonly>
                                     </div>
                                 </div>
@@ -107,25 +107,27 @@
     </div>
 </div>
 
-<div id="modalListAnak" class="modal" role="dialog">
+<div id="modalListKunjungan" class="modal" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-close-area modal-close-df">
                 <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
             </div>
             <div class="modal-body">
-                <input type="text" id="search__anak" class="form-control" placeholder="Cari Anak" >
+                <input type="text" id="search__kunjungan" class="form-control" placeholder="Cari Kunjungan" >
                 <table class="table table-striped   ">
                     <thead>
                         <tr>
-                            <th>No. BPJs</th>
-                            <th>no. KK</th>
-                            <th>Nama Lengkap</th>
+                            <th>No</th>
+                            <th>No. Kunjungan</th>
+                            <th>No. Antri </th>
+                            <th>No. KMS</th>
+                            <th>Nama Anak</th>
                             <th>Jenis Kelamin</th>
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody id="show__list__anak" ></tbody>
+                    <tbody id="show__list__kunjungan" ></tbody>
                 </table>
             </div>
             <div class="modal-footer">
@@ -161,3 +163,4 @@
 </div>
 
 <script src="<?= base_url().'public/mynotif.js'?>"></script>
+<script src="<?= base_url().'public/kader/imunisasi.js' ?>" ></script>

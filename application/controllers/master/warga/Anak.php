@@ -13,10 +13,11 @@ class Anak extends CI_Controller {
 
     function add()
     {
-        $no_bpjs     = $this->input->post('no_bpjs');
-        $nama_depan  = $this->input->post('nama_depan');
+        $no_bpjs       = $this->input->post('no_bpjs');
+        $nama_depan    = $this->input->post('nama_depan');
         $nama_belakang = $this->input->post('nama_blkg');
-        $jk         = $this->input->post('jk');
+        $tgl_lahir     = $this->input->post('tgl_lahir');
+        $jk            = $this->input->post('jk');
 
         for($count = 0; $count < count($no_bpjs); $count++ )
         {
@@ -25,6 +26,7 @@ class Anak extends CI_Controller {
                 'no_kk'   => $this->foreignKey,
                 'nama_depan' => $nama_depan[$count],
                 'nama_belakang' => $nama_belakang[$count],
+                'tgl_lahir' => $tgl_lahir[$count],
                 'jenis_kelamin' => $jk[$count]
             );
             $insert =  $this->m_core->add_data($this->table, $data);
