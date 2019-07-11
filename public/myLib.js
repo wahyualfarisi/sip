@@ -1,4 +1,3 @@
-(function() {
 
     const postDATA = (url, form, callback) => {
         $.ajax({
@@ -19,6 +18,7 @@
         $.ajax({
             url,
             method: 'post',
+            data: {query: query},
             dataType: 'json',
             success: function(data){
                 callback(data)
@@ -27,7 +27,4 @@
     }
     
     const ModalAction = (modalName, method) => $(modalName).modal(method)
-    
-    
-})
 

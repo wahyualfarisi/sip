@@ -2,21 +2,21 @@
     "use strict";
     
     
-    var ctx = document.getElementById('myChartsrs').getContext("2d");
-    var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+   var ctx = document.getElementById('myChartsrs').getContext("2d");
+   var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
    gradientStroke.addColorStop(0, '#80b6f4');
    
    gradientStroke.addColorStop(1, '#f49080');
    var myChartsrs = new Chart(ctx, {
        type: 'line',
        data: {
-           labels: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL"],
+           labels: ["Selesai", "Terlewat"],
            datasets: [{
-               label: "Orders",
+               label: "Data Antian Kunjungan",
                borderColor: gradientStroke,
                pointBorderColor: gradientStroke,
                pointBackgroundColor: gradientStroke,
-              pointHoverBackgroundColor: gradientStroke,
+               pointHoverBackgroundColor: gradientStroke,
                pointHoverBorderColor: gradientStroke,
                pointBorderWidth: 10,
                pointHoverRadius: 10,
@@ -24,7 +24,7 @@
                pointRadius: 3,
                fill: false,
                borderWidth: 4,
-               data: [0, 60, 120, 170, 0, 170, 190]
+               data: [120, 170]
            }]
        },
        options: {

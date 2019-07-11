@@ -23,12 +23,12 @@
                 <div class="col-md-6">
                         <div class="form-group">
                             <label>Berat Badan Lahir</label>
-                            <input type="number" class="form-control" name="berat_badan" step="0.1" placeholder="dalam (kg) "  >
+                            <input type="number" class="form-control" name="berat_badan" step="0.1" placeholder="dalam (g) "  >
                         </div>
 
                         <div class="form-group">
                             <label>Panjang Badan Lahir</label>
-                            <input type="number" class="form-control" name="panjang_badan" step="0.1" placeholder="dalam (kg) " >
+                            <input type="number" class="form-control" name="panjang_badan" step="0.1" placeholder="dalam (cm) " >
                         </div>
                </div>
                

@@ -41,7 +41,10 @@ class Kunjungan extends CI_Controller{
       'id_kegiatan' => $no_kegiatan
     );
 
-    $check_nokms = $this->m_core->get_where($this->table, array($this->foreignKEY_2 => $targetID ) );
+    $check_nokms = $this->m_core->get_where($this->table, array(
+                                              $this->foreignKEY_2 => $targetID,
+                                              $this->foreignKEY_1 => $no_kegiatan
+                                            ));
 
     $no_antri    = $this->m_core->get_where($this->table, $where_antri )->num_rows() + 1;
 
