@@ -63,5 +63,19 @@ class M_kunjungan extends CI_Model{
         return $this->db->query($query);
     }
 
+    public function ListKunjunganOnCheckout($query)
+    {
+        $query = "SELECT a.no_kunjungan , a.no_antri, a.status, a.no_kms,
+                         b.no_bpjs, b.berat_badan_lahir as bb_lahir , b.panjang_badan_lahir as pb_lahir,
+                         c.no_kk, CONCAT(c.nama_depan, ' ', c.nama_belakang) as nama_lengkap, c.jenis_kelamin as jk , c.tgl_lahir
+                  FROM t_kunjungan a 
+                       LEFT JOIN t_kms b ON a.no_kms = b.no_kms
+                       LEFT JOIN t_anak c ON b.no_bpjs = c.no_bpjs
+
+                   WHERE date(a.tanggal_kunjungan) = CURDATE() AND a.status != 'antri' AND a.status != 'selesai'
+         ";
+         return $this->db->query($query);
+    }
+
 }
 

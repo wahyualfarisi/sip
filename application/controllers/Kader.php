@@ -10,6 +10,7 @@ class Kader extends CI_Controller{
       redirect('/Login');
     }
     $this->load->model('m_kunjungan');
+    $this->load->model('m_core');
   }
 
   function index()
@@ -81,7 +82,8 @@ class Kader extends CI_Controller{
 
   function datakunjungan()
   {
-    $this->load->view('kader/pages/v_datakunjungan');
+    $data['jadwal'] = $this->m_core->get_all('t_jadwal_kegiatan');
+    $this->load->view('kader/pages/v_datakunjungan', $data);
   }
 
 }

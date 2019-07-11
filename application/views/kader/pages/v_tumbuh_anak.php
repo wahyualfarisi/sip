@@ -8,15 +8,41 @@
             <div class="row">
             <form id="form__add__kms" method="posts">
                 <div class="col-md-4">
-                        <div class="form-group">
-                            <label>No. Kunjungan</label>
-                            <input type="text" class="form-control" name="no_kunjungan" id="no_kunjungan" placeholder="Masukan No. Kunjungan" >
-                           
+                         <div class="form-group-inner">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="input-group custom-go-button">
+                                        <span class="input-group-btn"><button type="button" class="btn btn-primary" id="btn__show__list"><span class="fa fa-search"></span> Cari No. Kunjungan</button></span>
+                                        <input type="text" id="no_kunjungan" name="no_kunjungan" placeholder="no. kunjungan" class="form-control" readonly>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <label>Tanggal Cek</label>
-                            <input type="text" class="form-control" name="tanggal_cek" value="<?= date('Y-m-d') ?>" readOnly >
+                            <label>Nama Anak</label>
+                            <input type="text" class="form-control" name="nama_anak" id="nama_anak"  readOnly >
+                        </div>
+
+                        <div class="form-group">
+                            <label>Jenis Kelamin</label>
+                            <input type="text" class="form-control" name="jk" id="jk"  readOnly >
+                        </div>
+
+                    
+                        <div class="form-group">
+                            <label>Umur Saat ini</label>
+                            <input type="text" class="form-control" name="umur" id="umur"  readOnly >
+                        </div>
+
+                         <div class="form-group">
+                            <label>No Bpjs</label>
+                            <input type="text" class="form-control" name="no_bpjs" id="no_bpjs"  readOnly >
+                        </div>
+
+                         <div class="form-group">
+                            <label>No KK</label>
+                            <input type="text" class="form-control" name="no_kk" id="no_kk"  readOnly >
                         </div>
                        
                 </div>
@@ -28,12 +54,7 @@
 
                         <div class="form-group">
                             <label>Tinggi Badan</label>
-                            <input type="number" class="form-control" name="panjang_badan" step="0.1" placeholder="dalam (kg) " >
-                        </div>
-
-                         <div class="form-group">
-                            <label>Umur</label>
-                            <input type="text" class="form-control" name="umur" placeholder="" >
+                            <input type="number" class="form-control" name="panjang_badan" step="0.1" placeholder="dalam (cm) " >
                         </div>
                </div>
 
@@ -58,7 +79,7 @@
 </div>
 
 <div class="container-fluid" style="margin-top: 30px;">
-    <input type="text" id="serch__KMS" class="form-control" placeholder="Cari Data Pertumbuhan Anak">
+    <input type="text" id="" class="form-control" placeholder="Cari Data Pertumbuhan Anak">
 </div>
 
 <div class="static-table-area mg-b-15" style="margin-top: 50px;">
@@ -99,25 +120,27 @@
     </div>
 </div>
 
-<div id="modalListAnak" class="modal" role="dialog">
+<div id="modalListKunjungan" class="modal" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-close-area modal-close-df">
                 <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
             </div>
             <div class="modal-body">
-                <input type="text" id="search__anak" class="form-control" placeholder="Cari Anak" >
+                <input type="text" id="search__kunjungan" class="form-control" placeholder="Cari Kunjungan" >
                 <table class="table table-striped   ">
                     <thead>
                         <tr>
-                            <th>No. BPJs</th>
-                            <th>no. KK</th>
-                            <th>Nama Lengkap</th>
+                            <th>No</th>
+                            <th>No. Kunjungan</th>
+                            <th>No. Antri </th>
+                            <th>No. KMS</th>
+                            <th>Nama Anak</th>
                             <th>Jenis Kelamin</th>
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody id="show__list__anak" ></tbody>
+                    <tbody id="show__list__kunjungan" ></tbody>
                 </table>
             </div>
             <div class="modal-footer">
@@ -153,3 +176,4 @@
 </div>
 
 <script src="<?= base_url().'public/mynotif.js'?>"></script>
+<script src="<?= base_url().'public/kader/tumbuhanak.js' ?>"></script>

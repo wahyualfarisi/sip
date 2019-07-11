@@ -18,7 +18,8 @@ class Anak extends CI_Controller{
       'no_kk' => $this->input->post('no_kk'),
       'nama_depan' => $this->input->post('nama_depan'),
       'nama_belakang' => $this->input->post('nama_belakang'),
-      'jenis_kelamin' => $this->input->post('jenis_kelamin')
+      'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+      'tgl_lahir' => $this->input->post('tgl_lahir')
     );
     $check_primary = $this->m_core->get_where($this->table, array('no_bpjs' => $this->input->post('no_bpjs')));
     if($check_primary->num_rows() > 0){
@@ -56,7 +57,8 @@ class Anak extends CI_Controller{
     $data = array(
       'nama_depan' => $this->input->post('nama_depan'),
       'nama_belakang' => $this->input->post('nama_belakang'),
-      'jenis_kelamin' => $this->input->post('jenis_kelamin')
+      'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+      'tgl_lahir' => $this->input->post('tgl_lahir')
     );
     $where = array(
       'no_bpjs' => $this->input->post('no_bpjs')
@@ -82,6 +84,33 @@ class Anak extends CI_Controller{
     $data = $this->m_warga->fetch_anak_warga($query);
     echo json_encode($data->result() );
 
+  }
+
+  function cek_umur()
+  {
+    $d1= new DateTime(date('Y-m-d'));
+    $d2= new DateTime(date('2019-07-10'));
+    $interval_kpi = $d1->diff($d2);
+    $sprint='';
+    if($interval_kpi->y != 0){
+        $sprint .=$interval_kpi->y .' Tahun ';
+    }
+    if($interval_kpi->m != 0){
+        $sprint .=$interval_kpi->m .' Bulan ';
+    }
+    if($interval_kpi->d != 0){
+        $sprint .=$interval_kpi->d .' Hari ';
+    }
+    if($interval_kpi->h != 0){
+        $sprint .=$interval_kpi->h .' Jam ';
+    }
+    if($interval_kpi->i != 0){
+        $sprint .=$interval_kpi->i .' Menit ';
+    }
+    if($interval_kpi->s != 0){
+        $sprint .=$interval_kpi->s .' Detik ';
+    }             
+    echo  $sprint;
   }
 
 

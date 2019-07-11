@@ -1,6 +1,35 @@
 
 
 var UIWargaDetail = (function() {
+
+    const getAge = (tgl_lahir) => {
+        const today = new Date();
+        const birthday = new Date(tgl_lahir);
+       
+        let year = 0
+        if(today.getMonth() < birthday.getMonth() ){
+          year = 1
+        }else if( (today.getMonth() == birthday.getMonth()) && today.getDate() < birthday.getDate() ){
+          year = 1
+        }
+        
+        let age = today.getFullYear() - birthday.getFullYear() - year;
+       
+        if(age === 0){
+          if( (today.getFullYear() === birthday.getFullYear()) && today.getMonth() === birthday.getMonth() ){
+            console.log(today.getDate() - birthday.getDate() , ' - hari');
+          }else{
+            console.log('holla')
+          }
+        }else{
+          console.log(age, ' tahun')
+        }
+      
+        
+
+    }
+
+
     return {
       retriveDetailWarga: function(data){
         var html = '';
@@ -64,6 +93,16 @@ var UIWargaDetail = (function() {
         `;
         if(data.length > 0){
           data.forEach(function(item) {
+            var out = '';
+            var arrayUmur = item.umur.split(' ')
+            if(arrayUmur[1] === 'Tahun') {
+              out += arrayUmur[0] +' '+ arrayUmur[1];
+            }else if(arrayUmur[1] === 'Bulan'){
+              out += arrayUmur[0] +' '+ arrayUmur[1];
+            }else if(arrayUmur[1] === 'Hari'){
+              out += arrayUmur[0] +' '+ arrayUmur[1]
+            }
+            
             html += `
               <div class="widget-flot-bg shadow-reset mg-t-30 animated fadeInLeft">
                   <div class="admin-widget-flot-ch">
@@ -71,11 +110,12 @@ var UIWargaDetail = (function() {
                       <div style="margin-top: 30px;">
                         <p><strong> No.BPJS </strong>: ${item.no_bpjs}</p>
                         <p><strong> Jenis Kelamin </strong>: ${item.jenis_kelamin}</p>
+                        <p><strong> Tanggal Lahir </strong>: ${item.tgl_lahir}</p>
+                        <p><strong> Umur </strong>: ${out}</p>
                       </div>
                       <button class="btn btn-danger btn-xs btn-delete-anak" data-id="${item.no_bpjs}"> Hapus </button>
-                      <button class="btn btn-warning btn-xs btn-edit-anak" data-id="${item.no_bpjs}" data-nama_depan="${item.nama_depan}" data-nama_blkg="${item.nama_belakang}" data-jenis_kelamin="${item.jenis_kelamin}"> Edit </button>
+                      <button class="btn btn-warning btn-xs btn-edit-anak" data-id="${item.no_bpjs}" data-nama_depan="${item.nama_depan}" data-nama_blkg="${item.nama_belakang}" data-jenis_kelamin="${item.jenis_kelamin}" data-tgl_lahir="${item.tgl_lahir}"> Edit </button>
                   </div>
-                  <button class="btn btn-custome btn-block">Detail </button>
               </div>
             `;
           });
@@ -88,7 +128,8 @@ var UIWargaDetail = (function() {
           `;
         }
         $('#show-anak').html(html);
-      }
+      },
+      getAge: (date) => getAge(date)
 
 
 
@@ -128,6 +169,8 @@ var SetupEventWargaDetail = (function(UI) {
       })
     }
 
+
+
     //modal show
     $('#show-anak').on('click', '.btn-tambah-anak', function(){
       $('#no_kk').val(PARAMS);
@@ -144,6 +187,7 @@ var SetupEventWargaDetail = (function(UI) {
       $('#nama_depan_edit').val($(this).data('nama_depan') )
       $('#nama_belakang_edit').val($(this).data('nama_blkg') )
       $('#jenis_kelamin_edit').val($(this).data('jenis_kelamin') )
+      $('#tgl_lahir_edit').val($(this).data('tgl_lahir'))
       $('#modalEditAnak').modal('show');
     });
     $('#show-warga-detail').on('click', '.btn-delete-warga', function(){
@@ -171,6 +215,9 @@ var SetupEventWargaDetail = (function(UI) {
         },
         jenis_kelamin:{
           required: true
+        },
+        tgl_lahir: {
+          required: true
         }
       },
       messages:{
@@ -183,6 +230,9 @@ var SetupEventWargaDetail = (function(UI) {
         },
         jenis_kelamin: {
           required: 'Jenis Kelamin harus di pilih'
+        },
+        tgl_lahir: {
+          required: 'Tanggal Lahir Tidak Boleh Kosong'
         }
       },
       errorPlacement: function(error, element){
@@ -329,11 +379,14 @@ var SetupEventWargaDetail = (function(UI) {
 
 
 
+
+
+
     return {
       init: function(){
         load_warga()
         load_anak()
-
+        console.log(UI.getAge('2019-07-2'))
       
 
         console.log('initialize');

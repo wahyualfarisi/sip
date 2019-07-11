@@ -138,6 +138,10 @@
                       </select>
                     </div>
                     <div class="form-group">
+                        <label>Tanggal Lahir</label>
+                        <input type="date" class="form-control" name="tgl_lahir" id="tgl_lahir">
+                    </div>
+                    <div class="form-group">
                         <button type="submit" class="btn btn-custome" name="button">SIMPAN</button>
                     </div>
 
@@ -233,6 +237,10 @@
                         <option value="P">Perempuan</option>
                         <option value="L">Laki - Laki</option>
                       </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tanggal Lahir</label>
+                        <input type="date" class="form-control" name="tgl_lahir" id="tgl_lahir_edit">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-custome" name="button">UPDATE</button>

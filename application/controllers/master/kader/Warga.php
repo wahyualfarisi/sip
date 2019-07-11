@@ -150,7 +150,18 @@ class Warga extends CI_Controller{
   function get_anak($id)
   {
     $data = $this->m_core->get_where($this->table_anak, array('no_kk' => $id) );
-    echo json_encode($data->result() );
+    foreach($data->result() as $key){
+      $output[] = array(
+        'no_bpjs' => $key->no_bpjs,
+        'no_kk' => $key->no_kk,
+        'nama_depan' => $key->nama_depan,
+        'nama_belakang' => $key->nama_belakang,
+        'jenis_kelamin' => $key->jenis_kelamin,
+        'tgl_lahir' => $key->tgl_lahir,
+        'umur' => $this->cek_umur($key->tgl_lahir)
+      );
+    }
+    echo json_encode($output);
   }
 
   function fetch_warga_json()
@@ -165,6 +176,33 @@ class Warga extends CI_Controller{
     $data = $this->m_warga->fetch_data($query);
     echo json_encode($data->result());
 
+  }
+
+  function cek_umur($tgl_lahir)
+  {
+    $d1= new DateTime(date('Y-m-d'));
+    $d2= new DateTime(date($tgl_lahir));
+    $interval_kpi = $d1->diff($d2);
+    $sprint='';
+    if($interval_kpi->y != 0){
+        $sprint .=$interval_kpi->y .' Tahun ';
+    }
+    if($interval_kpi->m != 0){
+        $sprint .=$interval_kpi->m .' Bulan ';
+    }
+    if($interval_kpi->d != 0){
+        $sprint .=$interval_kpi->d .' Hari ';
+    }
+    if($interval_kpi->h != 0){
+        $sprint .=$interval_kpi->h .' Jam ';
+    }
+    if($interval_kpi->i != 0){
+        $sprint .=$interval_kpi->i .' Menit ';
+    }
+    if($interval_kpi->s != 0){
+        $sprint .=$interval_kpi->s .' Detik ';
+    }             
+    return $sprint;
   }
 
 }
