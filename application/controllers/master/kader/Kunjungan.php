@@ -163,9 +163,27 @@ class Kunjungan extends CI_Controller{
     
   }
 
-  
-
- 
+  function update_status_selesai()
+  {
+      $where = array(
+          'no_kunjungan' => $this->input->post('id_target')
+      );
+      $data = array(
+          'status' => 'selesai'
+      );
+      $update = $this->m_core->update_table($this->table, $data, $where);
+      if($update){
+        $res = array(
+          'code' => 200
+        );
+        echo json_encode($res);
+      }else{
+        $res = array(
+          'code' => 400
+        );
+        echo json_encode($res);
+      }
+  }
 
 
   public function generateAutoNumber()

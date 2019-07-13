@@ -2,13 +2,13 @@
     <div style="margin-top: 30px;" >
          <h3>CEK PERTUMBUHAN ANAK</h3>
     </div>
+
     <div class="sparkline12-list shadow-reset mg-t-30">
         <div class="sparkline12-graph">
-
             <div class="row">
-            <form id="form__add__kms" method="posts">
+            <form id="form__pertumbuhan__anak">
                 <div class="col-md-4">
-                         <div class="form-group-inner">
+                        <div class="form-group-inner">
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="input-group custom-go-button">
@@ -44,42 +44,63 @@
                             <label>No KK</label>
                             <input type="text" class="form-control" name="no_kk" id="no_kk"  readOnly >
                         </div>
-                       
                 </div>
                 <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Berat Badan</label>
-                            <input type="number" class="form-control" name="berat_badan" step="0.1" placeholder="dalam (kg) "  >
+                         <div class="form-group-inner">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                                    <label class="login2 pull-right pull-right-pro">Berat Badan</label>
+                                </div>
+                                <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="input-group custom-go-button">
+                                        <input type="number" class="form-control" id="berat_badan" name="berat_badan">
+                                        <span class="input-group-btn"><button type="button" class="btn btn-primary">kg</button></span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label>Tinggi Badan</label>
-                            <input type="number" class="form-control" name="panjang_badan" step="0.1" placeholder="dalam (cm) " >
+                        <div class="form-group-inner">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                                    <label class="login2 pull-right pull-right-pro">Panjang Badan</label>
+                                </div>
+                                <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="input-group custom-go-button">
+                                        <input type="number" class="form-control" id="panjang_badan" name="panjang_badan">
+                                        <span class="input-group-btn"><button type="button" class="btn btn-primary">cm</button></span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                         <button type="button" class="btn btn-success" id="btn__cek__gizi">CEK</button>
                </div>
-
+            
                <div class="col-md-5" >
                         <div class="form-group">
-                            <label>Hasil</label>
-                            <input type="number" class="form-control" name="berat_badan" step="0.1" placeholder="dalam (kg) "  >
+                            <label>Status Gizi</label>
+                            <input type="text" class="form-control" name="status_gizi" id="status_gizi" readonly/>
                         </div>
                         <div class="form-group">
                             <label>Catatan</label>
-                            <textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
-                        </div>
-                        <button class="btn btn-warning" type="button" id="btn__search_bpjs"><span class="fa fa-search"></span> Cari No Kunjungan</button>
-                        <button type="submit" class="btn btn-success">CEK</button>
+                            <textarea name="catatan" class="form-control" id="catatan" cols="30" rows="10"></textarea>
+                        </div>       
+
+                       <div class="text-center" >
+                           <button type="submit" class="btn btn-success">SIMPAN</button> 
+                       </div>                
                </div>
+
                
-               
-            </form>    
+               </form>
             </div>      
         </div>
     </div>
 </div>
 
 <div class="container-fluid" style="margin-top: 30px;">
-    <input type="text" id="" class="form-control" placeholder="Cari Data Pertumbuhan Anak">
+    <input type="text" id="query__search__pertumbuhan" class="form-control" placeholder="Cari Data Pertumbuhan Anak">
 </div>
 
 <div class="static-table-area mg-b-15" style="margin-top: 50px;">
@@ -100,17 +121,19 @@
                             <thead>
                                 <tr class="bg-warning">
                                     <th>No. </th>
-                                    <th>No. Kunjungan</th>
-                                    <th>No. BPJS</th>
+                                    <th>No. Cek Pertumbuhan</th>
                                     <th>No. KMS</th>
-                                    <th>Berat Badan</th>
-                                    <th>Tinggi Badan</th>
+                                    <th>No. Kunjungan</th>
+                                    <th>Nama Anak</th>
+                                    <th>Jenis Kelamin</th>
                                     <th>Umur</th>
+                                    <th>Panjang Badan</th>
+                                    <th>Berat Badan</th>
                                     <th>Hasil</th>
                                     <th>Catatan</th>
                                 </tr>
                             </thead>
-                            <tbody id="show-kms"></tbody>
+                            <tbody id="show__list_tumbuhanak"></tbody>
                         </table>
                     </div>
                 </div>
@@ -166,6 +189,33 @@
                     </div>
                     <button type="submit" class="btn btn-custome" name="button">Konfirmasi</button>
                 </form>
+
+            </div>
+            <div class="modal-footer">
+                <a data-dismiss="modal" href="#">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="modalConfirmCek" class="modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-close-area modal-close-df">
+                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+            </div>
+            <div class="modal-body">
+                <p>Apakah Anda Ingin Meneruskan Melakukan Cek Imunisasi</p>
+                <div class="row">
+                    <input type="text" name="id_target" id="id_target" class="form-control" >
+                    <div class="col-md-6" >
+                        <button class="btn btn-success btn-block" id="btn__finish" >Hanya Cek Pertumbuhan Saja</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-info btn-block" id="btn__next">Lakukan Cek Imunisasi</button>
+                    </div>
+                </div>
 
             </div>
             <div class="modal-footer">

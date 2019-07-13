@@ -6,7 +6,7 @@
         <div class="sparkline12-graph">
 
             <div class="row">
-            <form id="form__add__kms" method="posts">
+            <form id="form__add__imunisasi" method="posts">
                 <div class="col-md-6">
                         <div class="form-group-inner">
                             <div class="row">
@@ -17,6 +17,11 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                         <div class="form-group">
+                            <label>No KMS</label>
+                            <input type="text" class="form-control" name="no_kms" id="no_kms"  readOnly >
                         </div>
 
                         <div class="form-group">
@@ -30,35 +35,28 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Tanggal Lahir</label>
-                            <input type="text" class="form-control" name="jk" id="jk"  readOnly >
-                        </div>
-
-                        <div class="form-group">
                             <label>Umur</label>
                             <input type="text" class="form-control" name="umur" id="umur"  readOnly >
                         </div>
 
-                        <div class="form-group">
-                            <label>Imunisasi</label>
-                            <input type="text" class="form-control" name="tanggal_terdaftar" value="" >
+                        
+
+                        <div class="form-group" id="show__imunisasi">
+                            
                         </div>
                        
                 </div>
-                <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Hasil Imunisasi</label>
-                            <input type="number" class="form-control" name="berat_badan" step="0.1" placeholder="dalam (kg) "  >
-                        </div>
-
+                <div class="col-md-6 btn__simpan__imunisasi">
                         <div class="form-group">
                             <label>Catatan</label>
-                            <textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
+                            <textarea name="catatan" class="form-control" id="" cols="30" rows="10"></textarea>
                         </div>
                </div>
                
-               <button class="btn btn-warning" type="button" id="btn__search_bpjs"><span class="fa fa-search"></span> Cari No BPJS</button>
-               <button type="submit" class="btn btn-success">SIMPAN</button>
+               <div class="text-center btn__simpan__imunisasi">
+                    <button type="submit" class="btn btn-success" >SIMPAN</button>
+               </div>
+               
             </form>    
             </div>      
         </div>
@@ -87,13 +85,13 @@
                             <thead>
                                 <tr class="bg-warning">
                                     <th>No. </th>
+                                    <th>No. Cek Imunisasi</th>
+                                    <th>No. Kunjungan</th>
                                     <th>No. KMS</th>
-                                    <th>No. BPJS</th>
-                                    <th>Nama Lengkap </th>
-                                    <th>Tanggal Terdaftar</th>
-                                    <th>Berat Badan Lahir</th>
-                                    <th>Panjang Badan Lahir</th>
-                                    <th></th>
+                                    <th>Nama Anak </th>
+                                    <th>Imunisasi</th>
+                                    <th>Hasil Imunisasi</th>
+                                    <th>Catatan</th>
                                     <th></th>
                                 </tr>
                             </thead>

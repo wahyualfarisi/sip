@@ -1,6 +1,8 @@
 const UrlImunisasi = (function() {
     const urlString = {
-        listKunjungan: BASE_URL+'master/kader/TumbuhAnak/ListKunjunganOnCheckout'
+        listKunjungan: BASE_URL+'master/kader/TumbuhAnak/ListKunjunganOnCheckout',
+        showImunisasi: BASE_URL+'master/kader/Cekimunisasi/cek_imunisasi',
+        add: BASE_URL+'master/kader/Cekimunisasi/add'
     }
 
     return {
@@ -15,11 +17,14 @@ const imunisasiInterface = (function() {
             listKunjungan: '#modalListKunjungan'
         },
         html: {
-            showKunjungan: '#show__list__kunjungan'
+            showKunjungan: '#show__list__kunjungan',
+            showImunisasi: '#show__imunisasi'
         },
         btn: {
             showList: '#btn__show__list',
-            pilihAnak: '.btn__pilih__anak'
+            pilihAnak: '.btn__pilih__anak',
+            cekImunisasi: '#btn__cek__imunisasi',
+            btnSaveImunisasi: '.btn__simpan__imunisasi'
         },
         field: {
             searchKunjungan: '#search__kunjungan',
@@ -28,7 +33,11 @@ const imunisasiInterface = (function() {
             jk: '#jk',
             umur: '#umur',
             no_bpjs: '#no_bpjs',
-            no_kk: '#no_kk'
+            no_kk: '#no_kk',
+            no_kms: '#no_kms'
+        },
+        form: {
+            add: '#form__add__imunisasi'
         }
     }
 
@@ -54,6 +63,7 @@ const imunisasiInterface = (function() {
                                     data-nama="${item.nama_lengkap}"
                                     data-no_bpjs="${item.no_bpjs}"
                                     data-no_kk="${item.no_kk}"
+                                    
                             >Pilih Anak</td>
                         </tr>
                 `;
@@ -66,9 +76,35 @@ const imunisasiInterface = (function() {
         $(domString.html.showKunjungan).html(html)
     }
 
+    const renderImunisasi = object => {
+        let html = '';
+        if(object.length > 0){
+            $(domString.btn.btnSaveImunisasi).css('display','block')
+            html += `<label> Pilih Imunisasi </label>`;
+            html += `<select class="form-control" name="imunisasi" id="imunisasi" >`;
+            html += `<option value=""> -- Pilih Imunisasi -- </option>`;
+            object.forEach(item => {
+                    html += `<option value="${item.id_imunisasi}"> ${item.nama_imunisasi} </option>`;
+            })
+            html += `</select>`;
+        }else{
+            $(domString.btn.btnSaveImunisasi).css('display','none')
+            html = 'Imunisasi tidak memenuhi kriteria umur';
+        }
+        $(domString.html.showImunisasi).html(html)
+    }
+
+    const renderNotif = (data) => {
+        var parse = JSON.parse(data);
+        if(parse.code !== 200) return mynotifications('error','top right', parse.msg)
+        mynotifications('success','top right', parse.msg)
+    }
+
     return {
         getDOM: () => domString,
-        getListKunjungan: (data) => renderOnModal(data)
+        getListKunjungan: (data) => renderOnModal(data),
+        getImunisasi: (data) => renderImunisasi(data),
+        getNotif: (data) => renderNotif(data)
     }
 })()
 
@@ -79,6 +115,103 @@ const imunisasiController = (function(URL, UI) {
 
     const eventListener = function(){
         $(dom.btn.showList).on('click', () => ModalAction(dom.modal.listKunjungan, 'show') )
+
+        $(dom.html.showKunjungan).on('click', dom.btn.pilihAnak, function() {
+            $(dom.field.no_kunjungan).val($(this).data('no_kunjungan') );
+            $(dom.field.no_kms).val($(this).data('no_kms'))
+            $(dom.field.nama).val($(this).data('nama'))
+            $(dom.field.jk).val($(this).data('jk') )
+            $(dom.field.umur).val($(this).data('umur'))
+            $(dom.field.no_bpjs).val($(this).data('no_bpjs'))
+            $(dom.field.no_kk).val($(this).data('no_kk'))
+
+            ModalAction(dom.modal.listKunjungan, 'hide')
+
+
+            let rangeUmur;
+            const no_kms = $(this).data('no_kms');
+            const umur   = $(this).data('umur').split(' ');
+
+            if(umur[1] === "Hari"){
+                rangeUmur = 1 // range umur dalam hitungan hari 
+            }else if(umur[1] === "Bulan"){
+                rangeUmur = umur[0] // range umur dalam hitungan bulan
+            }else if(umur[1] === "Tahun"){
+                rangeUmur = umur[0] * 12 //range umur dalam hitungan tahun , convert ke dalam jumlah bulan
+            }
+            $.ajax({
+                url: url.showImunisasi,
+                method: 'post',
+                data: {no_kms: no_kms, umur: rangeUmur},
+                dataType: 'json',
+                success: function(data){
+                   UI.getImunisasi(data);
+                }
+            })
+        });
+
+        $(dom.form.add).validate({
+            rules: {
+                no_kunjungan: {
+                    required: true
+                },
+                no_kms: {
+                    required: true
+                },
+                nama_anak: {
+                    required: true
+                },
+                jk: {
+                    required: true
+                },
+                umur: {
+                    required: true
+                },
+                imunisasi: {
+                    required: true
+                },
+                catatan: {
+                    required: true
+                }
+            },
+            messages: {
+                no_kunjungan: {
+                    required: 'No. Kunjungan tidak boleh kosong'
+                },
+                no_kms: {
+                    required: 'No Kms Tidak Boleh Kosong'
+                },
+                nama_anak: {
+                    required: 'Nama Anak Tidak Boleh Kosong'
+                },
+                jk: {
+                    required: 'Jenis Kelamin Tidak Boleh Kosong'
+                },
+                umur: {
+                    required: 'Umur Tidak Boleh Kosong'
+                },
+                imunisasi: {
+                    required: 'Imunisasi Tidak Boleh Kosong'
+                },
+                catatan: {
+                    required: 'Catatan Tidak Boleh Kosong'
+                }
+            },
+            errorPlacement: function(error, element){
+                error.css('color','red')
+                error.insertAfter(element)
+            },
+            submitHandler: function(form){
+                postResource(url.add, form, data => {
+                    UI.getNotif(data)
+                    listKunjungan()
+                    $(dom.form.add)[0].reset()
+                    
+                });
+            }
+        })
+
+    
     }
 
     const listKunjungan = () => getResource(url.listKunjungan, undefined, data => UI.getListKunjungan(data) );
@@ -98,9 +231,25 @@ const imunisasiController = (function(URL, UI) {
         })
     }
 
+    const postResource = (url, form, callback) => {
+        $.ajax({
+            url,
+            method: 'post',
+            data: new FormData(form),
+            processData: false,
+            contentType: false,
+            async: false,
+            cache: false,
+            success: function(data){
+                callback(data);
+            }
+        })
+    }
+
     return {
         init: () => {
-            console.log('initialize imunisasi')
+
+            $(dom.btn.btnSaveImunisasi).css('display','none')
             listKunjungan()
             eventListener()
         }
