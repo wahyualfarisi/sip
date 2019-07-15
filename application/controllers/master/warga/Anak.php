@@ -9,6 +9,7 @@ class Anak extends CI_Controller {
         $this->table = 't_anak';
         $this->foreignKey = $this->session->userdata('no_kk');
         $this->load->model('m_core');
+        $this->load->model('m_kms');
     }
 
     function add()
@@ -53,6 +54,14 @@ class Anak extends CI_Controller {
     {
         $data = $this->m_core->get_order('t_jadwal_kegiatan', 'tanggal_kegiatan','asc');
         echo json_encode($data->result());
+    }
+
+    function get_anak()
+    {
+
+        $data = $this->m_kms->fetch_anakwarga_with_kms($this->session->userdata('no_kk'));
+
+        echo json_encode($data->result() );
     }
 
 

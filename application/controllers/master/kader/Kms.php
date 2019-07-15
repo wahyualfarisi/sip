@@ -11,9 +11,8 @@ class Kms extends CI_Controller{
     $this->foreignKEY = 'no_bpjs';
     $this->load->model('m_core');
     $this->load->model('m_kms');
+    $this->load->model('m_kunjungan');
   }
-
-
 
   public function add()
   {
@@ -90,6 +89,88 @@ class Kms extends CI_Controller{
       $res = array('msg' => 'Kms Gagal Di Update', 'code' => 400);
       echo json_encode($res);
     }
+  }
+
+  public function fetch_detail_kms($kms)
+  {
+    $data             = $this->m_kms->fetch_detail_kms($kms);
+    
+    $no_kunjungan = [];
+
+      if($data->num_rows() > 0)
+      {
+        foreach($data->result() as $row)
+        {
+          array_push($no_kunjungan, $row->no_kunjungan);
+
+
+          $datakunjungan[] = array(
+            'no_kunjungan'      => $row->no_kunjungan,
+            'no_antri'          => $row->no_antri,
+            'tanggal_kunjungan' => $row->tanggal_kunjungan,
+            'status'            => $row->status
+          );
+
+          $datakms[] = array(
+            'no_kms'       => $row->no_kms,
+            'no_kunjungan' => $row->no_kunjungan,
+            'no_bpjs'      => $row->no_bpjs,
+            'nama_anak'    => $row->nama_lengkap,
+            'jk'           => $row->jk,
+            'tgl_lahir'    => $row->tgl_lahir,
+            'orangtua'     => array(
+                                  'no_kk'    => $row->no_kk,
+                                  'nama_ibu' => $row->nama_ibu,
+                                  'nama_ayah' => $row->nama_ayah,
+                                  'alamat'    => $row->alamat,
+                                  'no_telp'   => $row->no_telp
+            )
+          );
+        }
+
+        $source_kunjungan = $this->m_kunjungan->get_kunjungan($no_kunjungan, $kms);
+
+        if($source_kunjungan->num_rows() > 0){
+          foreach($source_kunjungan->result() as $k)
+            {
+              $detail_kunjungan[] = array(
+                  'no_kunjungan'       => $k->no_kunjungan,
+                  'imunisasi'          => array(
+                  'no_cek_imunisasi'   => $k->no_cek_imunisasi,
+                  'id_imunisasi'       => $k->id_imunisasi,
+                  'umur_cek_imunisasi' => $k->umur_cek_imunisasi,
+                  'tgl_cek_imunisasi'  => $k->tgl_cek_imunisasi,
+                  'catatan_imunisasi'  => $k->catatan_imunisasi           
+                ),
+                'pertumbuhan'  => array(
+                  'no_cek_pertumbuhan' => $k->no_cek_pertumbuhan,
+                  'umur_cek_pertumbuhan' => $k->umur_cek_pertumbuhan,
+                  'tb' => $k->tb,
+                  'bb' => $k->bb,
+                  'hasil' => $k->hasil,
+                  'catatan_pertumbuhan' => $k->catatan_pertumbuhan
+                )
+              );
+            }
+        }else{
+          $detail_kunjungan = array();
+        }
+        
+
+        echo json_encode(array(
+          'kms'       => $datakms,
+          'kunjungan' => $datakunjungan,
+          'detail_kunjungan' => $detail_kunjungan,
+        ));
+      }else{
+        echo json_encode(array(
+          'kms'       => 0,
+          'kunjungan' => 0,
+          'detail_kunjungan' => 0,
+          'status' => 404,
+          'msg' => 'Source Not Found'
+        ));
+      }
   }
 
   public function generateAutoNumber()

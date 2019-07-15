@@ -25,4 +25,6 @@ class M_warga extends CI_Model{
     return $this->db->query($query);
   }
 
+  
+
 }

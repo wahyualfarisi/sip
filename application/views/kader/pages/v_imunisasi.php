@@ -64,7 +64,16 @@
 </div>
 
 <div class="container-fluid" style="margin-top: 30px;">
-    <input type="text" id="serch__KMS" class="form-control" placeholder="Cari Data Imunisasi">
+    <input type="text" id="serch__data__imunisasi" class="form-control" placeholder="Cari Data Imunisasi">
+
+    <div class="row" style="margin-top: 30px;">
+        <div class="col-md-3">
+            <label>Sortir By Tanggal</label>
+            <input type="date" class="form-control" id="search__imunisasi__by__date" >
+            <button class="btn btn-info" id="btn__search__by__date">Cari</button>
+        </div>
+    </div>
+
 </div>
 
 <div class="static-table-area mg-b-15" style="margin-top: 50px;">
@@ -86,16 +95,16 @@
                                 <tr class="bg-warning">
                                     <th>No. </th>
                                     <th>No. Cek Imunisasi</th>
+                                    <th>Tanggal Cek Imunisasi</th>
                                     <th>No. Kunjungan</th>
                                     <th>No. KMS</th>
+                                    <th>Imunisasi </th>
                                     <th>Nama Anak </th>
-                                    <th>Imunisasi</th>
-                                    <th>Hasil Imunisasi</th>
                                     <th>Catatan</th>
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody id="show-kms"></tbody>
+                            <tbody id="show__list__imunisasi"></tbody>
                         </table>
                     </div>
                 </div>

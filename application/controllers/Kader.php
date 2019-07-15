@@ -28,6 +28,11 @@ class Kader extends CI_Controller{
     $this->load->view('kader/pages/v_warga');
   }
 
+  function listanak()
+  {
+    $this->load->view('kader/pages/v_anak');
+  }
+
   function addwarga()
   {
     $this->load->view('kader/form/form_add_warga');

@@ -122,6 +122,7 @@
                                 <tr class="bg-warning">
                                     <th>No. </th>
                                     <th>No. Cek Pertumbuhan</th>
+                                    <th>Tanggal Cek</th>
                                     <th>No. KMS</th>
                                     <th>No. Kunjungan</th>
                                     <th>Nama Anak</th>

@@ -79,5 +79,39 @@ class M_kunjungan extends CI_Model{
          return $this->db->query($query);
     }
 
+    public function get_total_kunjungan_today()
+    {
+        $query = "SELECT * FROM t_kunjungan WHERE DATE(tanggal_kunjungan) = CURDATE()";
+        return $this->db->query($query);
+    }
+
+    public function get_antrian_warga($no_kk)
+    {
+        $query = "SELECT a.no_kunjungan, a.id_kegiatan, a.no_antri, a.tanggal_kunjungan,
+                         b.no_kms, b.tanggal_terdaftar, b.berat_badan_lahir as bb_lahir , b.panjang_badan_lahir as pb_lahir,
+                         c.no_bpjs, c.no_kk, CONCAT(c.nama_depan ,' ', c.nama_belakang) as nama_lengkap, c.jenis_kelamin as jk, c.tgl_lahir
+                  FROM t_kunjungan a LEFT JOIN t_kms b ON a.no_kms = b.no_kms 
+                                     LEFT JOIN t_anak c ON b.no_bpjs = c.no_bpjs
+                                     WHERE c.no_kk = '$no_kk' AND DATE(a.tanggal_kunjungan) = CURDATE()
+                    
+                 ";
+        return $this->db->query($query);
+    }
+
+    public function get_kunjungan($arrayKunjungan, $no_kms)
+    {
+        $implode = implode("','", $arrayKunjungan);
+
+        $query = "SELECT a.no_kunjungan,
+                         b.no_cek_imunisasi, b.id_imunisasi, b.umur as umur_cek_imunisasi , b.tgl_cek_imunisasi, b.catatan as catatan_imunisasi,
+                         c.no_cek_pertumbuhan, c.umur as umur_cek_pertumbuhan, c.tb, c.bb, c.hasil, c.catatan as catatan_pertumbuhan
+                  FROM t_kunjungan a
+                        LEFT JOIN t_cek_imunisasi b ON a.no_kunjungan = b.no_kunjungan
+                        LEFT JOIN t_cek_pertumbuhan c ON a.no_kunjungan = c.no_kunjungan 
+                  WHERE a.no_kms = '$no_kms'
+                 ";
+        return $this->db->query($query);
+    }
+
 }
 

@@ -100,6 +100,7 @@ const TumbuhAnakInterface = (function() {
                      <tr> 
                         <td> ${no++} </td>
                         <td> ${item.no_cek_pertumbuhan} </td>
+                        <td> ${item.tgl_cek_pertumbuhan} </td>
                         <td> ${item.no_kms} </td>
                         <td> ${item.no_kunjungan} </td>
                         <td> ${item.nama_lengkap} </td>

@@ -17,7 +17,9 @@
         <link rel="stylesheet" type="text/css"  href='<?= base_url().'assets/users/css/carouFredSel.css' ?>  ' />
         <link rel="stylesheet" type="text/css"  href='<?= base_url().'assets/users/css/sm-clean.css' ?>  ' />
         <link rel="stylesheet" type="text/css"  href='<?= base_url().'assets/users/style.css' ?> ' />
-        
+        <script>
+            var BASE_URL = '<?= base_url() ?>';
+        </script>
     </head>
     <body class="home blog">
 
@@ -52,7 +54,7 @@
                 <nav id="header-main-menu">
                     <ul class="main-menu sm sm-clean">
                         <li><a href="#/dashboard" class="current">Beranda</a></li>
-                        <li><a href="#/jadwal">Jadwal Kegiatan</a></li>
+                        <!-- <li><a href="#/jadwal">Jadwal Kegiatan</a></li> -->
                         <li><a href="#/antrian">Lihat Antrian</a></li>                        
                     </ul>
 

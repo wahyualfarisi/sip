@@ -2,7 +2,8 @@ const UrlImunisasi = (function() {
     const urlString = {
         listKunjungan: BASE_URL+'master/kader/TumbuhAnak/ListKunjunganOnCheckout',
         showImunisasi: BASE_URL+'master/kader/Cekimunisasi/cek_imunisasi',
-        add: BASE_URL+'master/kader/Cekimunisasi/add'
+        add: BASE_URL+'master/kader/Cekimunisasi/add',
+        fetchDataImunisasi: BASE_URL+'master/kader/Cekimunisasi/getimunisasi'
     }
 
     return {
@@ -18,13 +19,16 @@ const imunisasiInterface = (function() {
         },
         html: {
             showKunjungan: '#show__list__kunjungan',
-            showImunisasi: '#show__imunisasi'
+            showImunisasi: '#show__imunisasi',
+            showListImunisasi: '#show__list__imunisasi',
+            
         },
         btn: {
             showList: '#btn__show__list',
             pilihAnak: '.btn__pilih__anak',
             cekImunisasi: '#btn__cek__imunisasi',
-            btnSaveImunisasi: '.btn__simpan__imunisasi'
+            btnSaveImunisasi: '.btn__simpan__imunisasi',
+            btnSearchByDate: '#btn__search__by__date'
         },
         field: {
             searchKunjungan: '#search__kunjungan',
@@ -34,7 +38,9 @@ const imunisasiInterface = (function() {
             umur: '#umur',
             no_bpjs: '#no_bpjs',
             no_kk: '#no_kk',
-            no_kms: '#no_kms'
+            no_kms: '#no_kms',
+            searchByDate: '#search__imunisasi__by__date',
+            searchImunisasi: '#serch__data__imunisasi'
         },
         form: {
             add: '#form__add__imunisasi'
@@ -100,11 +106,33 @@ const imunisasiInterface = (function() {
         mynotifications('success','top right', parse.msg)
     }
 
+    const renderListImunisasi = object => {
+        let html = '', no = 1;
+        if(object.length > 0){
+            object.forEach(item => {
+                html += `
+                    <tr>
+                        <td> ${no++} </td>
+                        <td> ${item.no_cek_imunisasi} </td>
+                        <td> ${item.tgl_cek_imunisasi} </td>
+                        <td> ${item.no_kunjungan} </td>
+                        <td> ${item.kms} </td>
+                        <td> ${item.nama_imunisasi} </td>
+                        <td> ${item.nama_lengkap} </td>
+                        <td> ${item.catatan} </td>
+                    </tr>
+                `;
+            })
+        }
+        $(domString.html.showListImunisasi).html(html)
+    }
+
     return {
         getDOM: () => domString,
         getListKunjungan: (data) => renderOnModal(data),
         getImunisasi: (data) => renderImunisasi(data),
-        getNotif: (data) => renderNotif(data)
+        getNotif: (data) => renderNotif(data),
+        getListImunisasi: (data) => renderListImunisasi(data)
     }
 })()
 
@@ -205,16 +233,38 @@ const imunisasiController = (function(URL, UI) {
                 postResource(url.add, form, data => {
                     UI.getNotif(data)
                     listKunjungan()
+                    load_imunisasi()
                     $(dom.form.add)[0].reset()
                     
                 });
             }
         })
 
+        $(dom.btn.btnSearchByDate).on('click', function() {
+            const date = $(dom.field.searchByDate).val();
+            if(date !== ""){
+                load_search_by_date(date);
+            }else{
+                load_imunisasi()
+            }
+        })
+
+        $(dom.field.searchImunisasi).on('keyup', function() {
+            if($(this).val() !== ""){
+                search_list_imunisasi($(this).val())
+            }else{
+                load_imunisasi()
+            }
+        })
+
+        
     
     }
 
     const listKunjungan = () => getResource(url.listKunjungan, undefined, data => UI.getListKunjungan(data) );
+    const load_imunisasi = () => getResource(url.fetchDataImunisasi, undefined, data => UI.getListImunisasi(data) )
+    const load_search_by_date = (date) => getResource(url.fetchDataImunisasi, date, data => UI.getListImunisasi(data) )
+    const search_list_imunisasi = (query) => getResource(url.fetchDataImunisasi, query, data => UI.getListImunisasi(data))
 
 
     const ModalAction = (modalName, method) => $(modalName).modal(method)
@@ -252,6 +302,7 @@ const imunisasiController = (function(URL, UI) {
             $(dom.btn.btnSaveImunisasi).css('display','none')
             listKunjungan()
             eventListener()
+            load_imunisasi();
         }
     }
 })(UrlImunisasi, imunisasiInterface)

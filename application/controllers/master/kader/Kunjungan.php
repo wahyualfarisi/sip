@@ -13,6 +13,7 @@ class Kunjungan extends CI_Controller{
     $this->load->model('m_core');
     $this->load->model('m_kunjungan');
     $this->load->model('m_kms');
+    date_default_timezone_set('Asia/Jakarta');
   }
 
   public function fetch_list_kms()
@@ -46,9 +47,6 @@ class Kunjungan extends CI_Controller{
                                               $this->foreignKEY_1 => $no_kegiatan
                                             ));
 
-    $no_antri    = $this->m_core->get_where($this->table, $where_antri )->num_rows() + 1;
-
-
     if($check_nokms->num_rows() > 0) {
       $res = array('msg' => 'No. '.$targetID.' Sudah Dalam Antrian ', 'code' => 400  );
       echo json_encode($res);
@@ -59,7 +57,7 @@ class Kunjungan extends CI_Controller{
       'no_kunjungan' => $this->generateAutoNumber(),
       'no_kms' => $targetID,
       'id_kegiatan' => $no_kegiatan,
-      'no_antri' => $no_antri,
+      'no_antri' => $this->no_antri(),
       'tanggal_kunjungan' => date('Y-m-d'),
       'status' => 'antri'
     );
@@ -197,6 +195,17 @@ class Kunjungan extends CI_Controller{
     $char = 'KJG_';
     $newID = $char. sprintf('%04s', $nourut);
     return $newID;
+  }
+
+  public function no_antri()
+  {
+    $data = $this->m_core->getMaxNumber($this->table, 'no_antri');
+    $kode = $data->result()[0]->maxKode;
+    $kode++;
+    // $nourut = (int) substr($kode, 1, 1);
+    // $nourut++;
+
+    return $kode;
   }
 
   

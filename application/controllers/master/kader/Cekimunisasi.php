@@ -46,7 +46,11 @@ class Cekimunisasi extends CI_Controller{
 
   public function getimunisasi()
   {
-      $data = $this->m_imunisasi->get_imunisasi_kunjungan(date('Y-m-d'));
+      $query = "";
+      if($this->input->post('query') ){
+        $query = $this->input->post('query');
+      } 
+      $data = $this->m_imunisasi->get_imunisasi_kunjungan($query);
       echo json_encode($data->result() );
   }
 

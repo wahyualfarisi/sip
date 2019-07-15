@@ -10,9 +10,9 @@ class M_imunisasi extends CI_Model{
         return $this->db->query($query);
     }
 
-    public function get_imunisasi_kunjungan($tgl_kunjungan)
+    public function get_imunisasi_kunjungan($query)
     {
-        $query = "SELECT a.no_cek_imunisasi, a.id_imunisasi, a.umur, a.tgl_cek_imunisasi, a.hasil_imunisasi, a.catatan, a.kode_panitia,
+        $query = "SELECT a.no_cek_imunisasi, a.id_imunisasi, a.umur, a.tgl_cek_imunisasi, a.catatan, a.kode_panitia,
                          b.nama_imunisasi, b.dari_usia, b.sampai_usia,
                          c.no_kunjungan, c.tanggal_kunjungan, c.no_kms AS kms_on_kunjungan,
                          d.no_kms AS kms,
@@ -21,7 +21,8 @@ class M_imunisasi extends CI_Model{
                                          LEFT JOIN t_kunjungan c ON a.no_kunjungan = c.no_kunjungan
                                          LEFT JOIN t_kms d ON c.no_kms = d.no_kms
                                          LEFT JOIN t_anak e ON d.no_bpjs = e.no_bpjs
-                                         WHERE c.tanggal_kunjungan = '$tgl_kunjungan'
+                  WHERE a.tgl_cek_imunisasi LIKE '%$query%' OR e.nama_depan LIKE '%$query%'
+
                 ";
                 return $this->db->query($query);
     }
@@ -29,7 +30,7 @@ class M_imunisasi extends CI_Model{
     //get all imunisasi per KMS
     public function get_imunisasi_per_kms($no_kms)
     {
-        $query = "SELECT a.no_cek_imunisasi, a.id_imunisasi, a.umur, a.tgl_cek_imunisasi, a.hasil_imunisasi, a.catatan, a.kode_panitia,
+        $query = "SELECT a.no_cek_imunisasi, a.id_imunisasi, a.umur, a.tgl_cek_imunisasi, a.catatan, a.kode_panitia,
                          b.nama_imunisasi, b.dari_usia, b.sampai_usia,
                          c.no_kunjungan, c.tanggal_kunjungan, c.no_kms AS kms_on_kunjungan,
                          d.no_kms AS kms,
