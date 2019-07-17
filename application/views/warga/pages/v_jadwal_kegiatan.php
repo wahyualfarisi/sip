@@ -5,9 +5,6 @@
             <div class="entry-content relative">
                 <div class="content-1170 center-relative" id="show-jadwal">
 
-
-
-
                 </div>
             </div>
         </article>

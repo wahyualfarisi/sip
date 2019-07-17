@@ -128,7 +128,7 @@ class Kms extends CI_Controller{
           );
         }
 
-        $source_kunjungan = $this->m_kunjungan->get_kunjungan($no_kunjungan, $kms);
+        $source_kunjungan = $this->m_kunjungan->get_kunjungan($kms);
 
         if($source_kunjungan->num_rows() > 0){
           foreach($source_kunjungan->result() as $k)

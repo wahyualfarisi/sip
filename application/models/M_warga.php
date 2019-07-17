@@ -25,6 +25,16 @@ class M_warga extends CI_Model{
     return $this->db->query($query);
   }
 
+  function fetch_detail_anak($no_bpjs)
+  {
+    $query = "SELECT a.no_bpjs , a.no_kk, CONCAT(a.nama_depan, ' ', a.nama_belakang) as nama_anak, a.jenis_kelamin as jk, a.tgl_lahir,
+                     b.no_kms, b.tanggal_terdaftar, b.berat_badan_lahir as bb_lahir, b.panjang_badan_lahir as pb_lahir
+              FROM t_anak a LEFT JOIN t_kms b ON a.no_bpjs = b.no_bpjs 
+              WHERE a.no_bpjs = '$no_bpjs'
+             ";
+    return $this->db->query($query);
+  }
+
   
 
 }

@@ -10,7 +10,7 @@
 
         <link rel="shortcut icon" href="images/favicon.png" />
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CLibre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css"  href='<?= base_url().'assets/users/css/clear.css' ?>  ' />
         <link rel="stylesheet" type="text/css"  href='<?= base_url().'assets/users/css/common.css' ?>  ' />
         <link rel="stylesheet" type="text/css"  href='<?= base_url().'assets/users/css/font-awesome.min.css' ?>  ' />

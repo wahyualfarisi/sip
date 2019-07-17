@@ -1,10 +1,6 @@
 console.log('kegiatan is running');
 load_kegiatan();
 
-
-
-
-
 //fetch data kegiatan
 function load_kegiatan()
 {
@@ -103,6 +99,42 @@ $(document).ready(function(){
         }
       }
     })
+  })
+
+  $('#search__kegiatan').on('keyup', function() {
+    if($(this).val() !== ""){
+
+      $.ajax({
+        url: `${BASE_URL}master/kader/kegiatan/fetch`,
+        method: 'post',
+        data: {query: $(this).val()},
+        dataType: 'json',
+        success: function(data){
+          var html = '', no = 1;
+          if(data.length > 0){
+            data.forEach(function(item) {
+              html += `
+                <tr>
+                  <td>${no++}</td>
+                  <td>${item.nama_kegiatan} </td>
+                  <td>${item.tanggal_kegiatan}</td>
+                  <td>${item.lokasi} </td>
+                  <td>${item.kode_panitia} </td>
+                  <td><button class="btn btn-danger btn-xs btn-delete" data-id="${item.no_kegiatan}"> Delete </button></td>
+                  <td><button class="btn btn-warning btn-xs btn-edit" data-id="${item.no_kegiatan}" data-nama_kegiatan="${item.nama_kegiatan}" data-tanggal_kegiatan="${item.tanggal_kegiatan}" data-lokasi="${item.lokasi}" > Edit </button></td>
+                </tr>
+              `;
+            });
+          }
+          $('#show-kegiatan').html(html)
+        }
+      })
+
+
+    }else{
+      load_kegiatan()
+    }
+   
   })
 
 

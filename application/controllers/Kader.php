@@ -91,4 +91,9 @@ class Kader extends CI_Controller{
     $this->load->view('kader/pages/v_datakunjungan', $data);
   }
 
+  function detailkms()
+  {
+    $this->load->view('kader/pages/v_detail_kms');
+  }
+
 }

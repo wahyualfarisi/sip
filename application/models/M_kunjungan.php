@@ -98,16 +98,18 @@ class M_kunjungan extends CI_Model{
         return $this->db->query($query);
     }
 
-    public function get_kunjungan($arrayKunjungan, $no_kms)
+    public function get_kunjungan($no_kms)
     {
-        $implode = implode("','", $arrayKunjungan);
+        // $implode = implode("','", $arrayKunjungan);
 
-        $query = "SELECT a.no_kunjungan,
+        $query = "SELECT a.no_kunjungan, a.no_antri, a.status,
                          b.no_cek_imunisasi, b.id_imunisasi, b.umur as umur_cek_imunisasi , b.tgl_cek_imunisasi, b.catatan as catatan_imunisasi,
-                         c.no_cek_pertumbuhan, c.umur as umur_cek_pertumbuhan, c.tb, c.bb, c.hasil, c.catatan as catatan_pertumbuhan
+                         c.no_cek_pertumbuhan, c.umur as umur_cek_pertumbuhan, c.tb, c.bb, c.hasil, c.catatan as catatan_pertumbuhan,
+                         d.nama_imunisasi
                   FROM t_kunjungan a
                         LEFT JOIN t_cek_imunisasi b ON a.no_kunjungan = b.no_kunjungan
                         LEFT JOIN t_cek_pertumbuhan c ON a.no_kunjungan = c.no_kunjungan 
+                        LEFT JOIN t_imunisasi d ON b.id_imunisasi = d.id_imunisasi
                   WHERE a.no_kms = '$no_kms'
                  ";
         return $this->db->query($query);

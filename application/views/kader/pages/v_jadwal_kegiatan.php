@@ -3,6 +3,33 @@
          <h3>Jadwal Dan Kegiatan</h3>
 </div>
 </div>
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="breadcome-heading">
+                                        <form role="search" class="">
+                      						<input type="text" placeholder="Cari Kegiatan" id="search__kegiatan" name="search__kegiatan" class="form-control">
+                      						<a href=""><i class="fa fa-search"></i></a>
+                      					</form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="breadcome-menu">
+                                <li><span class="bread-blod">Data Kegiatan</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="static-table-area mg-b-15" style="margin-top: 50px;">
     <div class="container-fluid">
       <a href="#/addkegiatan" class="btn btn-custome" name="button">Tambah Jadwal Kegiatan</a>
@@ -99,8 +126,5 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-  var BASE_URL = '<?= base_url() ?>';
-</script>
 <script src="<?= base_url().'public/mynotif.js'?>"></script>
 <script src="<?= base_url().'public/kader/kegiatan.js'  ?> "></script>

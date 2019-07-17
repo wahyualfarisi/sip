@@ -92,7 +92,7 @@ const KmsUI = (function() {
                                      data-id="${item.no_kms}" 
                              > <i class="fa fa-close"> </i> </button> 
                         </td>
-                        <td> <a class="btn btn-info" > Detail KMS </a> </td>
+                        <td> <a href="#/detailkms/${item.bpjs_number}" class="btn btn-info" > Detail KMS </a> </td>
                     </tr>
                 `;
             })

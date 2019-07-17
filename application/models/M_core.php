@@ -48,4 +48,10 @@ class M_core extends CI_Model{
     return $this->db->get();
   }
 
+  function gettablesearch($query, $table, $field)
+  {
+    $query = "SELECT * FROM $table WHERE $field LIKE '%$query%' ";
+    return $this->db->query($query);
+  }
+
 }

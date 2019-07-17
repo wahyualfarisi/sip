@@ -60,6 +60,11 @@ class Home extends CI_Controller{
     $this->load->view('warga/pages/v_tambah_anak');
   }
 
+  function detailanak()
+  {
+    $this->load->view('warga/pages/v_detail_anak');
+  }
+
   
 
 }

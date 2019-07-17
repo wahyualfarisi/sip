@@ -14,7 +14,12 @@ class Kegiatan extends CI_Controller{
 
   function fetch()
   {
-    $data = $this->m_core->get_all($this->table);
+    $query = '';
+    if($this->input->post('query') )
+    {
+      $query = $this->input->post('query');
+    }
+    $data = $this->m_core->gettablesearch($query, $this->table, 'nama_kegiatan');
     echo json_encode($data->result());
   }
 

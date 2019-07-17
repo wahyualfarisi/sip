@@ -47,10 +47,6 @@ function kelengkapan_completed()
             $('.kelengkapan_data').html(html);
         }
     })
-
-
-
-    
 }
 
 function load_anak()
@@ -67,8 +63,9 @@ function load_anak()
                         <div class="col-md-6" style="margin-top: 20px;" >
                             <div class="card" style="width: 28rem; background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); ">
                                 <div class="card-body">
-                                    <h5 class="card-title">${item.nama_depan} ${item.nama_belakang} </h5>
-                                    <a href="#" class="btn btn-default">Jejak Rekam Medis</a>
+                                    <h5 class="card-title">${item.nama_depan} ${item.nama_belakang}  (${item.jenis_kelamin}) </h5>
+                                    <p> ${item.no_bpjs} </p>
+                                    <a href="#/detailanak/${item.no_bpjs}" class="btn btn-info">Detail Anak</a>
                                 </div>
                             </div>
                         </div>
