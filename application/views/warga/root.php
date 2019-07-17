@@ -10,7 +10,7 @@
 
         <link rel="shortcut icon" href="images/favicon.png" />
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CLibre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="<?= base_url().'assets/users/css/bootstrap.min.css' ?>" />
         <link rel="stylesheet" type="text/css"  href='<?= base_url().'assets/users/css/clear.css' ?>  ' />
         <link rel="stylesheet" type="text/css"  href='<?= base_url().'assets/users/css/common.css' ?>  ' />
         <link rel="stylesheet" type="text/css"  href='<?= base_url().'assets/users/css/font-awesome.min.css' ?>  ' />
@@ -20,8 +20,10 @@
         <script>
             var BASE_URL = '<?= base_url() ?>';
         </script>
+        
     </head>
-    <body class="home blog">
+    <body class="home blog" style="background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+ background-blend-mode: multiply;">
 
         <!-- Preloader Gif -->
         <table class="doc-loader">

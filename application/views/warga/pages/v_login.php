@@ -5,7 +5,7 @@
             <div class="entry-content relative">
                 <div class="content-1170 center-relative">
                     <h2 class="entry-title">
-                        <a href="#/login" style="text-decoration:none">Login</a>
+                        <a href="#/login" style="text-decoration:none; color: #fff" class="site-title">Login</a>
                     </h2>
                     <div class="clear"></div>
                 </div>
@@ -17,11 +17,11 @@
                 <div class="content-1170 center-relative">
                     <form id="form-login-warga" method="post">
                       <div class="form-group">
-                        <label>Email</label>
+                        <label class="site-title">Email</label>
                         <input type="email" name="email" id="email" class="form-control" placeholder="Masukan Alamat Email">
                       </div>
                       <div class="form-group">
-                        <label>Password</label>
+                        <label class="site-title">Password</label>
                         <input type="password" name="password" id="password" class="form-control" placeholder="Masukan Password">
                       </div>
                       <button type="submit" class="btn btn-danger btn-block" name="button">Login</button>
@@ -32,7 +32,7 @@
         </article>
 
         <div style="margin-top: 30px;">
-          <p>Belum punya akun ?  <a href="#/register" style="text-decoration: none">Daftar disini</a>  </p>
+          <p style="color: #fff">Belum punya akun ?  <a href="#/register" style="text-decoration: none; color: #fff">Daftar disini</a>  </p>
         </div>
 
 

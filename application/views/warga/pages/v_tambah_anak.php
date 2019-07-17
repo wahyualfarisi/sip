@@ -1,10 +1,10 @@
-<h3 class="text-center">Tambah Anak</h3>
+<h3 class="text-center site-title">Tambah Anak</h3>
 
 <div class="container">
 
     <div class="table-responsive">
         <form id="form-add-anak">
-            <table class="table table-striped" style="margin-top: 40px;" id="item_anak">
+            <table class="table" style="margin-top: 40px;" id="item_anak">
             <tr style="background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);">
                 <th> No. BPJS </th>
                 <th> Nama Depan </th>

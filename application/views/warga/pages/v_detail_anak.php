@@ -1,4 +1,4 @@
-<h3 class="text-center">Detail Anak</h3>
+<h3 class="text-center site-title">Detail Anak</h3>
 <div class="container">
 
     <div class="row" style="margin-top: 80px;">
@@ -50,38 +50,38 @@
         
     </div>
 
-    <h6 class="text-left">Jejak Rekam Medis</h6>
+    <h6 class="text-left site-title">Jejak Rekam Medis</h6>
 
      <ul class="nav nav-tabs" style="margin-top: 40px;">
-        <li class="active"><a data-toggle="tab" href="#home">Kunjungan</a></li>
-        <li><a data-toggle="tab" href="#imunisasi">Imunisasi</a></li>
-        <li><a data-toggle="tab" href="#tumbuhanak">Pertumbuhan</a></li>
+        <li class="active"><a data-toggle="tab" href="#home" style="color: red">Kunjungan</a></li>
+        <li><a data-toggle="tab" href="#imunisasi"  style="color: red">Imunisasi</a></li>
+        <li><a data-toggle="tab" href="#tumbuhanak"  style="color: red">Pertumbuhan</a></li>
     </ul>
 
            <div class="tab-content" style="margin-top: 40px;">
                     <div id="home" class="tab-pane fade in active">
-                        <h3>Kunjungan</h3>
-                        <table class="table table">
+                        <h3 class="site-title">Kunjungan</h3>
+                        <table class="table table" style="color: #fff">
                             <thead>
                                 <tr >
-                                    <th class="bg-info">No. Kunjungan</th>
-                                    <th class="bg-info">No Antri</th>
-                                    <th class="bg-info">Status</th>
-                                    <th colspan="2" class="text-center bg-warning">Imunisasi</th>
-                                    <th colspan="4" class="text-center bg-danger">Pertumbuhan</th>
+                                    <th style="background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);">No. Kunjungan</th>
+                                    <th style="background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);">No Antri</th>
+                                    <th style="background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);">Status</th>
+                                    <th colspan="2" style="background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);" class="text-center">Imunisasi</th>
+                                    <th colspan="4" class="text-center" style="background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);" >Pertumbuhan</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th class="bg-info" ></th>
-                                    <th class="bg-info"></th>
-                                    <th class="bg-info"></th>
-                                    <th class="text-center bg-warning">No. Cek Imunisasi</th>
-                                    <th class="text-center bg-warning">Nama Imunisasi</th>
-                                    <th class="text-center bg-danger">No. Cek Pertumbuhan</th>
-                                    <th class="text-center bg-danger">BB (kg)</th>
-                                    <th class="text-center bg-danger">PB (cm)</th>
-                                    <th class="text-center bg-danger">Hasil</th>
+                                    <th style="background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);"></th>
+                                    <th style="background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);"></th>
+                                    <th style="background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);"></th>
+                                    <th style="background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);">No. Cek Imunisasi</th>
+                                    <th style="background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);">Nama Imunisasi</th>
+                                    <th class="text-center" style="background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);">No. Cek Pertumbuhan</th>
+                                    <th class="text-center" style="background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);">BB (kg)</th>
+                                    <th class="text-center" style="background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);" >PB (cm)</th>
+                                    <th class="text-center" style="background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);">Hasil</th>
 
                                 </tr>
                             </tbody>
@@ -91,8 +91,8 @@
                         </table>
                     </div>
                     <div id="imunisasi" class="tab-pane fade">
-                        <h3>Imunisasi</h3>
-                        <table class="table">
+                        <h3 class="site-title">Imunisasi</h3>
+                        <table class="table" style="color: #fff">
                             <thead>
                                 <tr>
                                     <th>No. Cek Imunisasi</th>
@@ -106,8 +106,8 @@
                         </table>
                     </div>
                     <div id="tumbuhanak" class="tab-pane fade">
-                        <h3>Pertumbuhan</h3>
-                        <table class="table">
+                        <h3 class="site-title">Pertumbuhan</h3>
+                        <table class="table" style="color: #fff">
                             <thead>
                                 <tr>
                                     <th>No. Cek Pertumbuhan</th>

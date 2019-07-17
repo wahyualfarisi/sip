@@ -38,8 +38,8 @@ const antrianInterface = (function() {
             html += `
              <div>
                 <div class="card" style="padding: 30px;">
-                    <h3> ${item.nama_kegiatan} </h3>
-                    <p> ${item.lokasi} </p>
+                    <h3 class="site-title"> ${item.nama_kegiatan} </h3>
+                    <p class="site-title"> ${item.lokasi} </p>
                 </div>
 
                 <div style="margin-top: 30px;">
@@ -81,9 +81,14 @@ const antrianInterface = (function() {
     }
 
     const renderListAntrian = data => {
-        let html = ''
+        let html = '', btn = ''
         if(data.length > 0){
             data.forEach(item => {
+                if(item.status === "selesai"){
+                    btn = 'selesai';
+                }else{
+                    btn = '<button class="btn btn-danger btn-sm btn__batal__antri" data-no_kunjungan="${item.no_kunjungan}" > Batal </button> '
+                }
                     html += `
                         <tr>
                             <td> ${item.no_antri} </td>
@@ -91,7 +96,7 @@ const antrianInterface = (function() {
                             <td> ${item.nama_anak} </td>
                             <td> ${item.umur} </td>
                             <td> ${item.jk} </td>
-                            <td> <button class="btn btn-danger btn-sm btn__batal__antri" data-no_kunjungan="${item.no_kunjungan}" > Batal </button> </td>
+                            <td> ${btn} </td>
                         </tr>
                     `
             })

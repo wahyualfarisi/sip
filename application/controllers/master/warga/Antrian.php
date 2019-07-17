@@ -27,7 +27,8 @@ class Antrian extends CI_Controller {
                 'no_kunjungan' => $row->no_kunjungan,
                 'nama_anak' => $row->nama_lengkap,
                 'umur' => $this->cek_umur($row->tgl_lahir),
-                'jk' => $row->jk
+                'jk' => $row->jk,
+                'status' => $row->status
             );
         }
         echo json_encode($json);

@@ -72,6 +72,7 @@ class Anak extends CI_Controller{
       $res = array('msg' => 'Gagal Update Data Anak', 'code' => 500);
       echo json_encode($res);
     }
+    // echo json_encode(array('where' => $where, 'data' => $data) );
   }
 
   function fetch_anak_json()

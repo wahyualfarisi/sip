@@ -19,7 +19,9 @@ const detailAnakInterface = (() => {
             showTglTerdaftar: '#show__tgl__terdaftar',
             showPB: '#show__pb',
             showBB: '#show__bb',
-            showKunjungan: '#show__kunjungan'
+            showKunjungan: '#show__kunjungan',
+            showImunisasi: '#show__list__imunisasi',
+            showPertumbuhan: '#show__list__pertumbuhan'
         }
     }
 
@@ -57,11 +59,41 @@ const detailAnakInterface = (() => {
     } 
 
     const renderImunisasi = object => {
-        console.log(object)
+        let html = ''
+        if(object.length > 0){
+            object.forEach(item => {
+                html += `
+                    <tr> 
+                        <td> ${item.no_cek_imunisasi} </td>
+                        <td> ${item.nama_imunisasi} </td>
+                        <td> ${item.umur_cek_imunisasi} </td>
+                        <td> ${item.tgl_cek_imunisasi} </td>
+                        <td> ${item.catatan_imunisasi} </td>
+                    </tr>
+                `
+            })
+        }
+        $(domString.html.showImunisasi).html(html)
     }
 
     const renderPertumbuhan = object => {
-        console.log(object)
+        let html = ''
+        if(object.length > 0){
+            object.forEach(item => {
+                html += `
+                    <tr>
+                        <td> ${item.no_cek_pertumbuhan} </td>
+                        <td> ${item.umur_cek_pertumbuhan} </td>
+                        <td> ${item.tb} </td>
+                        <td> ${item.bb} </td>
+                        <td> ${item.hasil} </td>
+                        <td> ${item.catatan_pertumbuhan} </td>
+                    </tr>
+                `
+            })
+        }
+
+        $(domString.html.showPertumbuhan).html(html)
     }
 
 

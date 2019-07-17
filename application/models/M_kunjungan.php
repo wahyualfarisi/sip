@@ -87,7 +87,7 @@ class M_kunjungan extends CI_Model{
 
     public function get_antrian_warga($no_kk)
     {
-        $query = "SELECT a.no_kunjungan, a.id_kegiatan, a.no_antri, a.tanggal_kunjungan,
+        $query = "SELECT a.no_kunjungan, a.id_kegiatan, a.no_antri, a.tanggal_kunjungan,a.status,
                          b.no_kms, b.tanggal_terdaftar, b.berat_badan_lahir as bb_lahir , b.panjang_badan_lahir as pb_lahir,
                          c.no_bpjs, c.no_kk, CONCAT(c.nama_depan ,' ', c.nama_belakang) as nama_lengkap, c.jenis_kelamin as jk, c.tgl_lahir
                   FROM t_kunjungan a LEFT JOIN t_kms b ON a.no_kms = b.no_kms 

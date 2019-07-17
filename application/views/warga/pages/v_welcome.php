@@ -4,7 +4,7 @@
         <article id="post-1" class="blog-item-holder featured-post">
             <div class="entry-content relative">
                 <div class="content-1170 center-relative">
-                    <div class="excerpt">
+                    <div class="excerpt" style="color: #fff">
                       wadah pemeliharaan kesehatan yang dilakukan dari, oleh dan untuk masyarakat yang dibimbing petugas terkait.<a class="read-more" href="single.html"></a>
                     </div>
                     <div style="margin-top: 10px;">

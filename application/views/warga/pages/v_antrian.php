@@ -1,4 +1,4 @@
-<h1 class="text-center">Jadwal Kegiatan</h1>
+<h1 class="text-center site-title">Jadwal Kegiatan</h1>
 <div class="container">
 
         <div style="margin-top: 110px;">
@@ -13,8 +13,8 @@
         </div>
     
         
-        <div class="show-list-antrian-anak">
-            <table class="table table-striped">
+        <div class="show-list-antrian-anak" style="margin-top: 50px;">
+            <table class="table" style="color: #fff" >
                 <thead>
                     <tr>
                         <th>No Antri</th>
