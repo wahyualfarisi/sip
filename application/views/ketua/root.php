@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard v.1.0 | Adminpro - Admin Template</title>
+    <title>Ketua | Posyandu</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="<?= base_url().'assets/style.css' ?>  ">
     <link rel="stylesheet" href="<?= base_url().'assets/css/responsive.css' ?>  ">
     <script src="<?= base_url().'assets/js/vendor/modernizr-2.8.3.min.js' ?>  "></script>
+    <script>
+        var BASE_URL = '<?= base_url() ?>';
+    </script>
 </head>
 
 <body class="materialdesign">
@@ -32,7 +35,6 @@
                     </a>
                     <h3>Ketua</h3>
                     <p>Posyandu</p>
-                    <strong>AP+</strong>
                 </div>
                 <div class="left-custom-menu-adp-wrap">
                     <ul class="nav navbar-nav left-sidebar-menu-pro">
@@ -40,7 +42,7 @@
                             <a href="#/dashboard" class="nav-link dropdown-toggle"><i class="fa big-icon fa-home"></i> <span class="mini-dn">Home</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                         </li>
                         <li class="nav-item">
-                          <a href="#/user" class="nav-link dropdown-toggle"><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">Laporan</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                          <a href="#/laporan" class="nav-link dropdown-toggle"><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">Laporan</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                         </li>
                     </ul>
                 </div>
@@ -426,6 +428,10 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <ul class="breadcome-menu">
                                             <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                                            </li>
+                                            <li><a href="#">Pertumbuhan</a> <span class="bread-slash">/</span>
+                                            </li>
+                                            <li><a href="#">Imunisasi</a> <span class="bread-slash">/</span>
                                             </li>
                                             <li><span class="bread-blod">Dashboard</span>
                                             </li>

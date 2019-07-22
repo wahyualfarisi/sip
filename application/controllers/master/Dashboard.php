@@ -11,21 +11,27 @@ class Dashboard extends CI_Controller{
     $this->t_anak            = 't_anak';
     $this->t_kms             = 't_kms';
     $this->t_jadwal_kegiatan = 't_jadwal_kegiatan';
+    $this->t_pertumbuhan     = 't_cek_pertumbuhan';
+    $this->t_imunisasi       = 't_cek_imunisasi';
     $this->load->model('m_core');
     $this->load->model('m_dashboard');
   }
 
   public function fetch_total()
   {
-    $kunjungan = $this->m_core->get_all($this->t_kunjungan)->num_rows();
-    $warga     = $this->m_core->get_all($this->t_warga)->num_rows();
-    $kms       = $this->m_core->get_all($this->t_kms)->num_rows();
-    $jadwal    = $this->m_core->get_all($this->t_jadwal_kegiatan)->num_rows();
+    $kunjungan   = $this->m_core->get_all($this->t_kunjungan)->num_rows();
+    $warga       = $this->m_core->get_all($this->t_warga)->num_rows();
+    $kms         = $this->m_core->get_all($this->t_kms)->num_rows();
+    $jadwal      = $this->m_core->get_all($this->t_jadwal_kegiatan)->num_rows();
+    $pertumbuhan = $this->m_core->get_all($this->t_pertumbuhan)->num_rows();
+    $imunisasi   = $this->m_core->get_all($this->t_imunisasi)->num_rows();
 
-    $res['kunjungan'] = $kunjungan;
-    $res['warga']     = $warga;
-    $res['kms']       = $kms;
-    $res['jadwal']    = $jadwal;
+    $res['kunjungan']   = $kunjungan;
+    $res['warga']       = $warga;
+    $res['kms']         = $kms;
+    $res['jadwal']      = $jadwal;
+    $res['pertumbuhan'] = $pertumbuhan;
+    $res['imunisasi']   = $imunisasi;
 
     echo json_encode($res);
 
