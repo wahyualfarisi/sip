@@ -180,6 +180,49 @@ class Warga extends CI_Controller{
 
   }
 
+  function update()
+  {
+    $no_kk = $this->input->post('no_kk');
+    $email = $this->input->post('email');
+    $nama_ayah = $this->input->post('nama_ayah');
+    $nama_ibu = $this->input->post('nama_ibu');
+    $password = $this->input->post('password');
+    $alamat = $this->input->post('alamat');
+    $no_telp = $this->input->post('no_telp');
+
+    $where = array(
+      'no_kk' => $no_kk
+    );
+
+    $data  = array(
+      'email' => $email,
+      'nama_ayah' => $nama_ayah,
+      'nama_ibu' => $nama_ibu,
+      'password' => $password,
+      'alamat' => $alamat,
+      'no_telp' => $no_telp
+    ); 
+
+    $update = $this->m_core->update_table($this->table, $data, $where);
+    if($update){
+      $res = array(
+        'msg' => 'Data Berhasil Di Update',
+        'code' => 200
+      );
+      echo json_encode($res);
+    }else{
+      $res = array(
+        'msg' => 'Data Gagal Di Update',
+        'code' => 400
+      );
+      echo json_encode($res);
+    }
+    
+
+
+
+   }
+
   function cek_umur($tgl_lahir)
   {
     $d1= new DateTime(date('Y-m-d'));
@@ -206,5 +249,6 @@ class Warga extends CI_Controller{
     }             
     return $sprint;
   }
+
 
 }

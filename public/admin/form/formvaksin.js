@@ -9,7 +9,11 @@ $('#form-add-vaksin').validate(
       {
         required: true
       },
-      kriteria_usia:
+      dari_usia:
+      {
+        required: true
+      },
+      sampai_usia:
       {
         required: true
       }
@@ -20,9 +24,13 @@ $('#form-add-vaksin').validate(
       {
         required: 'Nama imunisasi harus diisi'
       },
-      kriteria_usia:
+      dari_usia:
       {
-        required: 'Kriterua Usia tidak boleh kosong'
+        required: 'Kriteria Usia tidak boleh kosong'
+      },
+      sampai_usia:
+      {
+        required: 'Kriteria Usia Tidak boleh kosong'
       }
     },
     errorPlacement: function(error, element){
@@ -63,8 +71,11 @@ $('#form-edit-vaksin').validate(
       {
         required: true
       },
-      kriteria_usia:
+      dari_usia:
       {
+        required: true
+      },
+      sampai_usia: {
         required: true
       }
     },
@@ -74,9 +85,13 @@ $('#form-edit-vaksin').validate(
       {
         required: 'Nama imunisasi harus diisi'
       },
-      kriteria_usia:
+      dari_usia:
       {
-        required: 'Kriterua Usia tidak boleh kosong'
+        required: 'Kriteria Usia Tidak Boleh Kosong'
+      },
+      sampai_usia: 
+      {
+        required: 'Kriteria Usia Tidak Boleh Kosong'
       }
     },
     errorPlacement: function(error, element){

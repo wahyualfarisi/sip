@@ -24,6 +24,7 @@
                         <label class="site-title">Password</label>
                         <input type="password" name="password" id="password" class="form-control" placeholder="Masukan Password">
                       </div>
+                      
                       <button type="submit" class="btn btn-danger btn-block" name="button">Login</button>
                     </form>
                     <div class="clear" ></div>

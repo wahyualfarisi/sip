@@ -43,7 +43,7 @@ var DashboardListener = (function() {
                   <li>
                     <span class="message-serial message-cl-one">${no++}</span>
                     <span class="message-info">${item.nama_imunisasi}</span>
-                    <span class="message-time">${item.kriteria_usia}</span>
+                    <span class="message-time">${item.dari_usia} - ${item.sampai_usia} </span>
                   </li>
               `;
             });

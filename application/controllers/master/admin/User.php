@@ -35,18 +35,18 @@ class User extends CI_Controller{
 
   function adduser()
   {
-    $kode_panitia = $this->input->post('kode_panitia');
-    $check_kode_panitia = $this->m_core->get_where($this->table, array($this->primary => $kode_panitia) );
+    // $kode_panitia = $this->input->post('kode_panitia');
+    // $check_kode_panitia = $this->m_core->get_where($this->table, array($this->primary => $kode_panitia) );
 
-    if($check_kode_panitia->num_rows() > 0) {
-      $res = array('msg' => 'kode panitia sudah ada , silahkan gunakan kode lain', 'code' => 500);
-      echo json_encode($res);
-      return;
-    }
+    // if($check_kode_panitia->num_rows() > 0) {
+    //   $res = array('msg' => 'kode panitia sudah ada , silahkan gunakan kode lain', 'code' => 500);
+    //   echo json_encode($res);
+    //   return;
+    // }
 
 
     $data = array(
-      'kode_panitia' => $this->input->post('kode_panitia'),
+      'kode_panitia' => $this->generateAutoNumber(),
       'username'     => $this->input->post('username'),
       'nama_panitia' => $this->input->post('nama_panitia'),
       'password'     => $this->input->post('password'),
@@ -80,18 +80,25 @@ class User extends CI_Controller{
       $res = array('msg' => 'Gagal Update data user', 'code' => 400);
       echo json_encode($res);
     }
-    
-
   }
-
-
-
 
   function fetch_user($id)
   {
     $where = array($this->primary => $id);
     $data  = $this->m_core->get_where($this->table, $where)->result();
     echo json_encode($data);
+  }
+
+  function generateAutoNumber()
+  {
+    $data = $this->m_core->getMaxNumber($this->table, $this->primary);
+    $kode = $data->result()[0]->maxKode;
+    $nourut = (int) substr($kode, 5, 5);
+    $nourut++;
+
+    $char = 'slipi';
+    $newID = $char. sprintf('%04s', $nourut);
+    return $newID;
   }
 
 }

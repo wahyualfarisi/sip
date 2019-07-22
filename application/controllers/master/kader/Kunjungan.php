@@ -184,6 +184,26 @@ class Kunjungan extends CI_Controller{
   }
 
 
+  function daftar_kunjungan($id_kegiatan)
+  {
+    //list per jadwal kegiatan 
+
+    $data_kegiatan  = $this->m_core->get_where('t_jadwal_kegiatan', array('no_kegiatan' => $id_kegiatan) );
+
+    $data_kunjungan = $this->m_kunjungan->daftar_kunjungan($id_kegiatan);
+
+    $output = json_encode(array(
+      'jadwal_kegiatan' => $data_kegiatan->result(),
+      'data_kunjungan' => $data_kunjungan->result(),
+      'jumlah_kunjungan' => $data_kunjungan->num_rows()
+    ));
+
+    echo $output;
+    
+
+  }
+
+
   public function generateAutoNumber()
   {
     $data = $this->m_core->getMaxNumber($this->table, $this->primary);
@@ -207,6 +227,7 @@ class Kunjungan extends CI_Controller{
 
     return $kode;
   }
+
 
   
 

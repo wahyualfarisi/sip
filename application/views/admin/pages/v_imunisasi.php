@@ -17,7 +17,8 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Nama Imuninasi</th>
-                                    <th>Kriteria Usia</th>
+                                    <th>Dari Usia</th>
+                                    <th>Sampai Usia</th>
                                     <th width="30%">Catatan</th>
                                     <th colspan="2"></th>
                                 </tr>

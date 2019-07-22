@@ -107,20 +107,20 @@ class Anak extends CI_Controller {
                 foreach($source_kunjungan->result() as $kjg)
                 {
                     $dataimunisasi = array(
-                            'no_cek_imunisasi'    => $kjg->no_cek_imunisasi,
-                            'id_imunisasi'        => $kjg->id_imunisasi,
-                            'nama_imunisasi'      => $kjg->nama_imunisasi,
-                            'umur_cek_imunisasi'  => $kjg->umur_cek_imunisasi,
-                            'tgl_cek_imunisasi'   => $kjg->tgl_cek_imunisasi,
-                            'catatan_imunisasi'   => $kjg->catatan_imunisasi,
+                            'no_cek_imunisasi'    => $kjg->no_cek_imunisasi ? $kjg->no_cek_imunisasi : '-'  ,
+                            'id_imunisasi'        => $kjg->id_imunisasi ? $kjg->id_imunisasi : '-',
+                            'nama_imunisasi'      => $kjg->nama_imunisasi ? $kjg->nama_imunisasi : '-',
+                            'umur_cek_imunisasi'  => $kjg->umur_cek_imunisasi ? $kjg->umur_cek_imunisasi : '-',
+                            'tgl_cek_imunisasi'   => $kjg->tgl_cek_imunisasi ? $kjg->tgl_cek_imunisasi : '-',
+                            'catatan_imunisasi'   => $kjg->catatan_imunisasi ? $kjg->catatan_imunisasi : '-',
                     );
                     $dataperkembangan = array(
-                        'no_cek_pertumbuhan'  => $kjg->no_cek_pertumbuhan,
-                        'umur_cek_pertumbuhan'=> $kjg->umur_cek_pertumbuhan,
-                        'tb' => $kjg->tb,
-                        'bb' => $kjg->bb,
-                        'hasil' => $kjg->hasil,
-                        'catatan_pertumbuhan' => $kjg->catatan_pertumbuhan
+                        'no_cek_pertumbuhan'  => $kjg->no_cek_pertumbuhan ? $kjg->no_cek_pertumbuhan : '-',
+                        'umur_cek_pertumbuhan'=> $kjg->umur_cek_pertumbuhan ?  $kjg->umur_cek_pertumbuhan : '-',
+                        'tb' => $kjg->tb ? $kjg->tb : '-',
+                        'bb' => $kjg->bb ? $kjg->bb : '-',
+                        'hasil' => $kjg->hasil ? $kjg->hasil : '-',
+                        'catatan_pertumbuhan' => $kjg->catatan_pertumbuhan ? $kjg->catatan_pertumbuhan : '-'
                     );
                     array_push($imunisasi, $dataimunisasi);
                     array_push($perkembangan, $dataperkembangan);

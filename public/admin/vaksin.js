@@ -15,8 +15,8 @@ var UIVaksin = (function() {
               <tr>
                   <td>${no++}</td>
                   <td>${item.nama_imunisasi}</td>
-                  <td>${item.kriteria_usia}</td>
-                  <td>${item.catatan}</td>
+                  <td>${item.dari_usia}</td>
+                  <td>${item.sampai_usia}</td>
                   <td><button class="btn btn-custome btn-delete" data-id="${item.id_imunisasi}"><span class="fa fa-trash"></span></button></td>
                   <td><a href="#/editvaksin/${item.id_imunisasi}" class="btn btn-custome btn-edit"><span class="fa fa-pencil"></span></a></td>
               </tr>

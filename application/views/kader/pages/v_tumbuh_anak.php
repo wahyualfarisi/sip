@@ -209,7 +209,7 @@
             <div class="modal-body">
                 <p>Apakah Anda Ingin Meneruskan Melakukan Cek Imunisasi</p>
                 <div class="row">
-                    <input type="text" name="id_target" id="id_target" class="form-control" >
+                    <input type="hidden" name="id_target" id="id_target" class="form-control" >
                     <div class="col-md-6" >
                         <button class="btn btn-success btn-block" id="btn__finish" >Hanya Cek Pertumbuhan Saja</button>
                     </div>

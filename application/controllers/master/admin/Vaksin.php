@@ -15,7 +15,8 @@ class Vaksin extends CI_Controller{
   {
     $data = array(
       'nama_imunisasi' => $this->input->post('nama_imunisasi'),
-      'kriteria_usia' => $this->input->post('kriteria_usia'),
+      'dari_usia' => $this->input->post('dari_usia'),
+      'sampai_usia' => $this->input->post('sampai_usia'),
       'catatan' => $this->input->post('catatan')
     );
 
@@ -55,9 +56,11 @@ class Vaksin extends CI_Controller{
   {
     $data = array(
       'nama_imunisasi' => $this->input->post('nama_imunisasi'),
-      'kriteria_usia' => $this->input->post('kriteria_usia'),
+      'dari_usia' => $this->input->post('dari_usia'),
+      'sampai_usia' => $this->input->post('sampai_usia'),
       'catatan' => $this->input->post('catatan')
     );
+
     $where = array(
       'id_imunisasi' => $this->input->post('id_imunisasi')
     );

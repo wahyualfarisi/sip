@@ -256,6 +256,57 @@
     </div>
 </div>
 
+
+<!-- MODAL EDIT WARGA -->
+<div id="modalEditWarga" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-close-area modal-close-df">
+                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+            </div>
+            <div class="modal-body">
+                <form id="form-edit-warga" method="post">
+                    <div class="form-group">
+                      <input type="hidden" name="no_kk" class="no_kk_edit">
+                    </div>
+                    <div class="form-group">
+                      <label>Email</label>
+                      <input type="text" class="form-control" name="email" id="email_warga_edit" placeholder="Email" readonly>
+                    </div>
+                    <div class="form-group">
+                      <label>Nama Ayah</label>
+                      <input type="text" class="form-control" name="nama_ayah" id="nama_ayah_edit" placeholder="Masukan Nama Ayah">
+                    </div>
+                    <div class="form-group">
+                      <label>Nama Ibu</label>
+                      <input type="text" class="form-control" name="nama_ibu" id="nama_ibu_edit" placeholder="Masukan Nama Ibu">
+                    </div>
+                    <div class="form-group">
+                      <label>Password </label>
+                      <input type="text" class="form-control" name="password" id="password_edit" placeholder="Masukan Nama Ibu">
+                    </div>
+                    <div class="form-group">
+                      <label>Alamat</label>
+                      <input type="text" class="form-control" name="alamat" id="alamat_edit" placeholder="Masukan Alamat">
+                    </div>
+                    <div class="form-group">
+                      <label>No Telp</label>
+                      <input type="number" class="form-control" name="no_telp" id="no_telp_edit" placeholder="Masukan No. Telp">
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-info">UPDATE</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <a data-dismiss="modal" href="#">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
   var BASE_URL = '<?= base_url() ?>';
   var PARAMS = '<?= $this->uri->segment(3) ?>';

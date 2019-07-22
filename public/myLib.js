@@ -1,5 +1,5 @@
 
-    const postDATA = (url, form, callback) => {
+    var postDATA = (url, form, callback) => {
         $.ajax({
             url,
             method: 'post',
@@ -14,7 +14,7 @@
         })
     }
     
-    const getResource = (url, query, callback) => {
+    var getResource = (url, query, callback) => {
         $.ajax({
             url,
             method: 'post',

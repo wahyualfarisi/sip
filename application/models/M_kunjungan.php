@@ -115,5 +115,23 @@ class M_kunjungan extends CI_Model{
         return $this->db->query($query);
     }
 
+    public function daftar_kunjungan($id_jadwal_kegiatan)
+    {
+        /**
+         * per jadwal kegiatan 
+         */
+        $query = "SELECT a.no_kunjungan, a.no_antri, a.tanggal_kunjungan, a.no_kms, a.status,
+                         b.no_kms, b.no_bpjs, b.tanggal_terdaftar,
+                         c.no_bpjs, CONCAT(c.nama_depan, ' ', c.nama_belakang) as nama_lengkap, c.jenis_kelamin as jk,
+                         d.no_kk, d.nama_ibu
+                  FROM t_kunjungan a LEFT JOIN t_kms b ON a.no_kms = b.no_kms 
+                                     LEFT JOIN t_anak c ON b.no_bpjs = c.no_bpjs
+                                     LEFT JOIN t_warga d ON c.no_kk = d.no_kk
+                                    WHERE a.id_kegiatan = '$id_jadwal_kegiatan'
+
+        ";
+        return $this->db->query($query);
+    }
+
 }
 

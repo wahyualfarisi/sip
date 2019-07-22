@@ -50,11 +50,11 @@
                                         <td id="show__list__tgl_terdaftar"></td>
                                     </tr>
                                     <tr>
-                                        <th>Panjang Badan</th>
+                                        <th>Panjang Badan (Cm) </th>
                                         <td id="show__list__panjang__badan"></td>
                                     </tr>
                                     <tr>
-                                        <th>Berat Badan</th>
+                                        <th>Berat Badan (Kg) </th>
                                         <td id="show__berat__badan"></td>
                                     </tr>
                                 </table>                     

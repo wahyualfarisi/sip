@@ -69,7 +69,7 @@ var UIWargaDetail = (function() {
                                   <div class="analytics-sparkle-line user-profile-sparkline">
                                       <div class="analytics-content">
                                           <h5>Setting</h5>
-                                          <button type="button" class="btn btn-custome btn-edit-warga" name="button">Edit Warga</button>
+                                          <button type="button" class="btn btn-custome btn-edit-warga" data-id="${item.no_kk}" data-email="${item.email}" data-nama_ayah="${item.nama_ayah}" data-nama_ibu="${item.nama_ibu}" data-password="${item.password}" data-alamat="${item.alamat}" data-no_telp="${item.no_telp}" name="button">Edit Warga</button>
                                           <button type="button" class="btn btn-danger btn-delete-warga" data-id="${item.no_kk}" name="button">Hapus Warga</button>
                                       </div>
                                   </div>
@@ -377,6 +377,87 @@ var SetupEventWargaDetail = (function(UI) {
       })
     })
 
+    $('#show-warga-detail').on('click', '.btn-edit-warga', function() {
+      var id = $(this).data('id')
+      var email = $(this).data('email')
+      var nama_ayah = $(this).data('nama_ayah')
+      var nama_ibu = $(this).data('nama_ibu')
+      var password = $(this).data('password')
+      var alamat = $(this).data('alamat')
+      var no_telp = $(this).data('no_telp')
+      $('.no_kk_edit').val(id)
+      $('#email_warga_edit').val(email)
+      $('#nama_ayah_edit').val(nama_ayah)
+      $('#nama_ibu_edit').val(nama_ibu)
+      $('#password_edit').val(password)
+      $('#alamat_edit').val(alamat)
+      $('#no_telp_edit').val(no_telp)
+      $('#modalEditWarga').modal('show')
+    })
+
+    $('#form-edit-warga').validate({
+      rules : {
+        email: {
+          required: true,
+          email: true
+        },
+        nama_ibu: {
+          required: true
+        },
+        password: {
+          required: true
+        },
+        alamat: {
+          required: true
+        },
+        no_telp: {
+          required: true
+        }
+      },
+      messages: {
+        email: {
+          required: 'Email Tidak Boleh Kosong',
+          email: 'Email Tidak Valid'
+        },
+        nama_ibu: {
+          required: 'Nama Ibu Tidak Boleh Kosong'
+        },
+        password: {
+          required: 'password tidak boleh kosong'
+        },
+        alamat: {
+          required: 'ALamat Tidak Boleh Kosong'
+        },
+        no_telp: {
+          required: 'No Telp Tidak Boleh Kosong'
+        }
+      },
+      errorPlacement: function (error, element){
+        error.css('color','red')
+        error.insertAfter(element)
+      },
+      submitHandler: function(form){
+        $.ajax({
+          url: `${BASE_URL}master/kader/Warga/update`,
+          method: 'post',
+          data: new FormData(form),
+          processData: false,
+          contentType: false,
+          async: false,
+          cache: false,
+          success: function(data){
+            var parse = JSON.parse(data);
+            if(parse.code === 200){
+              load_warga()
+              load_anak()
+              $('#modalEditWarga').modal('hide')
+              return mynotifications('success', 'top right', parse.msg)
+            }
+          }
+        })
+      }
+    })
+
 
 
 
@@ -386,10 +467,6 @@ var SetupEventWargaDetail = (function(UI) {
       init: function(){
         load_warga()
         load_anak()
-        console.log(UI.getAge('2019-07-2'))
-      
-
-        console.log('initialize');
       }
     }
 

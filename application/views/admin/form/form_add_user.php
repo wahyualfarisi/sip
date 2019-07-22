@@ -13,17 +13,6 @@
                      <div class="all-form-element-inner">
                          <form method="post" id="form-add-user">
 
-                           <div class="form-group-inner">
-                              <div class="row">
-                                  <div class="col-lg-3">
-                                      <label class="login2 pull-right pull-right-pro">Kode Panitia</label>
-                                  </div>
-                                  <div class="col-lg-9">
-                                      <input type="text" class="form-control" name="kode_panitia" id="kode_panitia" />
-                                  </div>
-                              </div>
-                            </div>
-
                             <div class="form-group-inner">
                               <div class="row">
                                   <div class="col-lg-3">

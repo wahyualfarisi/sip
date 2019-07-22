@@ -3,11 +3,6 @@ $('#form-add-user').validate(
   {
       rules:
       {
-        kode_panitia:
-        {
-          required: true,
-          minlength: 5
-        },
         username:
         {
           required: true
@@ -28,11 +23,6 @@ $('#form-add-user').validate(
       },
       messages:
       {
-        kode_panitia:
-        {
-          required: 'Kode panitia tidak boleh kosong',
-          minlength: 'Masukan minimal 5 karakter'
-        },
         username:
         {
           required: 'Username tidak boleh kosong'

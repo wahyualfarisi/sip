@@ -28,10 +28,21 @@
                             <div class="form-group-inner">
                                <div class="row">
                                    <div class="col-lg-3">
-                                       <label class="login2 pull-right pull-right-pro">Kriteria Usia</label>
+                                       <label class="login2 pull-right pull-right-pro">Dari Usia</label>
                                    </div>
                                    <div class="col-lg-9">
-                                       <input type="text" class="form-control" name="kriteria_usia" id="kriteria_usia" value="<?= $item->kriteria_usia  ?> " />
+                                       <input type="text" class="form-control" name="dari_usia" id="dari_usia" value="<?= $item->dari_usia  ?> " />
+                                   </div>
+                               </div>
+                             </div>
+
+                             <div class="form-group-inner">
+                               <div class="row">
+                                   <div class="col-lg-3">
+                                       <label class="login2 pull-right pull-right-pro">Sampai Usia</label>
+                                   </div>
+                                   <div class="col-lg-9">
+                                       <input type="text" class="form-control" name="sampai_usia" id="sampai_usia" value="<?= $item->sampai_usia  ?> " />
                                    </div>
                                </div>
                              </div>
