@@ -48,7 +48,18 @@ class Dashboard extends CI_Controller{
       'jumlah_anak'    => $data_anak->num_rows()
     );
     echo json_encode($json);
+  }
 
+  public function kunjungan_hari_ini()
+  {
+      $data = $this->m_dashboard->kunjungan_hari_ini();
+      echo json_encode($data->result());
+  }
+
+  public function kunjungan_per_tgl_kegiatan()
+  {
+    $data = $this->m_dashboard->kunjungan_per_tgl_kegiatan();
+    echo json_encode($data->result() );
   }
 
 

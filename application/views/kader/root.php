@@ -216,6 +216,7 @@
     <!-- flot JS
 		============================================ -->
     <script src="<?= base_url().'assets/js/flot/Chart.min.js' ?>  "></script>
+    
     <!-- map JS
 		============================================ -->
     <script src="<?= base_url().'assets/js/map/raphael.min.js' ?>  "></script>
@@ -227,8 +228,9 @@
 
     <script src="<?= base_url().'assets/js/Lobibox.js' ?>  "></script>
     <script src="<?= base_url().'assets/js/jquery.validate.min.js' ?> "></script>
+    
     <!-- data table JS
-		============================================ -->
+		===============s============================= -->
     <script src="<?= base_url().'assets/js/data-table/bootstrap-table.js' ?>  "></script>
     <script src="<?= base_url().'assets/js/data-table/tableExport.js' ?>  "></script>
     <script src="<?= base_url().'assets/js/data-table/data-table-active.js' ?>  "></script>

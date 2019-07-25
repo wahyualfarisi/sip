@@ -92,61 +92,17 @@
 </div>
 </div>
 
-
-<div class="dashtwo-order-area">
-<div class="container-fluid">
-    <label>Filter Kegiatan</label>
-    <select name="" id="select__kegiatan" class="form-control">
-        <option value="">---</option>
-    </select>
-    <div class="row" style="margin-top: 30px;">
-        <div class="col-lg-12">
-            <div class="dashtwo-order-list shadow-reset">
-                <div class="row">
-                    <div class="col-lg-9">
-                        <div class="wrapper">
-                            <canvas id="myChartsrs" width="500" height="200"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="skill-content-3">
-                            <div class="skill">
-                                 <div class="">
-                                    <div class="lead-content">
-                                        <h3>46</h3>
-                                        <p>Total Warga</p>
-                                    </div>
-                                </div>
-                                <div class="">
-                                    <div class="lead-content">
-                                        <h3>46</h3>
-                                        <p>Total Kunjungan</p>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="">
-                                    <div class="lead-content">
-                                        <h3>26</h3>
-                                        <p>Selesai</p>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="">
-                                    <div class="lead-content">
-                                        <h3>346</h3>
-                                        <p>Terlewat</p>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="col-lg-12">
+    <div class="charts-single-pro shadow-reset nt-mg-b-30">
+        <div class="alert-title">
+            <h2 class="text-center">Kunjungan Posyandu</h2>
+        </div>
+        <div id="basic-chart">
+            <canvas id="basiclinechart" width="1050" height="295"></canvas>
         </div>
     </div>
 </div>
-</div>
+
 
 <div class="container-fluid" style="margin-top: 20px;">
 <div class="row">
@@ -154,12 +110,7 @@
     <div class="sparkline8-list shadow-reset">
         <div class="sparkline8-hd">
             <div class="main-sparkline8-hd">
-                <h1>Kunjungan Hari ini</h1>
-                <div class="sparkline8-outline-icon">
-                    <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>
-                    <span><i class="fa fa-wrench"></i></span>
-                    <span class="sparkline8-collapse-close"><i class="fa fa-times"></i></span>
-                </div>
+                <h1>Kunjungan Hari ini</h1> 
             </div>
         </div>
         <div class="sparkline8-graph">
@@ -167,32 +118,14 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Username</th>
+                            <th>No. Kunjungan</th>
+                            <th>No. Antri</th>
+                            <th>No. KMS</th>
+                            <th>No. BPJS</th>
+                            <th>Nama Anak</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Mamun</td>
-                            <td>Roshid</td>
-                            <td>@Facebook</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Suhag</td>
-                            <td>Khan</td>
-                            <td>@Twitter</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Sakil</td>
-                            <td>Shak</td>
-                            <td>@Linkedin</td>
-                        </tr>
-                    </tbody>
+                    <tbody id="show__list__kunjungan" ></tbody>
                 </table>
             </div>
         </div>
@@ -200,7 +133,90 @@
 </div>
 </div>
 
+
+
 </div>
 
-<script src="<?= base_url('public/ex/chart_dashboard.js') ?>" ></script>
+
+<script src="<?= base_url('public/myLib.js') ?>" ></script>
 <script src="<?= base_url('public/dashboard.js') ?>" ></script>
+<!-- <script src="<?= base_url().'assets/js/charts/line-chart.js' ?> "></script> -->
+<script>
+ var storeLabel = [];
+ var dataTotal = [];
+ load_total_kunjungan()
+ function load_total_kunjungan()
+ {
+     getResource(BASE_URL+'master/Dashboard/kunjungan_per_tgl_kegiatan', undefined, data => {
+         if(data.length > 0){
+             data.forEach(item => {
+                 storeLabel.push(item.tanggal_kegiatan)
+                 dataTotal.push(item.totalKunjungan)
+             })
+         }
+         
+         get_chart()
+     })
+     
+     
+ }
+
+ function get_chart()
+ {
+    var ctx = document.getElementById('basiclinechart');
+            new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: storeLabel,
+                datasets: [{
+                    label: "steppedLine",
+                    data: dataTotal ,
+                    borderColor: '#07C',
+                    pointBackgroundColor: "#FFF",
+                    pointBorderColor: "#07C",
+                    pointHoverBackgroundColor: "#07C",
+                    pointHoverBorderColor: "#FFF",
+                    pointRadius: 4,
+                    pointHoverRadius: 4,
+                    fill: false,
+                    tension: 0.15
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text:'Kunjungan',
+                },
+                tooltips: {
+                    displayColors: true,
+                    callbacks: {
+                        label: function(e, d) {
+                            return;
+                        },
+                        title: function() {
+                            return;
+                        }
+                    }
+                },
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            max: 50
+                        }
+                    }]
+                }
+            }
+    });
+
+ }
+
+
+  
+
+
+
+</script>
