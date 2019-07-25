@@ -506,6 +506,7 @@
     <script src="<?= base_url().'assets/js/map/map-active.js' ?>  "></script>
     <!-- data table JS
 		============================================ -->
+    <script src="<?= base_url().'assets/js/jquery.validate.min.js' ?> "></script>
     <script src="<?= base_url().'assets/js/data-table/bootstrap-table.js' ?>  "></script>
     <script src="<?= base_url().'assets/js/data-table/tableExport.js' ?>  "></script>
     <script src="<?= base_url().'assets/js/data-table/data-table-active.js' ?>  "></script>
