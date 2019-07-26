@@ -1,4 +1,3 @@
-console.log('registrasi is running ');
 
 $('#form-registrasi-warga').validate(
     {
@@ -62,14 +61,9 @@ $('#form-registrasi-warga').validate(
                 $.ajax({
                     url: `${BASE_URL}master/warga/Akun/registrasi`,
                     method: 'post',
-                    data: new FormData(form),
-                    processData: false,
-                    contentType: false,
-                    cache: false,
-                    async: false,
+                    data: $(form).serialize(),
                     beforeSend: function(){
-                        console.log('beforesend')
-                        $('#btn-submit-register').val('Sedang mengirim email ..')
+                        $('#btn-submit-register').attr('disabled', true).html('<i class="fa fa-spinner fa-spin" > </i>')
                     },
                     success:function(data){
                         var parse = JSON.parse(data);
@@ -81,7 +75,11 @@ $('#form-registrasi-warga').validate(
                         }else{
                             $.notify('Gagal mengirim kode verifikasi', "info");
                         }
+                    },
+                    complete: function(){
+                        $('#btn-submit-register').attr('disabled', false).text('REGISTRASI')
                     }
+
                 })
                 
             }

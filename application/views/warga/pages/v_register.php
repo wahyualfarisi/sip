@@ -39,7 +39,7 @@
                         
 
                         <div style="margin-top: 30px;" >
-                            <p><input type="submit" id="btn-submit-register" class="btn btn-danger btn-block" value="Registrasi" /> </p>
+                            <p><button type="submit" id="btn-submit-register" class="btn btn-danger btn-block"> Registrasi </button> </p>
                         </div>
                     </form>
 
@@ -48,7 +48,7 @@
                               <input type="text" name="code_confirmation" class="form-control" id="code_confirmation" placeholder="Masukan Verifikasi Kode">
                          </div>
                         <div style="margin-top: 30px;" >
-                            <p><input type="submit" class="btn btn-danger btn-block" value="Konfirmasi" /> </p>
+                            <p><button type="submit" class="btn btn-danger btn-block" > Konfirmasi </button> </p>
                         </div>
                     </form>
 
