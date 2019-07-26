@@ -2,7 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-$active_group = 'production';
+$active_group = 'codemaniac';
+
 $query_builder = TRUE;
 
 $db['production'] = array(
