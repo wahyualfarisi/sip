@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-$active_group = 'codemaniac';
+$active_group = 'production';
 
 $query_builder = TRUE;
 
