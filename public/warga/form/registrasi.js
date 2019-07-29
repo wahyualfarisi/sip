@@ -65,6 +65,7 @@ $('#form-registrasi-warga').validate(
                     beforeSend: function(){
                         $('#btn-submit-register').attr('disabled', true).html('<i class="fa fa-spinner fa-spin" > </i>')
                     },
+                    processData: false,
                     success:function(data){
                         var parse = JSON.parse(data);
                         localStorage.setItem('codeVerification', JSON.stringify(parse) );

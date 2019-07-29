@@ -41,23 +41,15 @@ class Akun extends CI_Controller{
     
       // prosess kirim email
       $config = [
-        'useragent' => 'CodeIgniter',
         'protocol'  => 'smtp',
-        'mailpath'  => '/usr/sbin/sendmail',
         'smtp_host' => 'ssl://smtp.gmail.com',
-        'smtp_user' => 'posyanduslipi@gmail.com',   // Ganti dengan email gmail Anda.
-        'smtp_pass' => 'posyandu1234',             // Password gmail Anda.
         'smtp_port' => 465,
-        'smtp_keepalive' => TRUE,
-        'smtp_crypto' => 'SSL',
-        'wordwrap'  => TRUE,
-        'wrapchars' => 80,
-        'mailtype'  => 'html',
+        'smtp_user' => 'posyanduslipi@gmail.com',   
+        'smtp_pass' => 'posyandu1234',           
         'charset'   => 'utf-8',
-        'validate'  => TRUE,
-        'crlf'      => "\r\n",
+        'mailtype'  => 'html',
         'newline'   => "\r\n",
-        ];
+      ];
 
         $this->load->library('email', $config);
         $this->email->initialize($config);

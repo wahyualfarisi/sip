@@ -65,9 +65,15 @@ class Kader extends CI_Controller{
     $this->load->view('kader/pages/v_jadwal_kegiatan');
   }
 
-  function wargadetail($id = null)
+  function wargadetail($id)
   {
-    $this->load->view('kader/pages/v_detail_warga');
+    $cheknik = $this->m_core->get_where('t_warga', array('no_kk' => $id) );
+    if($cheknik->num_rows() > 0){
+      $this->load->view('kader/pages/v_detail_warga');
+    }else{
+      echo "No. KK Tidak Tersedia";
+    }
+    
   }
 
   function addkegiatan()

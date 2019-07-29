@@ -32,6 +32,7 @@ var UIWargaDetail = (function() {
 
     return {
       retriveDetailWarga: function(data){
+        
         var html = '';
         if(data.length > 0){
           data.forEach(function(item) {
@@ -79,6 +80,8 @@ var UIWargaDetail = (function() {
                   </div>
               `;
           });
+        }else{
+          html = 'tidak ada data'
         }
         $('#show-warga-detail').html(html);
       },
@@ -153,6 +156,7 @@ var SetupEventWargaDetail = (function(UI) {
         method: 'get',
         dataType: 'json',
         success: function(data){
+          console.log(data)
           UI.retriveDetailWarga(data);
         }
       })
@@ -164,6 +168,7 @@ var SetupEventWargaDetail = (function(UI) {
         method: 'get',
         dataType: 'json',
         success: function(data){
+          console.log(data)
           UI.retriveAnak(data)
         }
       })
